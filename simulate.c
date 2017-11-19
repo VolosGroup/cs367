@@ -70,7 +70,10 @@ int ind=0;
 
 int 
 printreg(int PC) {
-   
+   PC++;
+   int rA = (unsigned char)memory[PC];
+   rA = rA >> 4;
+   printf("%s = %x\n",regname[rA],regs[rA]);   
    return PC+1;
 }
 
@@ -81,6 +84,7 @@ printall (int PC) {
 
 int
 printmem(int PC) {
+printf("print mem\n");
    return PC + 1;
 } 
 
@@ -103,7 +107,7 @@ IRmov(int PC) {
    }
 
    regs[rB] = getHexValue(&bits,8);
-   printf("Register: %s\nValue:%x\nPC:%d\n",*(regname+rB),regs[rB],PC);
+   printf("Register: %s\nValue:%x\n",*(regname+rB),regs[rB]);
    return PC+8;
 }
 
