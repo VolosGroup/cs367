@@ -55,7 +55,7 @@ int ind=0;
 		  break;
 	 case 11: PC = Pop(PC);
 		  break;
-         case 12: PC = printall(PC);
+   case 12: PC = printall(PC);
 		   break;
 	 case 13: PC = printreg(PC);
 		  break;
