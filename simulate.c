@@ -27,7 +27,7 @@ execute(int PC) {
    char byte; 
    char opcode;
 int ind=0;
-  while(ind<400) printf("mem[]=%lx\n",(unsigned char)memory[ind++]);
+  while(ind<400) printf("mem[%d]=%lx\n",ind,(unsigned char)memory[ind++]);
    while (!done) {
       byte = memory[PC];
       opcode = (byte >> 4)&0xf;
@@ -84,8 +84,25 @@ printall (int PC) {
 
 int
 printmem(int PC) {
-printf("print mem\n");
-   return PC + 1;
+
+  PC++;
+  int rA = (unsigned char)memory[PC];
+  rA = rA >> 4;
+  PC++;
+
+  int ind= PC+7;
+  unsigned char bits[8];
+  int index=0;
+  for(;ind>=PC;ind--){
+    int b=memory[ind]&0xff;
+    bits[index]=(unsigned char)b&0xff;
+    index++;
+   }
+   
+   int displacement=getHexValue(bits,8);
+   printf("value: %x\n",rA+displacement);
+
+   return PC + 8;
 } 
 
 int
@@ -106,7 +123,7 @@ IRmov(int PC) {
     index++;
    }
 
-   regs[rB] = getHexValue(&bits,8);
+   regs[rB] = getHexValue(bits,8);
    printf("Register: %s\nValue:%x\n",*(regname+rB),regs[rB]);
    return PC+8;
 }
@@ -123,6 +140,8 @@ RMmov(int PC) {
 
 int
 MRmov(int PC) {
+
+   printf("Im next\n");
    return PC+1;
 }
 
@@ -167,3 +186,4 @@ int getHexValue(unsigned char *ptr, int bitCount){
   }
   return val;
 }
+
