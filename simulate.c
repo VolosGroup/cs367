@@ -27,7 +27,7 @@ execute(int PC) {
    char byte; 
    char opcode;
 int ind=0;
-  while(ind<200) printf("mem[%x]=%lx\n",ind,(unsigned char)memory[ind++]);
+  while(ind<200) { printf("mem[%x]=%lx\n",ind,(unsigned char)memory[ind]); ind++; }
    while (!done) {
       byte = memory[PC];
       opcode = (byte >> 4)&0xf;
@@ -93,25 +93,29 @@ printall (int PC) {
    return PC+1;
 }
 
+/**
+ * printmem disp(reg) – 10 byte instruction 0xE0, 0xrA:F, 8 byte displacement – print out
+ * the 8 byte constant stored at address contents(rA) + displacement.
+ */
 int
 printmem(int PC) {
 
   PC++;
-  int rA = (unsigned char)memory[PC];
+  int rA = (unsigned char) memory[PC];
   rA = rA >> 4;
   PC++;
 
   int ind= PC+7;
   unsigned char bits[8];
   int index=0;
-  for(;ind>=PC;ind--){
-    int b=memory[ind]&0xff;
-    bits[index]=(unsigned char)b&0xff;
+  for( ; ind >= PC; ind-- ){
+    int b = memory[ind]&0xff;
+    bits[index] = (unsigned char) b&0xff;
     index++;
    }
    
-   int displacement=getHexValue(bits,8);
-   printf("value: %x\n",rA+displacement);
+   int displacement = getHexValue(bits,8);
+   printf("\tprintmem value: %x\n",rA+displacement);
 
    return PC + 8;
 } 
@@ -171,15 +175,23 @@ MRmov(int PC) {
    
    
    int displacement = getHexValue(bits,8);
-   displacement += rB;
+   displacement += regs[rB];
+   ind = displacement + 0x7;
+   unsigned char storedValue[8];
+   index = 0;
+   for( ; ind >= displacement ; ind-- ){
+    int b = memory[ind]&0xff;
+    storedValue[index] = (unsigned char) b&0xff;
+    index++;
+   }
+   
+   regs[rA] = getHexValue(storedValue,8);
+   
    
    printall(PC-1);
-   printf("dis %x rB %x\n",displacement,rB);
    
    
    
-   
-   printf("MRmov : %x\n",getHexValue(bits,8));
    
    return PC+10;
 }
