@@ -114,7 +114,7 @@ printmem(int PC) {
     index++;
    }
    
-   int displacement = getHexValue(bits,8);
+   unsigned int displacement = getHexValue(bits,8);
    printf("\tprintmem value: %x\n",rA+displacement);
 
    return PC + 8;
@@ -125,7 +125,7 @@ IRmov(int PC) {
 
    PC++;
    unsigned char r=memory[PC];
-   int rB=r&0xf;
+   unsigned int rB=r&0xf;
 
    PC++; 
 
@@ -138,8 +138,8 @@ IRmov(int PC) {
     index++;
    }
 
-   regs[rB] = getHexValue(bits,8);
-   printf("Register: %s\nValue:%x\n",*(regname+rB),regs[rB]);
+   regs[rB] = getHexValue(bits,8) + 0;
+   printf("\tirmovq $0x%x, %s\n", regs[rB], *(regname+rB));
    return PC+8;
 }
 
@@ -157,10 +157,9 @@ int
 MRmov(int PC) {
    
    unsigned char r = memory[PC+1];
-   
-   int rB = r&0xf;
+   unsigned int rB = r&0xf;
    r >>= 4;
-   int rA = r&0xf;
+   unsigned int rA = r&0xf;
    PC+=2;
    
    int ind = PC+7;
@@ -172,9 +171,8 @@ MRmov(int PC) {
     index++;
    }
    
-   
-   
-   int displacement = getHexValue(bits,8);
+   unsigned int displacement = getHexValue(bits,8);
+   unsigned int initialDisplacement = displacement;
    displacement += regs[rB];
    ind = displacement + 0x7;
    unsigned char storedValue[8];
@@ -187,11 +185,8 @@ MRmov(int PC) {
    
    regs[rA] = getHexValue(storedValue,8);
    
-   
+   printf("\tmrmovq %d(%s), %s\n", initialDisplacement, regnames[rB], regnames[rA]);
    printall(PC-1);
-   
-   
-   
    
    return PC+10;
 }
@@ -224,7 +219,44 @@ Pop(int PC) {
 
 int
 OPx(int PC) {
-   return PC+1;
+   
+   unsigned char r = memory[PC];
+   int operation = r&0xf;
+   r = memory[PC+1];
+   
+   unsigned int rB = r&0xf;
+   r >>= 4;
+   unsigned int rA = r&0xf;
+   
+   unsigned int answer = 0;
+   switch(operation) {
+      case 0: // addq
+         answer = regs[rA] + regs[rB];
+         regs[rB] = answer;
+         if (answer==0x00) ZF=0x01;
+         printf("\taddq %s, %s", regnames[rA], regnames[rB]);
+         break;
+      case 1: // subq
+         answer = regs[rB] - regs[rA];
+         regs[rB] = answer;
+         if (answer==0x00) ZF=0x01;
+         printf("\tsubq %s, %s", regnames[rA], regnames[rB]);
+         break;
+      case 2: // andq
+         answer = regs[rB] & regs[rA];
+         regs[rB] = answer;
+         if (answer==0x00) ZF=0x01;
+         printf("\tandq %s, %s", regnames[rA], regnames[rB]);
+         break;
+      case 3: // xorq
+         answer = regs[rB] ^ regs[rA];
+         regs[rB] = answer;
+         if (answer==0x00) ZF=0x01;
+         printf("\txorq %s, %s", regnames[rA], regnames[rB]);
+         break;
+   }
+   
+   return PC+2;
 }
 
 int getHexValue(unsigned char *ptr, int bitCount){
