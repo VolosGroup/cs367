@@ -27,7 +27,7 @@ execute(int PC) {
    char byte; 
    char opcode;
 int ind=0;
-  while(ind<200) { printf("mem[%x]=%lx\n",ind,(unsigned char)memory[ind]); ind++; }
+  //while(ind<200) { printf("mem[%x]=%lx\n",ind,(unsigned char)memory[ind]); ind++; }
    while (!done) {
       byte = memory[PC];
       opcode = (byte >> 4)&0xf;
@@ -73,7 +73,7 @@ printreg(int PC) {
    PC++;
    int rA = (unsigned char)memory[PC];
    rA = rA >> 4;
-   printf("%s = %x\n",regname[rA],regs[rA]);   
+   printf("\t%s = 0x%x\n",regname[rA],regs[rA]);   
    return PC+1;
 }
 
@@ -81,14 +81,14 @@ int
 printall (int PC) {
    
    int cnt=0;
-   printf("******************************\n");
+   printf("\n\t******************************\n");
    while(cnt<15){
-      printf("%s = %x\t",regname[cnt],regs[cnt]);
+      printf("\t%s = %x\t",regname[cnt],regs[cnt]);
       cnt++;
-      printf("%s = %x\n",regname[cnt],regs[cnt]);
+      printf("\t%s = %x\n",regname[cnt],regs[cnt]);
       cnt++;
    }
-   printf("******************************\n");
+   printf("\t******************************\n\n");
    
    return PC+1;
 }
@@ -145,12 +145,55 @@ IRmov(int PC) {
 
 int
 RRmov(int PC) {
-   return PC+1;
+   unsigned char r = memory[PC+1];
+   unsigned int rB = r&0xf;
+   r >>= 4;
+   unsigned int rA = r&0xf;
+   
+   regs[rB] = regs[rA];
+   
+   printf("\trrmovq %s, %s\n", regname[rA], regname[rB]);
+   
+   return PC+2;
 }
 
 int
 RMmov(int PC) {
-   return PC+1;
+   
+   unsigned char r = memory[PC+1];
+   unsigned int rB = r&0xf;
+   r >>= 4;
+   unsigned int rA = r&0xf;
+   PC+=2;
+   
+   int ind = PC+7;
+   unsigned char bits[8];
+   int index = 0;
+   for( ; ind >= PC ; ind-- ){
+    int b = memory[ind]&0xff;
+    bits[index] = (unsigned char) b&0xff;
+    index++;
+   }
+   
+   unsigned int displacement = getHexValue(bits,8);
+   unsigned int initialDisplacement = displacement;
+   displacement += regs[rB];
+   ind = displacement + 0x7;
+   unsigned char storedValue[8];
+   index = 0;
+   for( ; ind >= displacement ; ind-- ){
+    int b = memory[ind]&0xff;
+    storedValue[index] = (unsigned char) b&0xff;
+    index++;
+   }
+   
+   // write each byte to memory[]
+    //memory[spot]= getHexValue(storedValue,8);
+   
+   printf("\trmmovq %s, 0x%x(%s)\n", regname[rB], initialDisplacement, regname[rA]);
+   
+   
+   return PC+8;
 }
 
 int
@@ -185,10 +228,9 @@ MRmov(int PC) {
    
    regs[rA] = getHexValue(storedValue,8);
    
-   printf("\tmrmovq %d(%s), %s\n", initialDisplacement, regnames[rB], regnames[rA]);
-   printall(PC-1);
+   printf("\tmrmovq %x(%s), %s\n", initialDisplacement, regname[rB], regname[rA]);
    
-   return PC+10;
+   return PC+8;
 }
 
 int
@@ -234,25 +276,29 @@ OPx(int PC) {
          answer = regs[rA] + regs[rB];
          regs[rB] = answer;
          if (answer==0x00) ZF=0x01;
-         printf("\taddq %s, %s", regnames[rA], regnames[rB]);
+         else ZF=0x00;
+         printf("\taddq %s, %s\n", regname[rA], regname[rB]);
          break;
       case 1: // subq
          answer = regs[rB] - regs[rA];
          regs[rB] = answer;
          if (answer==0x00) ZF=0x01;
-         printf("\tsubq %s, %s", regnames[rA], regnames[rB]);
+         else ZF=0x00;
+         printf("\tsubq %s, %s\n", regname[rA], regname[rB]);
          break;
       case 2: // andq
          answer = regs[rB] & regs[rA];
          regs[rB] = answer;
          if (answer==0x00) ZF=0x01;
-         printf("\tandq %s, %s", regnames[rA], regnames[rB]);
+         else ZF=0x00;
+         printf("\tandq %s, %s\n", regname[rA], regname[rB]);
          break;
       case 3: // xorq
          answer = regs[rB] ^ regs[rA];
          regs[rB] = answer;
          if (answer==0x00) ZF=0x01;
-         printf("\txorq %s, %s", regnames[rA], regnames[rB]);
+         else ZF=0x00;
+         printf("\txorq %s, %s\n", regname[rA], regname[rB]);
          break;
    }
    
