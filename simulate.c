@@ -27,7 +27,7 @@ execute(int PC) {
    char byte; 
    char opcode;
 int ind=0;
-  while(ind<400) printf("mem[%d]=%lx\n",ind,(unsigned char)memory[ind++]);
+  while(ind<200) printf("mem[%x]=%lx\n",ind,(unsigned char)memory[ind++]);
    while (!done) {
       byte = memory[PC];
       opcode = (byte >> 4)&0xf;
@@ -79,6 +79,17 @@ printreg(int PC) {
 
 int
 printall (int PC) {
+   
+   int cnt=0;
+   printf("******************************\n");
+   while(cnt<15){
+      printf("%s = %x\t",regname[cnt],regs[cnt]);
+      cnt++;
+      printf("%s = %x\n",regname[cnt],regs[cnt]);
+      cnt++;
+   }
+   printf("******************************\n");
+   
    return PC+1;
 }
 
@@ -114,12 +125,12 @@ IRmov(int PC) {
 
    PC++; 
 
-   int ind= PC+7;
+   int ind = PC+7;
    unsigned char bits[8];
-   int index=0;
-   for(;ind>=PC;ind--){
-    int b=memory[ind]&0xff;
-    bits[index]=(unsigned char)b&0xff;
+   int index = 0;
+   for( ; ind >= PC ; ind-- ){
+    int b = memory[ind]&0xff;
+    bits[index] = (unsigned char) b&0xff;
     index++;
    }
 
@@ -140,9 +151,37 @@ RMmov(int PC) {
 
 int
 MRmov(int PC) {
-
-   printf("Im next\n");
-   return PC+1;
+   
+   unsigned char r = memory[PC+1];
+   
+   int rB = r&0xf;
+   r >>= 4;
+   int rA = r&0xf;
+   PC+=2;
+   
+   int ind = PC+7;
+   unsigned char bits[8];
+   int index = 0;
+   for( ; ind >= PC ; ind-- ){
+    int b = memory[ind]&0xff;
+    bits[index] = (unsigned char) b&0xff;
+    index++;
+   }
+   
+   
+   
+   int displacement = getHexValue(bits,8);
+   displacement += rB;
+   
+   printall(PC-1);
+   printf("dis %x rB %x\n",displacement,rB);
+   
+   
+   
+   
+   printf("MRmov : %x\n",getHexValue(bits,8));
+   
+   return PC+10;
 }
 
 int
