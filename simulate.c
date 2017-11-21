@@ -10,6 +10,7 @@ int getBitSequence(int arrbin[]);
 
 char SF = 0x00;
 char ZF = 0x00;
+char OF = 0x00;
 
 extern char memory[] ;
 extern int PC ;
@@ -27,7 +28,7 @@ execute(int PC) {
    char byte; 
    char opcode;
 int ind=0;
-  //while(ind<200) { printf("mem[%x]=%lx\n",ind,(unsigned char)memory[ind]); ind++; } exit(1);
+  //while(<0x170 ) { printf("mem[%x]=%lx\n",ind,(unsigned char)memory[ind]); ind++; } exit(1);
    while (!done) {
       byte = memory[PC];
       opcode = (byte >> 4)&0xf;
@@ -36,6 +37,14 @@ int ind=0;
 		done = 1; break;  //halt
 	 case 1: PC++; break;   // nop
 	 case 2: PC = RRmov(PC);
+      /* rmmovq is 2 0
+cmovle is 2 1
+cmovl is 2 2
+cmove is 2 3
+cmovne is 2 4 
+cmovge is 2 5
+cmovg is 2 6.
+*/
 		 break;
 	 case 3: PC = IRmov(PC);
 		 break;
@@ -246,7 +255,58 @@ MRmov(int PC) {
 
 int
 Jump(int PC ) {
-	return PC+1;
+   
+   unsigned char r = memory[PC];
+   char fn = r&0xf;
+   
+   int startBlock = PC+1;
+   unsigned char byte16[8];
+   int cnt = 7;
+   for ( ; cnt >= 0 ; cnt-- ){
+      int byte = memory[startBlock]&0xff;
+      byte16[cnt] = (unsigned char)byte&0xff;
+      //printf("byte16 = %x\n",byte16[cnt]);
+      startBlock++;
+   }
+   
+   int jmpAddress = getHexValue(byte16,8);
+   switch(fn){
+      case 0:
+         PC = jmpAddress;
+         printf("\tjmp %x\n",jmpAddress);
+         break;
+      case 1:
+         if ( (SF^OF)|ZF ) PC = jmpAddress; //update PC to address
+         else PC = PC + 9;
+         printf("\tjle %x\n",jmpAddress);
+         break;
+      case 2:
+         if ( SF^OF ) PC = jmpAddress;
+         else PC = PC + 9;
+         printf("\tjl %x\n",jmpAddress);
+         break;
+      case 3:
+         if ( ZF ) PC = jmpAddress;
+         else PC = PC + 9;
+         printf("\tje %x\n",jmpAddress);
+         break;
+      case 4:
+         if ( ~ZF ) PC = jmpAddress;
+         else PC = PC + 9;
+         printf("\tjne %x\n",jmpAddress);
+         break;
+      case 5:
+         if ( ~(SF^OF)  ) PC = jmpAddress;
+         else PC = PC + 9;
+         printf("\tjge %x\n",jmpAddress);
+         break;
+      case 6:
+         if ( ~(SF^OF)&~ZF ) PC =  jmpAddress;
+         else PC = PC + 9;
+         printf("\tjg %x\n",jmpAddress);
+         break;
+   }
+	return PC;
 }
 
 int
@@ -283,12 +343,21 @@ OPx(int PC) {
    unsigned int rA = r&0xf;
    
    unsigned int answer = 0;
+   
+   /*
+    *
+    * Need Sign flag code
+    *
+    *
+    */
    switch(operation) {
       case 0: // addq
          answer = regs[rA] + regs[rB];
          regs[rB] = answer;
-         if (answer==0x00) ZF=0x01;
+         if (regs[rB] - regs[rA] == 0x0) ZF=0x01;
          else ZF=0x00;
+         if (regs[rB] - regs[rA]<0x0) SF=0x01;
+         else SF=0x00;
          printf("\taddq %s, %s\n", regname[rA], regname[rB]);
          break;
       case 1: // subq
@@ -296,20 +365,26 @@ OPx(int PC) {
          regs[rB] = answer;
          if (answer==0x00) ZF=0x01;
          else ZF=0x00;
+         if (regs[rB] - regs[rA]<0x0) SF=0x01;
+         else SF=0x00;
          printf("\tsubq %s, %s\n", regname[rA], regname[rB]);
          break;
       case 2: // andq
          answer = regs[rB] & regs[rA];
          regs[rB] = answer;
-         if (answer==0x00) ZF=0x01;
+         if (regs[rB] - regs[rA] == 0x0) ZF=0x01;
          else ZF=0x00;
+         if (regs[rB] - regs[rA]<0x0) SF=0x01;
+         else SF=0x00;
          printf("\tandq %s, %s\n", regname[rA], regname[rB]);
          break;
       case 3: // xorq
          answer = regs[rB] ^ regs[rA];
          regs[rB] = answer;
-         if (answer==0x00) ZF=0x01;
+         if (regs[rB] - regs[rA] == 0x0) ZF=0x01;
          else ZF=0x00;
+         if (regs[rB] - regs[rA]<0x0) SF=0x01;
+         else SF=0x00;
          printf("\txorq %s, %s\n", regname[rA], regname[rB]);
          break;
    }
@@ -331,15 +406,14 @@ int getHexValue(unsigned char *ptr, int bitCount){
 
 /*
 char *getByte(int startBlock){
-   char *byte = (char *) malloc(8 * sizeof(char));
-   int index = startBlock;
-   int ind = 0;
-   for( ; index <= startBlock+7 ; index++ ){
-    int b = memory[index]&0xff;
-    *(byte+ind) = (unsigned char) b&0xff;
-    ind++;
+   unsigned char byte16[8];
+   int cnt = startBlock + 7;
+   for ( ; cnt >= 0 ; cnt-- ){
+      int byte = memory[startBlock]&0xff;
+      byte16[cnt] = (unsigned char)byte&0xff;
+      startBlock++;
    }
-   return byte;
+   return byte16;
 }
 
 */
