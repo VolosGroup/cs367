@@ -255,6 +255,21 @@ MRmov(int PC) {
 
 int
 Jump(int PC ) {
+   // done
+   
+   // test push fucnction
+   memory[0x98]=0xA0;
+   memory[0x99]=0x2F;
+   regs[4] = 0x50;
+   Push(0x98);
+   
+   memory[0x98]=0xB0;
+   memory[0x99]=0x2F;
+   Pop(0x98);
+   
+   
+   // end of test
+   
    
    unsigned char r = memory[PC];
    char fn = r&0xf;
@@ -311,6 +326,8 @@ Jump(int PC ) {
 
 int
 Call(int PC) {
+   // push next instruction onto stack, then get the next 8 bytes whcih will be the next instruction
+   
    return PC + 1;
 }
 
@@ -321,12 +338,67 @@ Ret(int PC) {
 
 int
 Push(int PC) {
-  return PC+1;
+   
+   //done
+   
+   unsigned char r = memory[PC+1];
+   r >>= 4;
+   int rA = r&0xf;
+   int data = regs[rA];
+   
+   char stackTop = regs[4]; // get address of stack from %rsp
+   //int newaddy = 0x50; // next instruction for call
+   
+   int newTop = stackTop - 0x8;
+   regs[4] = newTop;
+   
+   
+   //write to newtop
+   //writes content of register to blocks of memory (address of displacment + )
+   int currentBlock = newTop;
+   while(currentBlock <= newTop+0x7){
+      memory[currentBlock] = (unsigned char) data&0xff;
+      data >>=8;
+      currentBlock++;
+   }
+   
+   // read latest stack value
+   int startBlock = newTop;
+   unsigned char byte16[8];
+   int cnt = 7;
+   for ( ; cnt >= 0 ; cnt-- ){
+      int byte = memory[startBlock]&0xff;
+      byte16[cnt] = (unsigned char)byte&0xff;
+      startBlock++;
+   }
+   printf("\tpushq %s\n",*(regname+rA));
+  return PC+2;
 }
 
 int
 Pop(int PC) {
-  return PC+1;
+   
+   unsigned char r = memory[PC+1];
+   r >>= 4;
+   int rA = r&0xf;
+   
+   int rsp = regs[4];
+   int startBlock = rsp;
+   
+   unsigned char byte16[8];
+   int cnt = 7;
+   for ( ; cnt >= 0 ; cnt-- ){
+      int byte = memory[startBlock]&0xff;
+      byte16[cnt] = (unsigned char)byte&0xff;
+      //printf("byte16 = %x\n",byte16[cnt]);
+      startBlock++;
+   }
+   
+   regs[4]+=0x8;
+   
+   printf("\tpopq %s\n",*(regname+rA));
+   
+  return PC+2;
 }
 
 
