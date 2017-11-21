@@ -27,7 +27,7 @@ execute(int PC) {
    char byte; 
    char opcode;
 int ind=0;
-  //while(ind<200) { printf("mem[%x]=%lx\n",ind,(unsigned char)memory[ind]); ind++; }
+  //while(ind<200) { printf("mem[%x]=%lx\n",ind,(unsigned char)memory[ind]); ind++; } exit(1);
    while (!done) {
       byte = memory[PC];
       opcode = (byte >> 4)&0xf;
@@ -113,10 +113,22 @@ printmem(int PC) {
     bits[index] = (unsigned char) b&0xff;
     index++;
    }
+   int displacement = getHexValue(bits,8);
    
-   unsigned int displacement = getHexValue(bits,8);
-   printf("\tprintmem value: %x\n",rA+displacement);
-
+   displacement += regs[rA];
+   
+   int startBlock = displacement;
+   unsigned char byte16[8];
+   int cnt = 7;
+   for ( ; cnt >= 0 ; cnt-- ){
+      int byte = memory[startBlock]&0xff;
+      byte16[cnt] = (unsigned char)byte&0xff;
+      //printf("byte16 = %x\n",byte16[cnt]);
+      startBlock++;
+   }
+   
+   printf("\tprintmem value: %x\n", getHexValue(byte16,8));
+   
    return PC + 8;
 } 
 
@@ -176,23 +188,19 @@ RMmov(int PC) {
    }
    
    unsigned int displacement = getHexValue(bits,8);
-   unsigned int initialDisplacement = displacement;
-   displacement += regs[rB];
-   ind = displacement + 0x7;
-   unsigned char storedValue[8];
-   index = 0;
-   for( ; ind >= displacement ; ind-- ){
-    int b = memory[ind]&0xff;
-    storedValue[index] = (unsigned char) b&0xff;
-    index++;
+   int currentBlock = displacement + regs[rB];
+   int endBlock = displacement + 7;
+   int data = regs[rA];
+   
+   //writes content of register to blocks of memory (address of displacment + )
+   while(currentBlock <= endBlock ){
+      memory[currentBlock] = data&0xff;
+      data >>= 8;
+      currentBlock++;
    }
    
-   // write each byte to memory[]
-    //memory[spot]= getHexValue(storedValue,8);
-   
-   printf("\trmmovq %s, 0x%x(%s)\n", regname[rB], initialDisplacement, regname[rA]);
-   
-   
+   printf("\trmmovq %s, 0x%x(%s)\n", regname[rA], currentBlock, regname[rB]);
+
    return PC+8;
 }
 
@@ -214,6 +222,8 @@ MRmov(int PC) {
     index++;
    }
    
+   
+  
    unsigned int displacement = getHexValue(bits,8);
    unsigned int initialDisplacement = displacement;
    displacement += regs[rB];
@@ -225,10 +235,11 @@ MRmov(int PC) {
     storedValue[index] = (unsigned char) b&0xff;
     index++;
    }
-   
    regs[rA] = getHexValue(storedValue,8);
    
    printf("\tmrmovq %x(%s), %s\n", initialDisplacement, regname[rB], regname[rA]);
+   
+   
    
    return PC+8;
 }
@@ -261,6 +272,7 @@ Pop(int PC) {
 
 int
 OPx(int PC) {
+   
    
    unsigned char r = memory[PC];
    int operation = r&0xf;
@@ -315,4 +327,20 @@ int getHexValue(unsigned char *ptr, int bitCount){
   }
   return val;
 }
+
+
+/*
+char *getByte(int startBlock){
+   char *byte = (char *) malloc(8 * sizeof(char));
+   int index = startBlock;
+   int ind = 0;
+   for( ; index <= startBlock+7 ; index++ ){
+    int b = memory[index]&0xff;
+    *(byte+ind) = (unsigned char) b&0xff;
+    ind++;
+   }
+   return byte;
+}
+
+*/
 
