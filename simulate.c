@@ -35,7 +35,7 @@ int ind=0x0;
       byte = memory[PC];
       opcode = (byte >> 4)&0xf;
    switch (opcode) {
-	 case 0: printf("Halt\n",PC); 
+	 case 0: printf("\tHalt\n",PC); 
 		done = 1; break;  //halt
 	 case 1: PC++; break;   // nop
 	 case 2: PC = RRmov(PC);
@@ -92,7 +92,7 @@ int
 printall (int PC) {
    
    int cnt=0;
-   printf("\n\t******************************\n");
+   printf("\tprintall\n\n\t******************************\n");
    while(cnt<15){
       printf("\t%s = %x\t",regname[cnt],regs[cnt]);
       cnt++;
@@ -110,7 +110,7 @@ printall (int PC) {
  */
 int
 printmem(int PC) {
-
+ //printmem A(%r14)
   PC++;
   int rA = (unsigned char) memory[PC];
   rA = rA >> 4;
@@ -126,9 +126,9 @@ printmem(int PC) {
    }
    int displacement = getHexValue(bits,8);
    
-   displacement += regs[rA];
+   int newDisplacement = displacement + regs[rA];
    
-   int startBlock = displacement;
+   int startBlock = newDisplacement;
    unsigned char byte16[8];
    int cnt = 7;
    for ( ; cnt >= 0 ; cnt-- ){
@@ -138,7 +138,7 @@ printmem(int PC) {
       startBlock++;
    }
    
-   printf("\tprintmem value: %x\n", getHexValue(byte16,8));
+   printf("\tprintmem %x(%s)\n", displacement, *(regname+rA) );
    
    return PC + 8;
 } 
@@ -168,12 +168,46 @@ IRmov(int PC) {
 
 int
 RRmov(int PC) {
+   
+   unsigned char t1 = memory[PC];
+   unsigned int fn = t1&0xf;
+   
    unsigned char r = memory[PC+1];
    unsigned int rB = r&0xf;
    r >>= 4;
    unsigned int rA = r&0xf;
    
-   regs[rB] = regs[rA];
+   int answer = regs[rB] - regs[rA];
+   if (answer==0x00) ZF=0x01;
+   else ZF=0x00;
+   if (answer<0x0) SF=0x01;
+   else SF=0x00;
+   
+   switch(fn){
+      
+      case 0:
+         regs[rB] = regs[rA];
+         break;
+      case 1:
+         if ( (SF^OF)|ZF ) regs[rB] = regs[rA];
+         break;
+      case 2:
+         if ( SF^OF ) regs[rB] = regs[rA];
+         break;
+      case 3:
+         if ( ZF ) regs[rB] = regs[rA];
+         break;
+      case 4:
+         if ( ~ZF ) regs[rB] = regs[rA];
+         break;
+      case 5:
+         if ( ~(SF^OF)  ) regs[rB] = regs[rA];
+         break;
+      case 6:
+         if ( ~(SF^OF)&~ZF ) regs[rB] = regs[rA];
+         break;
+      
+   }
    
    printf("\trrmovq %s, %s\n", regname[rA], regname[rB]);
    
@@ -257,20 +291,6 @@ MRmov(int PC) {
 
 int
 Jump(int PC ) {
-   // done
-   
-   // test push fucnction
-   memory[0x98]=0xA0;
-   memory[0x99]=0x2F;
-   regs[4] = 0x50;
-   Push(0x98);
-   
-   memory[0x98]=0xB0;
-   memory[0x99]=0x2F;
-   Pop(0x98);
-   
-   
-   // end of test
    
    
    unsigned char r = memory[PC];
@@ -370,7 +390,7 @@ Ret(int PC) {
    int rsp = regs[4];
    int startBlock = rsp;
    
-   printf("Fun%d:\n",functionCount,memory[startBlock]&0xff);
+   printf("\tret\n");
    regs[4]+=0x8;
    return memory[startBlock];
 }
