@@ -7,6 +7,8 @@ int IRmov(int), RRmov(int), RMmov(int), MRmov(int);
 int OPx(int);
 int printall(int), printreg(int),printmem(int);
 int getBitSequence(int arrbin[]);
+void printMemory(int startBlock, int endBlock);
+int functionCount = 0;
 
 char SF = 0x00;
 char ZF = 0x00;
@@ -27,13 +29,13 @@ execute(int PC) {
    int done = 0;
    char byte; 
    char opcode;
-int ind=0;
-  //while(<0x170 ) { printf("mem[%x]=%lx\n",ind,(unsigned char)memory[ind]); ind++; } exit(1);
+int ind=0x0;
+  //while( ind>=0x0 && ind<0x40 ) { printf("mem[%x]=%lx\n",ind,(unsigned char)memory[ind]); ind++; } exit(1);
    while (!done) {
       byte = memory[PC];
       opcode = (byte >> 4)&0xf;
    switch (opcode) {
-	 case 0: printf("Halting at instruction 0x%x\n",PC); 
+	 case 0: printf("Halt\n",PC); 
 		done = 1; break;  //halt
 	 case 1: PC++; break;   // nop
 	 case 2: PC = RRmov(PC);
@@ -328,12 +330,49 @@ int
 Call(int PC) {
    // push next instruction onto stack, then get the next 8 bytes whcih will be the next instruction
    
-   return PC + 1;
+   int nextInstruction = PC+9;
+   /**
+    * pushes next instruction onto stack
+    *
+    */
+   char stackTop = regs[4]; // get address of stack from %rsp
+   //int newaddy = 0x50; // next instruction for call
+   
+   int newTop = stackTop - 0x8;
+   regs[4] = newTop;
+   
+   
+   // write next instruction onto stack 
+   int currentBlock = newTop;
+   while(currentBlock <= newTop+0x7){
+      memory[currentBlock] = (unsigned char) nextInstruction&0xff;
+      nextInstruction >>=8;
+      currentBlock++;
+   }
+   
+   
+   int startBlock = PC+1;
+   unsigned char byte16[8];
+   int cnt = 7;
+   for ( ; cnt >= 0 ; cnt-- ){
+      int byte = memory[startBlock]&0xff;
+      byte16[cnt] = (unsigned char)byte&0xff;
+      startBlock++;
+   }
+   functionCount++;
+   printf("\tcall fun%d\n",functionCount);
+   return getHexValue(byte16,8);
 }
 
 int
 Ret(int PC) {
-    return PC+1;
+   PC++;
+   int rsp = regs[4];
+   int startBlock = rsp;
+   
+   printf("Fun%d:\n",functionCount,memory[startBlock]&0xff);
+   regs[4]+=0x8;
+   return memory[startBlock];
 }
 
 int
@@ -362,7 +401,7 @@ Push(int PC) {
       currentBlock++;
    }
    
-   // read latest stack value
+   /* reads from last inserted value, this is to verify read latest stack value was correct
    int startBlock = newTop;
    unsigned char byte16[8];
    int cnt = 7;
@@ -371,6 +410,8 @@ Push(int PC) {
       byte16[cnt] = (unsigned char)byte&0xff;
       startBlock++;
    }
+   */
+   
    printf("\tpushq %s\n",*(regname+rA));
   return PC+2;
 }
@@ -394,7 +435,7 @@ Pop(int PC) {
       startBlock++;
    }
    
-   regs[4]+=0x8;
+   regs[4] = rsp + 0x8;
    
    printf("\tpopq %s\n",*(regname+rA));
    
@@ -475,6 +516,14 @@ int getHexValue(unsigned char *ptr, int bitCount){
   return val;
 }
 
+void printMemory(int startBlock, int endBlock){
+   int ind = startBlock;
+   while( ind >= startBlock && ind<=endBlock){
+      printf("Mem[%x] = %x\n",ind,memory[ind]);
+      ind++;
+   }
+   
+}
 
 /*
 char *getByte(int startBlock){
