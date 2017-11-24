@@ -9,10 +9,12 @@ extern void execute(int);
 
 char memory[MAX_MEMORY] ;
 int PC = 0;
+char **funcs; 
 
 
 
 int main(int argc, char **argv) {
+   funcs = (char **)malloc(10);
    FILE *fp;
    if (argc > 1) {
      fp = fopen(argv[1],"r"); 
