@@ -25,16 +25,19 @@ typedef struct {
     int block3;
 }   Cache;
 
-TLB tlbentries[5];
-PageTable pageentries[5];
+void print();
+TLB tlbentries[10];
+PageTable pageentries[10];
 Cache cache[10];
+int lastTLB;
+int lastPage;
 
 void
 initialize() {
 /* if there is any initialization you would like to have, do it here */
 /*  This is called for you in the main program */
     
-    
+
     
     tlbentries[0].set = 0x0;
     tlbentries[0].tag = 0x3;
@@ -95,6 +98,7 @@ initialize() {
     cache[0].block2 = 0x1b;
     cache[0].block3 = 0xd3;
     
+    print();
     
     
 }
@@ -137,17 +141,16 @@ get_physical_address(int virt_address) {
     virtuality >>= 2;
     int tlbt = virtuality & 0x3f;
     //printf("vpo %d\t tbli %d \t tlbt %d\n",vpo,tlbi, tlbt);
-    
+
     int ppn = -1;
-    int lastTLB;
-    int lastPage;
- 
+
     // checks the TLB table for the ppn
     for(int i=0; i<5; i++){
         if( (tlbentries[i].set == tlbi) && (tlbentries[i].tag == tlbt) ){
             lastTLB = i;
             printf("Found in TLB\n");
             ppn = tlbentries[i].ppn;
+            break;
         } else{
             
         }
@@ -164,6 +167,17 @@ get_physical_address(int virt_address) {
                 PA = ppn;
                 PA = (PA << 6) | vpo;
                 printf("Found in page table\n");
+                //update TLB
+                // look for spot in tlb that has same set but valid = 0
+                // set tag,ppn, valid = 1
+                for(int y=0; y<10 ; y++){
+                    if(tlbentries[y].set == tlbi && tlbentries[y].valid == 0){
+                        tlbentries[y].ppn = ppn;
+                        tlbentries[y].valid = 1;
+                        tlbentries[y].tag = tlbt;
+                    }
+                }
+                break;
             }
         }
     }
@@ -172,9 +186,14 @@ get_physical_address(int virt_address) {
         // pa is the physicaladdress
         PA = ppn;
         PA = (PA << 6) | vpo;
+        
+        for(int i=0; i<5; i++){
+            if( (pageentries[i].vpn == vpn) && (pageentries[i].valid == 1) ){
+                lastPage = i;
+                break;
+            }
+        }
     }
-    
-    if (ppn == -1) printf("Not found.\n");
     
     return PA;
 }
@@ -209,15 +228,36 @@ error in the way you are computing it...
    
    for(int i=0; i<10 ; i++){
     //printf("vallue ci %x ct %x\n",cache[i].index, cache[i].tag);
-    if(cache[i].index == ci && cache[i].tag == ct && cache[i].valid == 1)
-        printf("Found in cache.\n");
+    // found value in cache, put in 
+    if(cache[i].index == ci && cache[i].tag == ct && cache[i].valid == 1){
+        tlbentries[lastTLB].ppn = cache[i].tag;
+        tlbentries[lastTLB].valid = 1;
+        pageentries[lastPage].ppn = cache[i].tag;
+        pageentries[lastPage].valid = 1;
+    }
+      
         
         
    }
    
-   
 
    return byte;
+}
+
+void print(){
+    
+    printf("TLB\n------------------------------\nSet\tTag\tPPN\tValid\n");
+    for(int i=0; i<5 ; i++){
+        printf("%x\t%x\t%x\t\%x\n",tlbentries[i].set, tlbentries[i].tag, tlbentries[i].ppn, tlbentries[i].valid);
+    }
+    printf("----------------------------\n\n");
+    
+    printf("Page Table\n-------------------------\nVPN\tPPN\tValid\n");
+    for(int i=0; i<5 ; i++){
+        printf("%x\t%x\t%x\n",pageentries[i].vpn, pageentries[i].ppn, pageentries[i].valid);
+    }
+    printf("--------------------------\n\n");
+    
 }
 
 

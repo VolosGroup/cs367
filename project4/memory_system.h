@@ -12,7 +12,7 @@
 #define PHYSICALERROR 6
 #define ILLEGALVPN 7
 
-
+void print();
 void initialize();
 int get_physical_address(int);
 char get_byte(int);
