@@ -104,7 +104,7 @@ get_physical_address(int virt_address) {
     int PA;
     
     char x[32];
-    sprintf(x,"%d",virt_address);
+    sprintf(x,"%x",virt_address);
     int virtuality = (int)strtol(x, NULL, 16);
     
     int vpo = virtuality & 0xff;
