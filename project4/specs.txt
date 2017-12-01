@@ -1,0 +1,49 @@
+Virtual Address : 18 bits (9 VPN, 9 VP0)
+Physical Address: 20 bits (11 PPN,9 PPO)
+CPU(TLB) -> Cache -> Memory
+
+Functions To Use
+extern int get_page_table_entry(int) ;
+extern int get_word(int);
+void  start_logging(), stop_logging(), log_entry(int,int);
+
+TLB is Direct Mapped Cache
+ -starts empty and valid = 0
+ -first 5 bits : VPN
+ -next 4 bits: Index
+
+Page table – supporting library has a function get_page_table_entry(VPN) 
+which will return the associated PPN from its internal data. Be sure to 
+update the TLB if you have to get information from the page table
+
+Use physical address to get data
+1) Check cache first
+  - First 13 bits of physical address : Tag
+  - Next 5 bits : index
+  - Last 2 bits : gets correct byte to return
+
+Cache
+ - holds 4 bytes of data 
+ - initially marked as everything valid = 0
+ - 2 way cache, each set has two possible entries
+
+Memory
+ - data stored in little endian
+ - get_word(addr) :  returns a 4-byte integer at address (addr & 0x3)
+ - For example, if you request the byte at address 0x1, you will
+   get the 4 bytes starting at 0x0 (0x0, 0x1, 0x2, 03) Be sure to update the 
+   cache if you have to get data from main memory
+
+ Example)
+  Data in cache: 0x12345678 
+  Offset bits = 1
+  returns 0x56
+
+Replacement Algorithm
+ - If both entries are invalid/unused, use the first one
+ - If one entry is valid and the other invalid/unused, use the invalid/unused 
+   one
+ - If both entries are valid, use the ‘oldest’ one – the one that has been in
+   the cache the longest. To determine this , you will need to keep
+    additional information around. I used a timestamp like approach and always
+     replace the entry with the lowest timestamp

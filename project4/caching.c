@@ -1,29 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "memory_system.h"
 
-typedef struct {
-    int vpn;
-    int ppn;
-    int valid;
-}   PageTable;
 
-typedef struct {
-    int set;
-    int tag;
-    int ppn;
-    int valid;
-}   TLB;
-
-typedef struct {
-    int index;
-    int tag;
-    int valid;
-    int block0;
-    int block1;
-    int block2;
-    int block3;
-}   Cache;
 
 void print();
 TLB tlbentries[10];
@@ -93,12 +73,34 @@ initialize() {
     cache[0].index = 0xe;
     cache[0].tag = 0x13;
     cache[0].valid = 1;
-    cache[0].block0 = 0x83;
-    cache[0].block1 = 0x77;
-    cache[0].block2 = 0x1b;
-    cache[0].block3 = 0xd3;
+    cache[0].data = 0x9315DA3B;
     
-    print();
+    cache[1].index = 0xa;
+    cache[1].tag = 0x2d;
+    cache[1].valid = 1;
+    cache[1].data = 0x9315DA3B;
+    
+    cache[2].index = 2;
+    cache[2].tag = 0x1b;
+    cache[2].valid = 1;
+    cache[2]. data = 0x00020408;
+    
+    cache[3].index = 0x3;
+    cache[3].tag = 0x0d;
+    cache[3].valid = 1;
+    cache[3].data = 0x23A56789;
+    
+    cache[4].index = 0x4;
+    cache[4].tag = 0x32;
+    cache[4].valid = 1;
+    cache[4].data = 0x436D8F09;
+    
+    
+    
+    
+    //print();
+    
+    
     
     
 }
@@ -109,6 +111,12 @@ initialize() {
  *     * you MUST call the relevant log_entry() functions (described below)
  *          or you will not receive credit for all of your hard work!
  */
+
+
+
+
+
+
 
 int
 get_physical_address(int virt_address) {
@@ -130,6 +138,10 @@ get_physical_address(int virt_address) {
 
     int PA;
     
+    //for(int i=0; i<5; i++){
+    //    printf("Showing TLBs = %x\n", tlbentries[i].ppn);
+    //}
+    
     char x[32];
     sprintf(x,"%x",virt_address);
     int virtuality = (int)strtol(x, NULL, 16);
@@ -137,6 +149,7 @@ get_physical_address(int virt_address) {
     int vpo = virtuality & 0xff;
     virtuality >>= 6;
     int vpn = virtuality;
+    
     int tlbi = virtuality & 0x3;
     virtuality >>= 2;
     int tlbt = virtuality & 0x3f;
@@ -144,17 +157,22 @@ get_physical_address(int virt_address) {
 
     int ppn = -1;
 
+    printf("tlbi %x tlbt %x\n",tlbi,tlbt);
     // checks the TLB table for the ppn
     for(int i=0; i<5; i++){
-        if( (tlbentries[i].set == tlbi) && (tlbentries[i].tag == tlbt) ){
-            lastTLB = i;
-            printf("Found in TLB\n");
-            ppn = tlbentries[i].ppn;
-            break;
-        } else{
-            
-        }
+        if( tlbentries[i].tag == tlbt && tlbentries[i].set == tlbi )
+         ppn = tlbentries[i].ppn;
+         //printf("Found val : %x\n",tlbentries[i].ppn);
     }
+    
+  /*
+   *  this should be used when page_table_entry works
+        if( ppn = -1){
+        ppn = get_page_table_entry(vpn);
+        PA = ppn;
+        PA = (PA << 6) | vpo;
+    }
+    */
 
     // checks page table for ppn if it hasn't been found yet
     // looks for ppn in the page table
@@ -195,8 +213,20 @@ get_physical_address(int virt_address) {
         }
     }
     
+    int xy = get_page_table_entry(48);
+    printf("xy %d\n",xy);
+    
+    printf("PA %x\n",PA);
+    
     return PA;
 }
+
+
+
+
+
+
+
 char
 get_byte(int phys_address) {
 /*
@@ -213,8 +243,11 @@ get_byte(int phys_address) {
 
 NOTE: if the incoming physical address is too large, there is an
 error in the way you are computing it...
+
+// get word goes to ram
 */
-   char byte;
+   char byte = '0';
+   
    
    printf("phys %x\n",phys_address);
    int pareplica = phys_address;
@@ -226,25 +259,55 @@ error in the way you are computing it...
    
    printf("co %x\tci %x\tct %x\n",co,ci,ct);
    
-   for(int i=0; i<10 ; i++){
+
+   
+ /*  for(int i=0; i<10 ; i++){
     //printf("vallue ci %x ct %x\n",cache[i].index, cache[i].tag);
     // found value in cache, put in 
     if(cache[i].index == ci && cache[i].tag == ct && cache[i].valid == 1){
         tlbentries[lastTLB].ppn = cache[i].tag;
         tlbentries[lastTLB].valid = 1;
-        pageentries[lastPage].ppn = cache[i].tag;
-        pageentries[lastPage].valid = 1;
+        byte = cache[i].data;
+        printf("Found data in cache: %x\n",cache[i].data);
+     //   pageentries[lastPage].ppn = cache[i].tag;
+     //   pageentries[lastPage].valid = 1;
     }
-      
-        
-        
+   }*/
+   
+   int data = -1; 
+   for(int i=0; i<10 ; i++){
+    if(cache[i].index == ci && cache[i].tag == ct && cache[i].valid == 1){
+        tlbentries[lastTLB].ppn = cache[i].tag;
+        tlbentries[lastTLB].valid = 1;
+        data = cache[i].data;
+        printf("Found data in cache: %x\n",data);
+    }
    }
    
+   // data was found in cache
+   if ( data != -1 ){
+    if (co == 2){
+        data >>= 8;
+        data &= 0xff;
+    }
+   }
+   byte = (char) data;
+   printf("val: %x\n",data);
 
    return byte;
 }
 
-void print(){
+
+
+
+
+
+
+
+
+
+void
+print(){
     
     printf("TLB\n------------------------------\nSet\tTag\tPPN\tValid\n");
     for(int i=0; i<5 ; i++){
@@ -256,6 +319,12 @@ void print(){
     for(int i=0; i<5 ; i++){
         printf("%x\t%x\t%x\n",pageentries[i].vpn, pageentries[i].ppn, pageentries[i].valid);
     }
+    printf("--------------------------\n\n");
+    
+    printf("Cache\n-------------------------\nIndx\tTag\tValid\tData\n");
+  //  for(int i=0; i<5 ; i++){
+        printf("%x\t%x\t%x\t%x\n",cache[0].index,cache[0].tag,cache[0].valid,cache[0].data);
+ //   }
     printf("--------------------------\n\n");
     
 }

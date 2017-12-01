@@ -12,6 +12,31 @@
 #define PHYSICALERROR 6
 #define ILLEGALVPN 7
 
+#ifndef MEMORY_SYSTEM_H
+#define MEMORY_SYSTEM_H
+
+typedef struct {
+    int vpn;
+    int ppn;
+    int valid;
+}   PageTable;
+
+typedef struct {
+    int set;
+    int tag;
+    int ppn;
+    int valid;
+}   TLB;
+
+typedef struct {
+    int index;
+    int tag;
+    int valid;
+    int data;
+}   Cache;
+
+#endif
+
 void print();
 void initialize();
 int get_physical_address(int);

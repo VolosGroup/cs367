@@ -28,7 +28,7 @@ main() {
      if (phy_address != -1) {
         char ch = get_byte(phy_address);  // implement this function
      }
-     print();
+     //print();
      printf("> ");
      scanf("%x",&virt_address);
   }
