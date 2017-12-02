@@ -146,16 +146,12 @@ get_physical_address(int virt_address) {
 
     int PA;
     
-    //for(int i=0; i<5; i++){
-    //    printf("Showing TLBs = %x\n", tlbentries[i].ppn);
-    //}
-    
     char x[32];
     sprintf(x,"%x",virt_address);
     int virtuality = (int)strtol(x, NULL, 16);
     
-    int vpo = virtuality & 0xff;
-    virtuality >>= 6;
+    int vpo = virtuality & 0x1ff;
+    virtuality >>= 9;
     int vpn = virtuality;
     
     int tlbi = virtuality & 0x3;
