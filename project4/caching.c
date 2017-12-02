@@ -3,12 +3,20 @@
 #include <time.h>
 #include "memory_system.h"
 
+/*
+ *  TLB will start have as invalid
+ *  get ppn from page table and update the tlb by the set and tag of the virtual address
+ *  cache will start as all invalid
+ *  go get data from main memory and update cache by index and tag
+ *  
+ */
+
 
 
 void print();
-TLB tlbentries[10];
+TLB tlbentries[32]; // maybe array size should be 16?
 PageTable pageentries[10];
-Cache cache[10];
+Cache cache[32];
 int lastTLB;
 int lastPage;
 
@@ -167,17 +175,31 @@ get_physical_address(int virt_address) {
     
   /*
    *  this should be used when page_table_entry works
-        if( ppn = -1){
+        if( ppn == -1){
         ppn = get_page_table_entry(vpn);
         PA = ppn;
+        PA = (PA << 9) | vpo;
+        }else{
+        // adds the vpo to the ppn
+        // pa is the physicaladdress
+        PA = ppn;
         PA = (PA << 6) | vpo;
-    }
-    */
+        
+        /*for(int i=0; i<5; i++){
+            if( (pageentries[i].vpn == vpn) && (pageentries[i].valid == 1) ){
+                lastPage = i;
+                break;
+            }
+        }*/
+    
+    
 
     // checks page table for ppn if it hasn't been found yet
     // looks for ppn in the page table
     // by the vpn number
     if( ppn == -1 ){
+        
+        /*
         for(int i=0; i<5; i++){
             if( (pageentries[i].vpn == vpn) && (pageentries[i].valid == 1) ){
                 lastPage = i;
@@ -197,7 +219,7 @@ get_physical_address(int virt_address) {
                 }
                 break;
             }
-        }
+        } */
     }
     else{
         // adds the vpo to the ppn
@@ -205,17 +227,15 @@ get_physical_address(int virt_address) {
         PA = ppn;
         PA = (PA << 6) | vpo;
         
-        for(int i=0; i<5; i++){
+        /*for(int i=0; i<5; i++){
             if( (pageentries[i].vpn == vpn) && (pageentries[i].valid == 1) ){
                 lastPage = i;
                 break;
             }
-        }
+        }*/
     }
     
-    int xy = get_page_table_entry(48);
-    printf("xy %d\n",xy);
-    
+    printf("Word %d\tPage %d\n",get_word(0x8485),get_page_table_entry(vpn));
     printf("PA %x\n",PA);
     
     return PA;
