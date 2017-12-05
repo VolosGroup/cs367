@@ -32,6 +32,7 @@ typedef struct {
     int index;
     int tag;
     int valid;
+    int block;
     int data;
 }   Cache;
 

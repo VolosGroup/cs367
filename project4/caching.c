@@ -14,99 +14,44 @@
 
 
 void print();
+void updateCache(int pa, int data);
 TLB tlbentries[32]; // maybe array size should be 16?
-PageTable pageentries[10];
+
 Cache cache[32];
-int lastTLB;
-int lastPage;
+int lastTLBidx;
+int lastTLBtag;
 
 void
 initialize() {
 /* if there is any initialization you would like to have, do it here */
 /*  This is called for you in the main program */
     
+   // for(int z=0; z<200;z++) printf("page[%x] = %d\n",z,get_page_table_entry(z));
+   // exit(1);
+    for(int z=0;z<32;z++){
+        tlbentries[z].set = 0x0;
+        tlbentries[z].tag = 0x0;
+        tlbentries[z].ppn = 0x0;
+        tlbentries[z].valid = 0;
+    }
+    
+    for(int z=0;z<32;z++){
+        cache[z].index = 0x0;
+        cache[z].tag = 0x0;
+        cache[z].data = 0x0;
+        cache[z].valid = 0;
+        cache[z].block = -1;
+    }
+    
 
     
-    tlbentries[0].set = 0x0;
-    tlbentries[0].tag = 0x3;
-    tlbentries[0].ppn = 0x0;
-    tlbentries[0].valid = 0;
     
-    tlbentries[1].set = 0;
-    tlbentries[1].tag = 0x9;
-    tlbentries[1].ppn = 0x0d;
-    tlbentries[1].valid = 1;
-    
-    tlbentries[2].set = 0;
-    tlbentries[2].tag = 0x7;
-    tlbentries[2].ppn = 0x2;
-    tlbentries[2].valid = 1;
-    
-    tlbentries[3].set = 1;
-    tlbentries[3].tag = 0x3;
-    tlbentries[3].ppn = 0x2d;
-    tlbentries[3].valid = 1;
-    
-    tlbentries[4].set = 1;
-    tlbentries[4].tag = 0x2;
-    tlbentries[4].ppn = 0;
-    tlbentries[4].valid = 0;
-
-    
-    //
-    
-    pageentries[0].vpn = 0x0;
-    pageentries[0].ppn = 0x28;
-    pageentries[0].valid = 1;
-    
-    pageentries[1].vpn = 0x1;
-    pageentries[1].ppn = 0;
-    pageentries[1].valid = 0;
-    
-    pageentries[2].vpn = 0x3;
-    pageentries[2].ppn = 0x33;
-    pageentries[2].valid = 1;
-    
-    pageentries[3].vpn = 0x4;
-    pageentries[3].ppn = 2;
-    pageentries[3].valid = 1;
-    
-    pageentries[4].vpn = 8;
-    pageentries[4].ppn = 0x13;
-    pageentries[4].valid = 1;
-    
-    
-    //
-    
-    cache[0].index = 0xe;
-    cache[0].tag = 0x13;
-    cache[0].valid = 1;
-    cache[0].data = 0x9315DA3B;
-    
-    cache[1].index = 0xa;
-    cache[1].tag = 0x2d;
-    cache[1].valid = 1;
-    cache[1].data = 0x9315DA3B;
-    
-    cache[2].index = 2;
-    cache[2].tag = 0x1b;
-    cache[2].valid = 1;
-    cache[2]. data = 0x00020408;
-    
-    cache[3].index = 0x3;
-    cache[3].tag = 0x0d;
-    cache[3].valid = 1;
-    cache[3].data = 0x23A56789;
-    
-    cache[4].index = 0x4;
-    cache[4].tag = 0x32;
-    cache[4].valid = 1;
-    cache[4].data = 0x436D8F09;
+ 
     
     
     
     
-    //print();
+    print();
     
     
     
@@ -154,91 +99,39 @@ get_physical_address(int virt_address) {
     virtuality >>= 9;
     int vpn = virtuality;
     
-    int tlbi = virtuality & 0x3;
-    virtuality >>= 2;
-    int tlbt = virtuality & 0x3f;
+    int tlbi = virtuality & 0xf;
+    lastTLBidx = tlbi;
+    virtuality >>= 4;
+    int tlbt = virtuality & 0x1f;
+    lastTLBtag = tlbt;
     //printf("vpo %d\t tbli %d \t tlbt %d\n",vpo,tlbi, tlbt);
 
     int ppn = -1;
 
-    printf("tlbi %x tlbt %x\n",tlbi,tlbt);
+    printf("tlbi %x tlbt %x last ones %x %x\n",tlbi,tlbt,lastTLBidx,lastTLBtag);
     // checks the TLB table for the ppn
-    for(int i=0; i<5; i++){
+    for(int i=0; i<32; i++){
         if( tlbentries[i].tag == tlbt && tlbentries[i].set == tlbi )
          ppn = tlbentries[i].ppn;
          //printf("Found val : %x\n",tlbentries[i].ppn);
     }
     
-  /*
-   *  this should be used when page_table_entry works
-        if( ppn == -1){
-        ppn = get_page_table_entry(vpn);
-        PA = ppn;
-        PA = (PA << 9) | vpo;
-        }else{
-        // adds the vpo to the ppn
-        // pa is the physicaladdress
-        PA = ppn;
-        PA = (PA << 6) | vpo;
-        
-        /*for(int i=0; i<5; i++){
-            if( (pageentries[i].vpn == vpn) && (pageentries[i].valid == 1) ){
-                lastPage = i;
-                break;
-            }
-        }*/
+    if( ppn == -1)
+     ppn = get_page_table_entry(vpn);
     
-    
+    printf("PPN = %d\n",ppn);
+     
+     
+    // adds the vpo to the ppn
+    // pa is the physicaladdress
+    PA = ppn;
+    PA = (PA << 9) | vpo;
 
-    // checks page table for ppn if it hasn't been found yet
-    // looks for ppn in the page table
-    // by the vpn number
-    if( ppn == -1 ){
-        
-        /*
-        for(int i=0; i<5; i++){
-            if( (pageentries[i].vpn == vpn) && (pageentries[i].valid == 1) ){
-                lastPage = i;
-                ppn = pageentries[i].ppn;
-                PA = ppn;
-                PA = (PA << 6) | vpo;
-                printf("Found in page table\n");
-                //update TLB
-                // look for spot in tlb that has same set but valid = 0
-                // set tag,ppn, valid = 1
-                for(int y=0; y<10 ; y++){
-                    if(tlbentries[y].set == tlbi && tlbentries[y].valid == 0){
-                        tlbentries[y].ppn = ppn;
-                        tlbentries[y].valid = 1;
-                        tlbentries[y].tag = tlbt;
-                    }
-                }
-                break;
-            }
-        } */
-    }
-    else{
-        // adds the vpo to the ppn
-        // pa is the physicaladdress
-        PA = ppn;
-        PA = (PA << 6) | vpo;
-        
-        /*for(int i=0; i<5; i++){
-            if( (pageentries[i].vpn == vpn) && (pageentries[i].valid == 1) ){
-                lastPage = i;
-                break;
-            }
-        }*/
-    }
-    
-    printf("Word %d\tPage %d\n",get_word(0x8485),get_page_table_entry(vpn));
+   // printf("Word %d\tPage %d\n",get_word(0x8485),get_page_table_entry(vpn));
     printf("PA %x\n",PA);
     
     return PA;
 }
-
-
-
 
 
 
@@ -262,60 +155,67 @@ error in the way you are computing it...
 
 // get word goes to ram
 */
-   char byte = '0';
-   
-   
-   printf("phys %x\n",phys_address);
-   int pareplica = phys_address;
-   int co = pareplica & 0x3;
-   pareplica >>= 2 ;
-   int ci = pareplica & 0xf;
-   pareplica >>= 4;
-   int ct = pareplica & 0x3f;
-   
-   printf("co %x\tci %x\tct %x\n",co,ci,ct);
-   
 
+    char byte;
+    printf("phys %x\n",phys_address);
    
- /*  for(int i=0; i<10 ; i++){
-    //printf("vallue ci %x ct %x\n",cache[i].index, cache[i].tag);
-    // found value in cache, put in 
-    if(cache[i].index == ci && cache[i].tag == ct && cache[i].valid == 1){
-        tlbentries[lastTLB].ppn = cache[i].tag;
-        tlbentries[lastTLB].valid = 1;
-        byte = cache[i].data;
-        printf("Found data in cache: %x\n",cache[i].data);
-     //   pageentries[lastPage].ppn = cache[i].tag;
-     //   pageentries[lastPage].valid = 1;
+    int pareplica = phys_address;
+    int co = pareplica & 0x3;
+    pareplica >>= 2 ;
+    int ci = pareplica & 0x1f;
+    pareplica >>= 5;
+    int ct = pareplica & 0x1fff;
+    
+    int cacheData = -1;
+    
+    for(int i=0; i<32 ; i++){
+     if(cache[i].index == ci && cache[i].tag == ct && cache[i].valid == 1){
+        cacheData = cache[i].data;
+        printf("Found data in cache: %x\n",cacheData);
+     }
     }
-   }*/
-   
-   int data = -1; 
-   for(int i=0; i<10 ; i++){
-    if(cache[i].index == ci && cache[i].tag == ct && cache[i].valid == 1){
-        tlbentries[lastTLB].ppn = cache[i].tag;
-        tlbentries[lastTLB].valid = 1;
-        data = cache[i].data;
-        printf("Found data in cache: %x\n",data);
-    }
-   }
-   
+    
    // data was found in cache
-   if ( data != -1 ){
-    if (co == 2){
-        data >>= 8;
-        data &= 0xff;
-    }
+   if ( cacheData == -1 ){
+    cacheData = get_word(phys_address);
+    //update cache
+    updateCache(phys_address,cacheData);
    }
-   byte = (char) data;
-   printf("val: %x\n",data);
-
+   
+   switch(co){
+    case 0:
+        break;
+    case 1:
+        break;
+    case 2:
+        break;
+    case 3:
+        break;
+   }
+   
+   byte = (char) cacheData;
+   
    return byte;
 }
 
 
 
+void updateCache(int pa, int data){
+    int pareplica = pa;
+    int co = pareplica & 0x3;
+    pareplica >>= 2 ;
+    int ci = pareplica & 0x1f;
+    pareplica >>= 5;
+    int ct = pareplica & 0x1fff;
+    printf("cache[%x] : %x",ci,cache[ci].valid);
 
+    cache[ci].valid = 1 ;
+    cache[ci].index = ci;
+    cache[ci].tag = ct;
+    cache[ci].block = co;
+    cache[ci].data = data;
+    
+}
 
 
 
@@ -325,22 +225,22 @@ error in the way you are computing it...
 void
 print(){
     
-    printf("TLB\n------------------------------\nSet\tTag\tPPN\tValid\n");
-    for(int i=0; i<5 ; i++){
-        printf("%x\t%x\t%x\t\%x\n",tlbentries[i].set, tlbentries[i].tag, tlbentries[i].ppn, tlbentries[i].valid);
+    printf("\n\nTLB\n------------------------------\nSet\tTag\tPPN\tValid\n");
+    for(int i=0; i<32 ; i++){
+        if(tlbentries[i].valid!=0) printf("%x\t%x\t%x\t\%x\n",tlbentries[i].set, tlbentries[i].tag, tlbentries[i].ppn, tlbentries[i].valid);
     }
     printf("----------------------------\n\n");
     
-    printf("Page Table\n-------------------------\nVPN\tPPN\tValid\n");
+   /* printf("Page Table\n-------------------------\nVPN\tPPN\tValid\n");
     for(int i=0; i<5 ; i++){
         printf("%x\t%x\t%x\n",pageentries[i].vpn, pageentries[i].ppn, pageentries[i].valid);
     }
-    printf("--------------------------\n\n");
+    printf("--------------------------\n\n"); */
     
     printf("Cache\n-------------------------\nIndx\tTag\tValid\tData\n");
-  //  for(int i=0; i<5 ; i++){
-        printf("%x\t%x\t%x\t%x\n",cache[0].index,cache[0].tag,cache[0].valid,cache[0].data);
- //   }
+   for(int i=0; i<32 ; i++){
+        if(cache[i].valid==1) printf("%x\t%x\t%x\t%x\n",cache[0].index,cache[0].tag,cache[0].valid,cache[0].data);
+    }
     printf("--------------------------\n\n");
     
 }
