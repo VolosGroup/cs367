@@ -27,8 +27,8 @@ main() {
 // Assumes function returns -1 if address is illegal 
      if (phy_address != -1) {
         char ch = get_byte(phy_address);  // implement this function
+        printf("Data = %x\n\n",ch);
      }
-     //print();
      printf("> ");
      scanf("%x",&virt_address);
   }

@@ -15,14 +15,10 @@
 #ifndef MEMORY_SYSTEM_H
 #define MEMORY_SYSTEM_H
 
-typedef struct {
-    int vpn;
-    int ppn;
-    int valid;
-}   PageTable;
 
 typedef struct {
-    int set;
+    int index;
+    
     int tag;
     int ppn;
     int valid;
@@ -30,10 +26,17 @@ typedef struct {
 
 typedef struct {
     int index;
+    
     int tag;
     int valid;
-    int block;
     int data;
+    long int time;
+    
+    int tag2;
+    int valid2;
+    int data2;
+    long int time2;
+    
 }   Cache;
 
 #endif

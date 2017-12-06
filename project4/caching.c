@@ -15,11 +15,10 @@
 
 void print();
 void updateCache(int pa, int data);
-TLB tlbentries[32]; // maybe array size should be 16?
 
-Cache cache[32];
-int lastTLBidx;
-int lastTLBtag;
+TLB tlbentries[32]; // maybe array size should be 16?
+Cache cache[32]; //
+
 
 void
 initialize() {
@@ -29,7 +28,7 @@ initialize() {
    // for(int z=0; z<200;z++) printf("page[%x] = %d\n",z,get_page_table_entry(z));
    // exit(1);
     for(int z=0;z<32;z++){
-        tlbentries[z].set = 0x0;
+        tlbentries[z].index = 0x0;
         tlbentries[z].tag = 0x0;
         tlbentries[z].ppn = 0x0;
         tlbentries[z].valid = 0;
@@ -40,22 +39,13 @@ initialize() {
         cache[z].tag = 0x0;
         cache[z].data = 0x0;
         cache[z].valid = 0;
-        cache[z].block = -1;
+        
+        cache[z].tag2 = 0x0;
+        cache[z].data2 = 0x0;
+        cache[z].valid2 = 0;
     }
     
 
-    
-    
- 
-    
-    
-    
-    
-    print();
-    
-    
-    
-    
 }
 
 /* You will implement the two functions below:
@@ -100,26 +90,30 @@ get_physical_address(int virt_address) {
     int vpn = virtuality;
     
     int tlbi = virtuality & 0xf;
-    lastTLBidx = tlbi;
     virtuality >>= 4;
     int tlbt = virtuality & 0x1f;
-    lastTLBtag = tlbt;
     //printf("vpo %d\t tbli %d \t tlbt %d\n",vpo,tlbi, tlbt);
 
     int ppn = -1;
-
-    printf("tlbi %x tlbt %x last ones %x %x\n",tlbi,tlbt,lastTLBidx,lastTLBtag);
+    
     // checks the TLB table for the ppn
-    for(int i=0; i<32; i++){
-        if( tlbentries[i].tag == tlbt && tlbentries[i].set == tlbi )
-         ppn = tlbentries[i].ppn;
-         //printf("Found val : %x\n",tlbentries[i].ppn);
-    }
+        if( tlbentries[tlbi].tag == tlbt )
+         { ppn = tlbentries[tlbi].ppn;
+         printf("Found in TLB : %x\n",tlbentries[tlbi].ppn);}
+
     
-    if( ppn == -1)
+    // get PPN from page table and update TLB
+    if( ppn == -1) {
      ppn = get_page_table_entry(vpn);
-    
-    printf("PPN = %d\n",ppn);
+     printf("ppn = %x at vpn %x\n",ppn,vpn);
+     tlbentries[tlbi].ppn = ppn;
+     tlbentries[tlbi].tag = tlbt;
+     tlbentries[tlbi].index = tlbi;
+     tlbentries[tlbi].valid = 1;
+     printf("Updated TLB\n");
+    }
+    //printf("tlb idx= %x\n",tlbi);
+    //printf("PPN = %x\n",ppn);
      
      
     // adds the vpo to the ppn
@@ -128,7 +122,7 @@ get_physical_address(int virt_address) {
     PA = (PA << 9) | vpo;
 
    // printf("Word %d\tPage %d\n",get_word(0x8485),get_page_table_entry(vpn));
-    printf("PA %x\n",PA);
+   // printf("PA %x\n",PA);
     
     return PA;
 }
@@ -157,7 +151,6 @@ error in the way you are computing it...
 */
 
     char byte;
-    printf("phys %x\n",phys_address);
    
     int pareplica = phys_address;
     int co = pareplica & 0x3;
@@ -168,12 +161,18 @@ error in the way you are computing it...
     
     int cacheData = -1;
     
-    for(int i=0; i<32 ; i++){
-     if(cache[i].index == ci && cache[i].tag == ct && cache[i].valid == 1){
-        cacheData = cache[i].data;
+    printf("co %x ci %x ct %x\n",co,ci,ct);
+    
+
+     if( cache[ci].tag == ct && cache[ci].valid == 1){
+        cacheData = cache[ci].data;
         printf("Found data in cache: %x\n",cacheData);
      }
-    }
+     if( cache[ci].tag2 == ct && cache[ci].valid2 == 1){
+        cacheData = cache[ci].data2;
+        printf("Found data in cache: %x\n",cacheData);
+     }
+
     
    // data was found in cache
    if ( cacheData == -1 ){
@@ -184,17 +183,26 @@ error in the way you are computing it...
    
    switch(co){
     case 0:
+        byte = cacheData & 0xff;
         break;
     case 1:
+        cacheData >>= 8;
+        printf("shifted = %02x\n",cacheData);
+        byte = cacheData & 0xff;
         break;
     case 2:
+        cacheData >>= 16;
+        printf("shifted = %02x\n",cacheData);
+        byte = cacheData & 0xff;
         break;
     case 3:
+        cacheData >>= 24;
+        printf("shifted = %x\n",cacheData);
+        byte = cacheData & 0xff;
         break;
    }
-   
-   byte = (char) cacheData;
-   
+   print();
+   ("Byte = %x\n",byte);
    return byte;
 }
 
@@ -202,32 +210,61 @@ error in the way you are computing it...
 
 void updateCache(int pa, int data){
     int pareplica = pa;
-    int co = pareplica & 0x3;
     pareplica >>= 2 ;
     int ci = pareplica & 0x1f;
     pareplica >>= 5;
     int ct = pareplica & 0x1fff;
-    printf("cache[%x] : %x",ci,cache[ci].valid);
-
-    cache[ci].valid = 1 ;
-    cache[ci].index = ci;
-    cache[ci].tag = ct;
-    cache[ci].block = co;
-    cache[ci].data = data;
     
+    /*
+     * check cache at index
+     * if block1 or block2 valid == 0
+     *  update block 1 or 2
+     * if block 1 and block 2 valid == 1
+     *  check both times
+     *   update oldest
+     */
+    
+    if (cache[ci].valid == 0 || cache[ci].valid2 == 0){
+        if(cache[ci].valid == 0){
+            cache[ci].valid = 1;
+            cache[ci].index = ci;
+            cache[ci].tag = ct;
+            cache[ci].data = data;
+            cache[ci].time = (unsigned long)time(NULL);
+        }else{
+            cache[ci].valid2 = 1;
+            cache[ci].index = ci;
+            cache[ci].tag2 = ct;
+            cache[ci].data2 = data;
+            cache[ci].time2 = (unsigned long)time(NULL);
+        }
+    }
+    else if ( cache[ci].valid == 1 && cache[ci].valid2 == 1){
+        if( cache[ci].time < cache[ci].time2 ){
+            cache[ci].valid = 1;
+            cache[ci].index = ci;
+            cache[ci].tag = ct;
+            cache[ci].data = data;
+            cache[ci].time = (unsigned long)time(NULL);
+        }else{
+            cache[ci].valid2 = 1;
+            cache[ci].index = ci;
+            cache[ci].tag2 = ct;
+            cache[ci].data2 = data;
+            cache[ci].time2 = (unsigned long)time(NULL);
+        }
+    }
+    
+    printf("Updated cache\n");
 }
-
-
-
-
 
 
 void
 print(){
     
-    printf("\n\nTLB\n------------------------------\nSet\tTag\tPPN\tValid\n");
+    printf("\n\nTLB\n------------------------------\nIndx\tTag\tPPN\tValid\n");
     for(int i=0; i<32 ; i++){
-        if(tlbentries[i].valid!=0) printf("%x\t%x\t%x\t\%x\n",tlbentries[i].set, tlbentries[i].tag, tlbentries[i].ppn, tlbentries[i].valid);
+        if(tlbentries[i].valid!=0) printf("%x\t%x\t%x\t\%x\n",tlbentries[i].index, tlbentries[i].tag, tlbentries[i].ppn, tlbentries[i].valid);
     }
     printf("----------------------------\n\n");
     
@@ -237,11 +274,14 @@ print(){
     }
     printf("--------------------------\n\n"); */
     
-    printf("Cache\n-------------------------\nIndx\tTag\tValid\tData\n");
+    printf("Cache\n------------------------------------------------------------------\nIndx\tTag\tValid\tData\t\tTime\t\n");
    for(int i=0; i<32 ; i++){
-        if(cache[i].valid==1) printf("%x\t%x\t%x\t%x\n",cache[0].index,cache[0].tag,cache[0].valid,cache[0].data);
+        if (cache[i].valid==1){
+            printf("%x\t%x\t%x\t%x\t%lu\n",cache[i].index,cache[i].tag,cache[i].valid,cache[i].data,cache[i].time);
+            printf("%x\t%x\t%x\t%x\t%lu\n",cache[i].index,cache[i].tag2,cache[i].valid2,cache[i].data2,cache[i].time2);
+        }
     }
-    printf("--------------------------\n\n");
+    printf("---------------------------------------------------------------------\n\n");
     
 }
 
