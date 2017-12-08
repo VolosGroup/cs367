@@ -1,0 +1,58 @@
+Virtual Address: 0x0 
+	Data: 0xffffff84 from memory
+Virtual Address: 0x1 
+	Data: 0xffffffae from cache
+Virtual Address: 0x2 
+	Data: 0x6a from cache
+Virtual Address: 0x3 
+	Data: 0x7f from cache
+Virtual Address: 0x4 
+	Data: 0x17 from memory
+Virtual Address: 0x5 
+	Data: 0x62 from cache
+Virtual Address: 0x6 
+	Data: 0x55 from cache
+Virtual Address: 0x7 
+	Data: 0x15 from cache
+Virtual Address: 0x8 
+	Data: 0xffffff92 from memory
+Virtual Address: 0x9 
+	Data: 0xffffff96 from cache
+Virtual Address: 0xa 
+	Data: 0xa from cache
+Virtual Address: 0xb 
+	Data: 0x6c from cache
+Virtual Address: 0xc 
+	Data: 0x4a from memory
+Virtual Address: 0xd 
+	Data: 0xffffff9e from cache
+Virtual Address: 0xe 
+	Data: 0x4e from cache
+Virtual Address: 0xf 
+	Data: 0x69 from cache
+Virtual Address: 0x10 
+	Data: 0xffffffba from memory
+Virtual Address: 0x11 
+	Data: 0x56 from cache
+Virtual Address: 0x12 
+	Data: 0xffffff9f from cache
+Virtual Address: 0x13 
+	Data: 0x11 from cache
+Virtual Address: 0x14 
+	Data: 0x42 from memory
+Virtual Address: 0x15 
+	Data: 0xfffffff7 from cache
+Virtual Address: 0x16 
+	Data: 0x11 from cache
+Virtual Address: 0x17 
+	Data: 0x23 from cache
+Virtual Address: 0x18 
+	Data: 0x70 from memory
+Virtual Address: 0x19 
+	Data: 0x48 from cache
+Virtual Address: 0x1a 
+	Data: 0x76 from cache
+Virtual Address: 0x1b 
+	Data: 0x75 from cache
+Virtual Address: 0x1c 
+	Data: 0x2c from memory

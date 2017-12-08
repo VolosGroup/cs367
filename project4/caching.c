@@ -12,7 +12,6 @@
  */
 
 
-
 void print();
 void updateCache(int pa, int data);
 
@@ -25,8 +24,7 @@ initialize() {
 /* if there is any initialization you would like to have, do it here */
 /*  This is called for you in the main program */
     
-   // for(int z=0; z<200;z++) printf("page[%x] = %d\n",z,get_page_table_entry(z));
-   // exit(1);
+    
     for(int z=0;z<32;z++){
         tlbentries[z].index = 0x0;
         tlbentries[z].tag = 0x0;
@@ -68,15 +66,18 @@ get_physical_address(int virt_address) {
      * if virt_address too large, 
           log_entry(ILLEGALVIRTUAL,virt_address); 
           return -1
+          NOT DONE
      * if PPN is in the TLB, 
-	  compute PA 
+          compute PA 
           log_entry(ADDRESS_FROM_TLB,PA);
           return PA
+          DONE
      * else use the page table function to get the PPN:
           PPN = get_page_table_entry(VPN) // provided function
           compute PA 
           log_entry(ADDRESS_FROM_PAGETABLE,PA);
           return PA
+          DONE
 */
 
     int PA;
@@ -85,6 +86,7 @@ get_physical_address(int virt_address) {
     sprintf(x,"%x",virt_address);
     int virtuality = (int)strtol(x, NULL, 16);
     
+    
     int vpo = virtuality & 0x1ff;
     virtuality >>= 9;
     int vpn = virtuality;
@@ -92,25 +94,31 @@ get_physical_address(int virt_address) {
     int tlbi = virtuality & 0xf;
     virtuality >>= 4;
     int tlbt = virtuality & 0x1f;
-    //printf("vpo %d\t tbli %d \t tlbt %d\n",vpo,tlbi, tlbt);
 
     int ppn = -1;
     
     // checks the TLB table for the ppn
-        if( tlbentries[tlbi].tag == tlbt )
-         { ppn = tlbentries[tlbi].ppn;
-         printf("Found in TLB : %x\n",tlbentries[tlbi].ppn);}
+    if( tlbentries[tlbi].tag == tlbt && tlbentries[tlbi].valid == 1 ){
+        ppn = tlbentries[tlbi].ppn;
+        
+        PA = ppn;
+        PA = (PA << 9) | vpo;
+   //     log_entry(ADDRESS_FROM_TLB,PA);
+    }
 
     
     // get PPN from page table and update TLB
     if( ppn == -1) {
      ppn = get_page_table_entry(vpn);
-     printf("ppn = %x at vpn %x\n",ppn,vpn);
+     
      tlbentries[tlbi].ppn = ppn;
      tlbentries[tlbi].tag = tlbt;
      tlbentries[tlbi].index = tlbi;
      tlbentries[tlbi].valid = 1;
-     printf("Updated TLB\n");
+   //  printf("Updated TLB\n");
+     PA = ppn;
+     PA = (PA << 9) | vpo;
+  //   log_entry(ADDRESS_FROM_PAGETABLE,PA);
     }
     //printf("tlb idx= %x\n",tlbi);
     //printf("PPN = %x\n",ppn);
@@ -118,12 +126,10 @@ get_physical_address(int virt_address) {
      
     // adds the vpo to the ppn
     // pa is the physicaladdress
-    PA = ppn;
-    PA = (PA << 9) | vpo;
+    
 
    // printf("Word %d\tPage %d\n",get_word(0x8485),get_page_table_entry(vpn));
-   // printf("PA %x\n",PA);
-    
+
     return PA;
 }
 
@@ -151,6 +157,7 @@ error in the way you are computing it...
 */
 
     char byte;
+    int foundInCache = 0;
    
     int pareplica = phys_address;
     int co = pareplica & 0x3;
@@ -161,16 +168,16 @@ error in the way you are computing it...
     
     int cacheData = -1;
     
-    printf("co %x ci %x ct %x\n",co,ci,ct);
-    
 
      if( cache[ci].tag == ct && cache[ci].valid == 1){
         cacheData = cache[ci].data;
-        printf("Found data in cache: %x\n",cacheData);
+    //    printf("Found data in cache: %x\n",cacheData);
+        foundInCache = 1;
      }
      if( cache[ci].tag2 == ct && cache[ci].valid2 == 1){
         cacheData = cache[ci].data2;
-        printf("Found data in cache: %x\n",cacheData);
+    //    printf("Found data in cache: %x\n",cacheData);
+        foundInCache = 1;
      }
 
     
@@ -181,28 +188,35 @@ error in the way you are computing it...
     updateCache(phys_address,cacheData);
    }
    
+   printf("cache data = %x\n",cacheData);
+   
    switch(co){
     case 0:
         byte = cacheData & 0xff;
         break;
     case 1:
         cacheData >>= 8;
-        printf("shifted = %02x\n",cacheData);
+      //  printf("shifted = %02x\n",cacheData);
         byte = cacheData & 0xff;
         break;
     case 2:
         cacheData >>= 16;
-        printf("shifted = %02x\n",cacheData);
+      //  printf("shifted = %02x\n",cacheData);
         byte = cacheData & 0xff;
         break;
     case 3:
         cacheData >>= 24;
-        printf("shifted = %x\n",cacheData);
+        //printf("shifted = %x\n",cacheData);
         byte = cacheData & 0xff;
         break;
    }
-   print();
-   ("Byte = %x\n",byte);
+   
+   if (foundInCache == 1)   log_entry(DATA_FROM_CACHE,byte&0xff);
+   else     log_entry(DATA_FROM_MEMORY,byte&0xff);
+   
+   
+   //print();
+  // ("Byte = %x\n",byte &0xff);
    return byte;
 }
 
@@ -276,7 +290,7 @@ print(){
     
     printf("Cache\n------------------------------------------------------------------\nIndx\tTag\tValid\tData\t\tTime\t\n");
    for(int i=0; i<32 ; i++){
-        if (cache[i].valid==1){
+        if (cache[i].valid==1 || cache[i].valid2==1){
             printf("%x\t%x\t%x\t%x\t%lu\n",cache[i].index,cache[i].tag,cache[i].valid,cache[i].data,cache[i].time);
             printf("%x\t%x\t%x\t%x\t%lu\n",cache[i].index,cache[i].tag2,cache[i].valid2,cache[i].data2,cache[i].time2);
         }
