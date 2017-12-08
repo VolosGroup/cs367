@@ -59,10 +59,18 @@ void log_entry(int type, int data) {
   	fprintf(log_file,"\tPhysical Address: 0x%x from page table\n",data); break;
      case ADDRESS_FROM_TLB:
   	fprintf(log_file,"\tPhysical Address: 0x%x from TLB\n",data); break;
+    
+    
+    // larger than 9 bits
      case ILLEGALVPN:
   	fprintf(log_file,"\tIllegal VPN generated: 0x%x \n",data); break;
+    
+    
+    // larger than 20 bits
      case PHYSICALERROR:
   	fprintf(log_file,"\tIllegal Physical Address generated: 0x%x \n",data); break;
+    
+    //larger than 18
      case ILLEGALVIRTUAL:
   	fprintf(log_file,"\tIllegal Virtual Address as input: 0x%x \n",data); break;
    }

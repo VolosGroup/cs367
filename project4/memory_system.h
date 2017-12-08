@@ -41,7 +41,12 @@ typedef struct {
 
 #endif
 
+extern TLB tlbentries[32]; // maybe array size should be 16?
+extern Cache cache[32]; //
+int getHex(int n);
+void updateCache(int pa, int data);
 void print();
+
 void initialize();
 int get_physical_address(int);
 char get_byte(int);

@@ -1,2002 +1,3003 @@
 Virtual Address: 0x0 
+	Physical Address: 0x78400 from page table
 	Data: 0x84 from memory
 Virtual Address: 0x1 
+	Physical Address: 0x78401 from TLB
 	Data: 0xae from cache
 Virtual Address: 0x2 
+	Physical Address: 0x78402 from TLB
 	Data: 0x6a from cache
 Virtual Address: 0x3 
+	Physical Address: 0x78403 from TLB
 	Data: 0x7f from cache
 Virtual Address: 0x4 
+	Physical Address: 0x78404 from TLB
 	Data: 0x17 from memory
 Virtual Address: 0x5 
+	Physical Address: 0x78405 from TLB
 	Data: 0x62 from cache
 Virtual Address: 0x6 
+	Physical Address: 0x78406 from TLB
 	Data: 0x55 from cache
 Virtual Address: 0x7 
+	Physical Address: 0x78407 from TLB
 	Data: 0x15 from cache
 Virtual Address: 0x8 
+	Physical Address: 0x78408 from TLB
 	Data: 0x92 from memory
 Virtual Address: 0x9 
+	Physical Address: 0x78409 from TLB
 	Data: 0x96 from cache
 Virtual Address: 0xa 
+	Physical Address: 0x7840a from TLB
 	Data: 0xa from cache
 Virtual Address: 0xb 
+	Physical Address: 0x7840b from TLB
 	Data: 0x6c from cache
 Virtual Address: 0xc 
+	Physical Address: 0x7840c from TLB
 	Data: 0x4a from memory
 Virtual Address: 0xd 
+	Physical Address: 0x7840d from TLB
 	Data: 0x9e from cache
 Virtual Address: 0xe 
+	Physical Address: 0x7840e from TLB
 	Data: 0x4e from cache
 Virtual Address: 0xf 
+	Physical Address: 0x7840f from TLB
 	Data: 0x69 from cache
 Virtual Address: 0x10 
+	Physical Address: 0x78410 from TLB
 	Data: 0xba from memory
 Virtual Address: 0x11 
+	Physical Address: 0x78411 from TLB
 	Data: 0x56 from cache
 Virtual Address: 0x12 
+	Physical Address: 0x78412 from TLB
 	Data: 0x9f from cache
 Virtual Address: 0x13 
+	Physical Address: 0x78413 from TLB
 	Data: 0x11 from cache
 Virtual Address: 0x14 
+	Physical Address: 0x78414 from TLB
 	Data: 0x42 from memory
 Virtual Address: 0x15 
+	Physical Address: 0x78415 from TLB
 	Data: 0xf7 from cache
 Virtual Address: 0x16 
+	Physical Address: 0x78416 from TLB
 	Data: 0x11 from cache
 Virtual Address: 0x17 
+	Physical Address: 0x78417 from TLB
 	Data: 0x23 from cache
 Virtual Address: 0x18 
+	Physical Address: 0x78418 from TLB
 	Data: 0x70 from memory
 Virtual Address: 0x19 
+	Physical Address: 0x78419 from TLB
 	Data: 0x48 from cache
 Virtual Address: 0x1a 
+	Physical Address: 0x7841a from TLB
 	Data: 0x76 from cache
 Virtual Address: 0x1b 
+	Physical Address: 0x7841b from TLB
 	Data: 0x75 from cache
 Virtual Address: 0x1c 
+	Physical Address: 0x7841c from TLB
 	Data: 0x2c from memory
 Virtual Address: 0x1d 
+	Physical Address: 0x7841d from TLB
 	Data: 0xcc from cache
 Virtual Address: 0x1e 
+	Physical Address: 0x7841e from TLB
 	Data: 0x6 from cache
 Virtual Address: 0x1f 
+	Physical Address: 0x7841f from TLB
 	Data: 0x6e from cache
 Virtual Address: 0x20 
+	Physical Address: 0x78420 from TLB
 	Data: 0xca from memory
 Virtual Address: 0x21 
+	Physical Address: 0x78421 from TLB
 	Data: 0xb2 from cache
 Virtual Address: 0x22 
+	Physical Address: 0x78422 from TLB
 	Data: 0x6e from cache
 Virtual Address: 0x23 
+	Physical Address: 0x78423 from TLB
 	Data: 0x65 from cache
 Virtual Address: 0x24 
+	Physical Address: 0x78424 from TLB
 	Data: 0xb7 from memory
 Virtual Address: 0x25 
+	Physical Address: 0x78425 from TLB
 	Data: 0x8f from cache
 Virtual Address: 0x26 
+	Physical Address: 0x78426 from TLB
 	Data: 0x60 from cache
 Virtual Address: 0x27 
+	Physical Address: 0x78427 from TLB
 	Data: 0x1b from cache
 Virtual Address: 0x28 
+	Physical Address: 0x78428 from TLB
 	Data: 0x5e from memory
 Virtual Address: 0x29 
+	Physical Address: 0x78429 from TLB
 	Data: 0xc4 from cache
 Virtual Address: 0x2a 
+	Physical Address: 0x7842a from TLB
 	Data: 0xc0 from cache
 Virtual Address: 0x2b 
+	Physical Address: 0x7842b from TLB
 	Data: 0x75 from cache
 Virtual Address: 0x2c 
+	Physical Address: 0x7842c from TLB
 	Data: 0xd2 from memory
 Virtual Address: 0x2d 
+	Physical Address: 0x7842d from TLB
 	Data: 0xcc from cache
 Virtual Address: 0x2e 
+	Physical Address: 0x7842e from TLB
 	Data: 0x37 from cache
 Virtual Address: 0x2f 
+	Physical Address: 0x7842f from TLB
 	Data: 0x9 from cache
 Virtual Address: 0x30 
+	Physical Address: 0x78430 from TLB
 	Data: 0xa1 from memory
 Virtual Address: 0x31 
+	Physical Address: 0x78431 from TLB
 	Data: 0xe1 from cache
 Virtual Address: 0x32 
+	Physical Address: 0x78432 from TLB
 	Data: 0xc7 from cache
 Virtual Address: 0x33 
+	Physical Address: 0x78433 from TLB
 	Data: 0x62 from cache
 Virtual Address: 0x34 
+	Physical Address: 0x78434 from TLB
 	Data: 0x8e from memory
 Virtual Address: 0x35 
+	Physical Address: 0x78435 from TLB
 	Data: 0xa7 from cache
 Virtual Address: 0x36 
+	Physical Address: 0x78436 from TLB
 	Data: 0x45 from cache
 Virtual Address: 0x37 
+	Physical Address: 0x78437 from TLB
 	Data: 0x68 from cache
 Virtual Address: 0x38 
+	Physical Address: 0x78438 from TLB
 	Data: 0x74 from memory
 Virtual Address: 0x39 
+	Physical Address: 0x78439 from TLB
 	Data: 0x6d from cache
 Virtual Address: 0x3a 
+	Physical Address: 0x7843a from TLB
 	Data: 0xd9 from cache
 Virtual Address: 0x3b 
+	Physical Address: 0x7843b from TLB
 	Data: 0x6b from cache
 Virtual Address: 0x3c 
+	Physical Address: 0x7843c from TLB
 	Data: 0x1e from memory
 Virtual Address: 0x3d 
+	Physical Address: 0x7843d from TLB
 	Data: 0xe1 from cache
 Virtual Address: 0x3e 
+	Physical Address: 0x7843e from TLB
 	Data: 0xc from cache
 Virtual Address: 0x3f 
+	Physical Address: 0x7843f from TLB
 	Data: 0x64 from cache
 Virtual Address: 0x40 
+	Physical Address: 0x78440 from TLB
 	Data: 0x58 from memory
 Virtual Address: 0x41 
+	Physical Address: 0x78441 from TLB
 	Data: 0x86 from cache
 Virtual Address: 0x42 
+	Physical Address: 0x78442 from TLB
 	Data: 0x5a from cache
 Virtual Address: 0x43 
+	Physical Address: 0x78443 from TLB
 	Data: 0x63 from cache
 Virtual Address: 0x44 
+	Physical Address: 0x78444 from TLB
 	Data: 0xb9 from memory
 Virtual Address: 0x45 
+	Physical Address: 0x78445 from TLB
 	Data: 0x86 from cache
 Virtual Address: 0x46 
+	Physical Address: 0x78446 from TLB
 	Data: 0x8d from cache
 Virtual Address: 0x47 
+	Physical Address: 0x78447 from TLB
 	Data: 0x51 from cache
 Virtual Address: 0x48 
+	Physical Address: 0x78448 from TLB
 	Data: 0x65 from memory
 Virtual Address: 0x49 
+	Physical Address: 0x78449 from TLB
 	Data: 0x2b from cache
 Virtual Address: 0x4a 
+	Physical Address: 0x7844a from TLB
 	Data: 0x76 from cache
 Virtual Address: 0x4b 
+	Physical Address: 0x7844b from TLB
 	Data: 0x9 from cache
 Virtual Address: 0x4c 
+	Physical Address: 0x7844c from TLB
 	Data: 0xa2 from memory
 Virtual Address: 0x4d 
+	Physical Address: 0x7844d from TLB
 	Data: 0xf0 from cache
 Virtual Address: 0x4e 
+	Physical Address: 0x7844e from TLB
 	Data: 0x66 from cache
 Virtual Address: 0x4f 
+	Physical Address: 0x7844f from TLB
 	Data: 0x70 from cache
 Virtual Address: 0x50 
+	Physical Address: 0x78450 from TLB
 	Data: 0xfa from memory
 Virtual Address: 0x51 
+	Physical Address: 0x78451 from TLB
 	Data: 0x66 from cache
 Virtual Address: 0x52 
+	Physical Address: 0x78452 from TLB
 	Data: 0x77 from cache
 Virtual Address: 0x53 
+	Physical Address: 0x78453 from TLB
 	Data: 0x40 from cache
 Virtual Address: 0x54 
+	Physical Address: 0x78454 from TLB
 	Data: 0x70 from memory
 Virtual Address: 0x55 
+	Physical Address: 0x78455 from TLB
 	Data: 0x0 from cache
 Virtual Address: 0x56 
+	Physical Address: 0x78456 from TLB
 	Data: 0x97 from cache
 Virtual Address: 0x57 
+	Physical Address: 0x78457 from TLB
 	Data: 0x27 from cache
 Virtual Address: 0x58 
+	Physical Address: 0x78458 from TLB
 	Data: 0xb8 from memory
 Virtual Address: 0x59 
+	Physical Address: 0x78459 from TLB
 	Data: 0x63 from cache
 Virtual Address: 0x5a 
+	Physical Address: 0x7845a from TLB
 	Data: 0x40 from cache
 Virtual Address: 0x5b 
+	Physical Address: 0x7845b from TLB
 	Data: 0x3e from cache
 Virtual Address: 0x5c 
+	Physical Address: 0x7845c from TLB
 	Data: 0xf4 from memory
 Virtual Address: 0x5d 
+	Physical Address: 0x7845d from TLB
 	Data: 0x40 from cache
 Virtual Address: 0x5e 
+	Physical Address: 0x7845e from TLB
 	Data: 0x50 from cache
 Virtual Address: 0x5f 
+	Physical Address: 0x7845f from TLB
 	Data: 0x3d from cache
 Virtual Address: 0x60 
+	Physical Address: 0x78460 from TLB
 	Data: 0x2f from memory
 Virtual Address: 0x61 
+	Physical Address: 0x78461 from TLB
 	Data: 0xef from cache
 Virtual Address: 0x62 
+	Physical Address: 0x78462 from TLB
 	Data: 0x33 from cache
 Virtual Address: 0x63 
+	Physical Address: 0x78463 from TLB
 	Data: 0x7e from cache
 Virtual Address: 0x64 
+	Physical Address: 0x78464 from TLB
 	Data: 0xb5 from memory
 Virtual Address: 0x65 
+	Physical Address: 0x78465 from TLB
 	Data: 0x99 from cache
 Virtual Address: 0x66 
+	Physical Address: 0x78466 from TLB
 	Data: 0x14 from cache
 Virtual Address: 0x67 
+	Physical Address: 0x78467 from TLB
 	Data: 0x14 from cache
 Virtual Address: 0x68 
+	Physical Address: 0x78468 from TLB
 	Data: 0xe5 from memory
 Virtual Address: 0x69 
+	Physical Address: 0x78469 from TLB
 	Data: 0x25 from cache
 Virtual Address: 0x6a 
+	Physical Address: 0x7846a from TLB
 	Data: 0x95 from cache
 Virtual Address: 0x6b 
+	Physical Address: 0x7846b from TLB
 	Data: 0x79 from cache
 Virtual Address: 0x6c 
+	Physical Address: 0x7846c from TLB
 	Data: 0x68 from memory
 Virtual Address: 0x6d 
+	Physical Address: 0x7846d from TLB
 	Data: 0xe3 from cache
 Virtual Address: 0x6e 
+	Physical Address: 0x7846e from TLB
 	Data: 0xac from cache
 Virtual Address: 0x6f 
+	Physical Address: 0x7846f from TLB
 	Data: 0x22 from cache
 Virtual Address: 0x70 
+	Physical Address: 0x78470 from TLB
 	Data: 0x8 from memory
 Virtual Address: 0x71 
+	Physical Address: 0x78471 from TLB
 	Data: 0xe1 from cache
 Virtual Address: 0x72 
+	Physical Address: 0x78472 from TLB
 	Data: 0x43 from cache
 Virtual Address: 0x73 
+	Physical Address: 0x78473 from TLB
 	Data: 0x53 from cache
 Virtual Address: 0x74 
+	Physical Address: 0x78474 from TLB
 	Data: 0xb5 from memory
 Virtual Address: 0x75 
+	Physical Address: 0x78475 from TLB
 	Data: 0x4d from cache
 Virtual Address: 0x76 
+	Physical Address: 0x78476 from TLB
 	Data: 0x0 from cache
 Virtual Address: 0x77 
+	Physical Address: 0x78477 from TLB
 	Data: 0x1b from cache
 Virtual Address: 0x78 
+	Physical Address: 0x78478 from TLB
 	Data: 0xb1 from memory
 Virtual Address: 0x79 
+	Physical Address: 0x78479 from TLB
 	Data: 0xb9 from cache
 Virtual Address: 0x7a 
+	Physical Address: 0x7847a from TLB
 	Data: 0x4f from cache
 Virtual Address: 0x7b 
+	Physical Address: 0x7847b from TLB
 	Data: 0x3f from cache
 Virtual Address: 0x7c 
+	Physical Address: 0x7847c from TLB
 	Data: 0x8d from memory
 Virtual Address: 0x7d 
+	Physical Address: 0x7847d from TLB
 	Data: 0x8f from cache
 Virtual Address: 0x7e 
+	Physical Address: 0x7847e from TLB
 	Data: 0xae from cache
 Virtual Address: 0x7f 
+	Physical Address: 0x7847f from TLB
 	Data: 0x52 from cache
 Virtual Address: 0x80 
+	Physical Address: 0x78480 from TLB
 	Data: 0xcc from memory
 Virtual Address: 0x81 
+	Physical Address: 0x78481 from TLB
 	Data: 0xaf from cache
 Virtual Address: 0x82 
+	Physical Address: 0x78482 from TLB
 	Data: 0x55 from cache
 Virtual Address: 0x83 
+	Physical Address: 0x78483 from TLB
 	Data: 0x30 from cache
 Virtual Address: 0x84 
+	Physical Address: 0x78484 from TLB
 	Data: 0x44 from memory
 Virtual Address: 0x85 
+	Physical Address: 0x78485 from TLB
 	Data: 0x50 from cache
 Virtual Address: 0x86 
+	Physical Address: 0x78486 from TLB
 	Data: 0x5a from cache
 Virtual Address: 0x87 
+	Physical Address: 0x78487 from TLB
 	Data: 0x2b from cache
 Virtual Address: 0x88 
+	Physical Address: 0x78488 from TLB
 	Data: 0xd7 from memory
 Virtual Address: 0x89 
+	Physical Address: 0x78489 from TLB
 	Data: 0x2d from cache
 Virtual Address: 0x8a 
+	Physical Address: 0x7848a from TLB
 	Data: 0xfd from cache
 Virtual Address: 0x8b 
+	Physical Address: 0x7848b from TLB
 	Data: 0x3b from cache
 Virtual Address: 0x8c 
+	Physical Address: 0x7848c from TLB
 	Data: 0x87 from memory
 Virtual Address: 0x8d 
+	Physical Address: 0x7848d from TLB
 	Data: 0x6 from cache
 Virtual Address: 0x8e 
+	Physical Address: 0x7848e from TLB
 	Data: 0xf5 from cache
 Virtual Address: 0x8f 
+	Physical Address: 0x7848f from TLB
 	Data: 0x41 from cache
 Virtual Address: 0x90 
+	Physical Address: 0x78490 from TLB
 	Data: 0x86 from memory
 Virtual Address: 0x91 
+	Physical Address: 0x78491 from TLB
 	Data: 0x47 from cache
 Virtual Address: 0x92 
+	Physical Address: 0x78492 from TLB
 	Data: 0x6c from cache
 Virtual Address: 0x93 
+	Physical Address: 0x78493 from TLB
 	Data: 0x4e from cache
 Virtual Address: 0x94 
+	Physical Address: 0x78494 from TLB
 	Data: 0x47 from memory
 Virtual Address: 0x95 
+	Physical Address: 0x78495 from TLB
 	Data: 0x76 from cache
 Virtual Address: 0x96 
+	Physical Address: 0x78496 from TLB
 	Data: 0x73 from cache
 Virtual Address: 0x97 
+	Physical Address: 0x78497 from TLB
 	Data: 0x31 from cache
 Virtual Address: 0x98 
+	Physical Address: 0x78498 from TLB
 	Data: 0xb3 from memory
 Virtual Address: 0x99 
+	Physical Address: 0x78499 from TLB
 	Data: 0xd2 from cache
 Virtual Address: 0x9a 
+	Physical Address: 0x7849a from TLB
 	Data: 0xfb from cache
 Virtual Address: 0x9b 
+	Physical Address: 0x7849b from TLB
 	Data: 0x2f from cache
 Virtual Address: 0x9c 
+	Physical Address: 0x7849c from TLB
 	Data: 0x50 from memory
 Virtual Address: 0x9d 
+	Physical Address: 0x7849d from TLB
 	Data: 0xfa from cache
 Virtual Address: 0x9e 
+	Physical Address: 0x7849e from TLB
 	Data: 0xda from cache
 Virtual Address: 0x9f 
+	Physical Address: 0x7849f from TLB
 	Data: 0x33 from cache
 Virtual Address: 0xa0 
+	Physical Address: 0x784a0 from TLB
 	Data: 0xff from memory
 Virtual Address: 0xa1 
+	Physical Address: 0x784a1 from TLB
 	Data: 0x5 from cache
 Virtual Address: 0xa2 
+	Physical Address: 0x784a2 from TLB
 	Data: 0xd4 from cache
 Virtual Address: 0xa3 
+	Physical Address: 0x784a3 from TLB
 	Data: 0x4c from cache
 Virtual Address: 0xa4 
+	Physical Address: 0x784a4 from TLB
 	Data: 0x12 from memory
 Virtual Address: 0xa5 
+	Physical Address: 0x784a5 from TLB
 	Data: 0x97 from cache
 Virtual Address: 0xa6 
+	Physical Address: 0x784a6 from TLB
 	Data: 0xbc from cache
 Virtual Address: 0xa7 
+	Physical Address: 0x784a7 from TLB
 	Data: 0x25 from cache
 Virtual Address: 0xa8 
+	Physical Address: 0x784a8 from TLB
 	Data: 0x23 from memory
 Virtual Address: 0xa9 
+	Physical Address: 0x784a9 from TLB
 	Data: 0xc7 from cache
 Virtual Address: 0xaa 
+	Physical Address: 0x784aa from TLB
 	Data: 0x12 from cache
 Virtual Address: 0xab 
+	Physical Address: 0x784ab from TLB
 	Data: 0x3d from cache
 Virtual Address: 0xac 
+	Physical Address: 0x784ac from TLB
 	Data: 0xa0 from memory
 Virtual Address: 0xad 
+	Physical Address: 0x784ad from TLB
 	Data: 0xe7 from cache
 Virtual Address: 0xae 
+	Physical Address: 0x784ae from TLB
 	Data: 0x9b from cache
 Virtual Address: 0xaf 
+	Physical Address: 0x784af from TLB
 	Data: 0x2f from cache
 Virtual Address: 0xb0 
+	Physical Address: 0x784b0 from TLB
 	Data: 0xa0 from memory
 Virtual Address: 0xb1 
+	Physical Address: 0x784b1 from TLB
 	Data: 0x3e from cache
 Virtual Address: 0xb2 
+	Physical Address: 0x784b2 from TLB
 	Data: 0x2 from cache
 Virtual Address: 0xb3 
+	Physical Address: 0x784b3 from TLB
 	Data: 0xe from cache
 Virtual Address: 0xb4 
+	Physical Address: 0x784b4 from TLB
 	Data: 0x97 from memory
 Virtual Address: 0xb5 
+	Physical Address: 0x784b5 from TLB
 	Data: 0x34 from cache
 Virtual Address: 0xb6 
+	Physical Address: 0x784b6 from TLB
 	Data: 0xec from cache
 Virtual Address: 0xb7 
+	Physical Address: 0x784b7 from TLB
 	Data: 0x28 from cache
 Virtual Address: 0xb8 
+	Physical Address: 0x784b8 from TLB
 	Data: 0xbe from memory
 Virtual Address: 0xb9 
+	Physical Address: 0x784b9 from TLB
 	Data: 0xc8 from cache
 Virtual Address: 0xba 
+	Physical Address: 0x784ba from TLB
 	Data: 0xa8 from cache
 Virtual Address: 0xbb 
+	Physical Address: 0x784bb from TLB
 	Data: 0x13 from cache
 Virtual Address: 0xbc 
+	Physical Address: 0x784bc from TLB
 	Data: 0xf9 from memory
 Virtual Address: 0xbd 
+	Physical Address: 0x784bd from TLB
 	Data: 0xc4 from cache
 Virtual Address: 0xbe 
+	Physical Address: 0x784be from TLB
 	Data: 0x5c from cache
 Virtual Address: 0xbf 
+	Physical Address: 0x784bf from TLB
 	Data: 0x71 from cache
 Virtual Address: 0xc0 
+	Physical Address: 0x784c0 from TLB
 	Data: 0x51 from memory
 Virtual Address: 0xc1 
+	Physical Address: 0x784c1 from TLB
 	Data: 0xbb from cache
 Virtual Address: 0xc2 
+	Physical Address: 0x784c2 from TLB
 	Data: 0x79 from cache
 Virtual Address: 0xc3 
+	Physical Address: 0x784c3 from TLB
 	Data: 0x7a from cache
 Virtual Address: 0xc4 
+	Physical Address: 0x784c4 from TLB
 	Data: 0x24 from memory
 Virtual Address: 0xc5 
+	Physical Address: 0x784c5 from TLB
 	Data: 0xf4 from cache
 Virtual Address: 0xc6 
+	Physical Address: 0x784c6 from TLB
 	Data: 0x1e from cache
 Virtual Address: 0xc7 
+	Physical Address: 0x784c7 from TLB
 	Data: 0x1d from cache
 Virtual Address: 0xc8 
+	Physical Address: 0x784c8 from TLB
 	Data: 0x9b from memory
 Virtual Address: 0xc9 
+	Physical Address: 0x784c9 from TLB
 	Data: 0xb5 from cache
 Virtual Address: 0xca 
+	Physical Address: 0x784ca from TLB
 	Data: 0xc3 from cache
 Virtual Address: 0xcb 
+	Physical Address: 0x784cb from TLB
 	Data: 0x61 from cache
 Virtual Address: 0xcc 
+	Physical Address: 0x784cc from TLB
 	Data: 0x4b from memory
 Virtual Address: 0xcd 
+	Physical Address: 0x784cd from TLB
 	Data: 0x22 from cache
 Virtual Address: 0xce 
+	Physical Address: 0x784ce from TLB
 	Data: 0xf1 from cache
 Virtual Address: 0xcf 
+	Physical Address: 0x784cf from TLB
 	Data: 0x3a from cache
 Virtual Address: 0xd0 
+	Physical Address: 0x784d0 from TLB
 	Data: 0x94 from memory
 Virtual Address: 0xd1 
+	Physical Address: 0x784d1 from TLB
 	Data: 0xf4 from cache
 Virtual Address: 0xd2 
+	Physical Address: 0x784d2 from TLB
 	Data: 0xb5 from cache
 Virtual Address: 0xd3 
+	Physical Address: 0x784d3 from TLB
 	Data: 0x44 from cache
 Virtual Address: 0xd4 
+	Physical Address: 0x784d4 from TLB
 	Data: 0x53 from memory
 Virtual Address: 0xd5 
+	Physical Address: 0x784d5 from TLB
 	Data: 0x19 from cache
 Virtual Address: 0xd6 
+	Physical Address: 0x784d6 from TLB
 	Data: 0x4 from cache
 Virtual Address: 0xd7 
+	Physical Address: 0x784d7 from TLB
 	Data: 0x20 from cache
 Virtual Address: 0xd8 
+	Physical Address: 0x784d8 from TLB
 	Data: 0x40 from memory
 Virtual Address: 0xd9 
+	Physical Address: 0x784d9 from TLB
 	Data: 0x63 from cache
 Virtual Address: 0xda 
+	Physical Address: 0x784da from TLB
 	Data: 0x41 from cache
 Virtual Address: 0xdb 
+	Physical Address: 0x784db from TLB
 	Data: 0x78 from cache
 Virtual Address: 0xdc 
+	Physical Address: 0x784dc from TLB
 	Data: 0xc4 from memory
 Virtual Address: 0xdd 
+	Physical Address: 0x784dd from TLB
 	Data: 0xe3 from cache
 Virtual Address: 0xde 
+	Physical Address: 0x784de from TLB
 	Data: 0xe9 from cache
 Virtual Address: 0xdf 
+	Physical Address: 0x784df from TLB
 	Data: 0x42 from cache
 Virtual Address: 0xe0 
+	Physical Address: 0x784e0 from TLB
 	Data: 0x9 from memory
 Virtual Address: 0xe1 
+	Physical Address: 0x784e1 from TLB
 	Data: 0xb3 from cache
 Virtual Address: 0xe2 
+	Physical Address: 0x784e2 from TLB
 	Data: 0x18 from cache
 Virtual Address: 0xe3 
+	Physical Address: 0x784e3 from TLB
 	Data: 0x34 from cache
 Virtual Address: 0xe4 
+	Physical Address: 0x784e4 from TLB
 	Data: 0x25 from memory
 Virtual Address: 0xe5 
+	Physical Address: 0x784e5 from TLB
 	Data: 0x89 from cache
 Virtual Address: 0xe6 
+	Physical Address: 0x784e6 from TLB
 	Data: 0xd6 from cache
 Virtual Address: 0xe7 
+	Physical Address: 0x784e7 from TLB
 	Data: 0x71 from cache
 Virtual Address: 0xe8 
+	Physical Address: 0x784e8 from TLB
 	Data: 0x2c from memory
 Virtual Address: 0xe9 
+	Physical Address: 0x784e9 from TLB
 	Data: 0xc7 from cache
 Virtual Address: 0xea 
+	Physical Address: 0x784ea from TLB
 	Data: 0x96 from cache
 Virtual Address: 0xeb 
+	Physical Address: 0x784eb from TLB
 	Data: 0x65 from cache
 Virtual Address: 0xec 
+	Physical Address: 0x784ec from TLB
 	Data: 0x11 from memory
 Virtual Address: 0xed 
+	Physical Address: 0x784ed from TLB
 	Data: 0x94 from cache
 Virtual Address: 0xee 
+	Physical Address: 0x784ee from TLB
 	Data: 0x5c from cache
 Virtual Address: 0xef 
+	Physical Address: 0x784ef from TLB
 	Data: 0x7 from cache
 Virtual Address: 0xf0 
+	Physical Address: 0x784f0 from TLB
 	Data: 0xda from memory
 Virtual Address: 0xf1 
+	Physical Address: 0x784f1 from TLB
 	Data: 0xd6 from cache
 Virtual Address: 0xf2 
+	Physical Address: 0x784f2 from TLB
 	Data: 0xd6 from cache
 Virtual Address: 0xf3 
+	Physical Address: 0x784f3 from TLB
 	Data: 0xc from cache
 Virtual Address: 0xf4 
+	Physical Address: 0x784f4 from TLB
 	Data: 0xdd from memory
 Virtual Address: 0xf5 
+	Physical Address: 0x784f5 from TLB
 	Data: 0x80 from cache
 Virtual Address: 0xf6 
+	Physical Address: 0x784f6 from TLB
 	Data: 0xe6 from cache
 Virtual Address: 0xf7 
+	Physical Address: 0x784f7 from TLB
 	Data: 0x24 from cache
 Virtual Address: 0xf8 
+	Physical Address: 0x784f8 from TLB
 	Data: 0x9e from memory
 Virtual Address: 0xf9 
+	Physical Address: 0x784f9 from TLB
 	Data: 0x23 from cache
 Virtual Address: 0xfa 
+	Physical Address: 0x784fa from TLB
 	Data: 0xb from cache
 Virtual Address: 0xfb 
+	Physical Address: 0x784fb from TLB
 	Data: 0x5a from cache
 Virtual Address: 0xfc 
+	Physical Address: 0x784fc from TLB
 	Data: 0xa7 from memory
 Virtual Address: 0xfd 
+	Physical Address: 0x784fd from TLB
 	Data: 0x86 from cache
 Virtual Address: 0xfe 
+	Physical Address: 0x784fe from TLB
 	Data: 0x2c from cache
 Virtual Address: 0xff 
+	Physical Address: 0x784ff from TLB
 	Data: 0x3d from cache
 Virtual Address: 0x100 
+	Physical Address: 0x78500 from TLB
 	Data: 0x21 from memory
 Virtual Address: 0x101 
+	Physical Address: 0x78501 from TLB
 	Data: 0xd1 from cache
 Virtual Address: 0x102 
+	Physical Address: 0x78502 from TLB
 	Data: 0x40 from cache
 Virtual Address: 0x103 
+	Physical Address: 0x78503 from TLB
 	Data: 0x50 from cache
 Virtual Address: 0x104 
+	Physical Address: 0x78504 from TLB
 	Data: 0x76 from memory
 Virtual Address: 0x105 
+	Physical Address: 0x78505 from TLB
 	Data: 0x51 from cache
 Virtual Address: 0x106 
+	Physical Address: 0x78506 from TLB
 	Data: 0x8 from cache
 Virtual Address: 0x107 
+	Physical Address: 0x78507 from TLB
 	Data: 0x16 from cache
 Virtual Address: 0x108 
+	Physical Address: 0x78508 from TLB
 	Data: 0x2e from memory
 Virtual Address: 0x109 
+	Physical Address: 0x78509 from TLB
 	Data: 0x8d from cache
 Virtual Address: 0x10a 
+	Physical Address: 0x7850a from TLB
 	Data: 0x21 from cache
 Virtual Address: 0x10b 
+	Physical Address: 0x7850b from TLB
 	Data: 0x7f from cache
 Virtual Address: 0x10c 
+	Physical Address: 0x7850c from TLB
 	Data: 0xa8 from memory
 Virtual Address: 0x10d 
+	Physical Address: 0x7850d from TLB
 	Data: 0x18 from cache
 Virtual Address: 0x10e 
+	Physical Address: 0x7850e from TLB
 	Data: 0xad from cache
 Virtual Address: 0x10f 
+	Physical Address: 0x7850f from TLB
 	Data: 0x1e from cache
 Virtual Address: 0x110 
+	Physical Address: 0x78510 from TLB
 	Data: 0xbd from memory
 Virtual Address: 0x111 
+	Physical Address: 0x78511 from TLB
 	Data: 0xc7 from cache
 Virtual Address: 0x112 
+	Physical Address: 0x78512 from TLB
 	Data: 0x7b from cache
 Virtual Address: 0x113 
+	Physical Address: 0x78513 from TLB
 	Data: 0x47 from cache
 Virtual Address: 0x114 
+	Physical Address: 0x78514 from TLB
 	Data: 0xe1 from memory
 Virtual Address: 0x115 
+	Physical Address: 0x78515 from TLB
 	Data: 0x5f from cache
 Virtual Address: 0x116 
+	Physical Address: 0x78516 from TLB
 	Data: 0x1d from cache
 Virtual Address: 0x117 
+	Physical Address: 0x78517 from TLB
 	Data: 0x2f from cache
 Virtual Address: 0x118 
+	Physical Address: 0x78518 from TLB
 	Data: 0xf8 from memory
 Virtual Address: 0x119 
+	Physical Address: 0x78519 from TLB
 	Data: 0x12 from cache
 Virtual Address: 0x11a 
+	Physical Address: 0x7851a from TLB
 	Data: 0x88 from cache
 Virtual Address: 0x11b 
+	Physical Address: 0x7851b from TLB
 	Data: 0x52 from cache
 Virtual Address: 0x11c 
+	Physical Address: 0x7851c from TLB
 	Data: 0xbc from memory
 Virtual Address: 0x11d 
+	Physical Address: 0x7851d from TLB
 	Data: 0xcd from cache
 Virtual Address: 0x11e 
+	Physical Address: 0x7851e from TLB
 	Data: 0x4f from cache
 Virtual Address: 0x11f 
+	Physical Address: 0x7851f from TLB
 	Data: 0x14 from cache
 Virtual Address: 0x120 
+	Physical Address: 0x78520 from TLB
 	Data: 0xf3 from memory
 Virtual Address: 0x121 
+	Physical Address: 0x78521 from TLB
 	Data: 0xf6 from cache
 Virtual Address: 0x122 
+	Physical Address: 0x78522 from TLB
 	Data: 0xd9 from cache
 Virtual Address: 0x123 
+	Physical Address: 0x78523 from TLB
 	Data: 0x54 from cache
 Virtual Address: 0x124 
+	Physical Address: 0x78524 from TLB
 	Data: 0x1b from memory
 Virtual Address: 0x125 
+	Physical Address: 0x78525 from TLB
 	Data: 0xda from cache
 Virtual Address: 0x126 
+	Physical Address: 0x78526 from TLB
 	Data: 0x9a from cache
 Virtual Address: 0x127 
+	Physical Address: 0x78527 from TLB
 	Data: 0xf from cache
 Virtual Address: 0x128 
+	Physical Address: 0x78528 from TLB
 	Data: 0x5c from memory
 Virtual Address: 0x129 
+	Physical Address: 0x78529 from TLB
 	Data: 0xb5 from cache
 Virtual Address: 0x12a 
+	Physical Address: 0x7852a from TLB
 	Data: 0xeb from cache
 Virtual Address: 0x12b 
+	Physical Address: 0x7852b from TLB
 	Data: 0x43 from cache
 Virtual Address: 0x12c 
+	Physical Address: 0x7852c from TLB
 	Data: 0x94 from memory
 Virtual Address: 0x12d 
+	Physical Address: 0x7852d from TLB
 	Data: 0x35 from cache
 Virtual Address: 0x12e 
+	Physical Address: 0x7852e from TLB
 	Data: 0xdc from cache
 Virtual Address: 0x12f 
+	Physical Address: 0x7852f from TLB
 	Data: 0x62 from cache
 Virtual Address: 0x130 
+	Physical Address: 0x78530 from TLB
 	Data: 0xb3 from memory
 Virtual Address: 0x131 
+	Physical Address: 0x78531 from TLB
 	Data: 0xe from cache
 Virtual Address: 0x132 
+	Physical Address: 0x78532 from TLB
 	Data: 0x87 from cache
 Virtual Address: 0x133 
+	Physical Address: 0x78533 from TLB
 	Data: 0x38 from cache
 Virtual Address: 0x134 
+	Physical Address: 0x78534 from TLB
 	Data: 0x1b from memory
 Virtual Address: 0x135 
+	Physical Address: 0x78535 from TLB
 	Data: 0x7e from cache
 Virtual Address: 0x136 
+	Physical Address: 0x78536 from TLB
 	Data: 0x94 from cache
 Virtual Address: 0x137 
+	Physical Address: 0x78537 from TLB
 	Data: 0x57 from cache
 Virtual Address: 0x138 
+	Physical Address: 0x78538 from TLB
 	Data: 0x8d from memory
 Virtual Address: 0x139 
+	Physical Address: 0x78539 from TLB
 	Data: 0xfa from cache
 Virtual Address: 0x13a 
+	Physical Address: 0x7853a from TLB
 	Data: 0x38 from cache
 Virtual Address: 0x13b 
+	Physical Address: 0x7853b from TLB
 	Data: 0x54 from cache
 Virtual Address: 0x13c 
+	Physical Address: 0x7853c from TLB
 	Data: 0x4 from memory
 Virtual Address: 0x13d 
+	Physical Address: 0x7853d from TLB
 	Data: 0xca from cache
 Virtual Address: 0x13e 
+	Physical Address: 0x7853e from TLB
 	Data: 0x0 from cache
 Virtual Address: 0x13f 
+	Physical Address: 0x7853f from TLB
 	Data: 0x33 from cache
 Virtual Address: 0x140 
+	Physical Address: 0x78540 from TLB
 	Data: 0x3f from memory
 Virtual Address: 0x141 
+	Physical Address: 0x78541 from TLB
 	Data: 0x72 from cache
 Virtual Address: 0x142 
+	Physical Address: 0x78542 from TLB
 	Data: 0xb3 from cache
 Virtual Address: 0x143 
+	Physical Address: 0x78543 from TLB
 	Data: 0x74 from cache
 Virtual Address: 0x144 
+	Physical Address: 0x78544 from TLB
 	Data: 0x28 from memory
 Virtual Address: 0x145 
+	Physical Address: 0x78545 from TLB
 	Data: 0xb0 from cache
 Virtual Address: 0x146 
+	Physical Address: 0x78546 from TLB
 	Data: 0xfc from cache
 Virtual Address: 0x147 
+	Physical Address: 0x78547 from TLB
 	Data: 0x35 from cache
 Virtual Address: 0x148 
+	Physical Address: 0x78548 from TLB
 	Data: 0x4f from memory
 Virtual Address: 0x149 
+	Physical Address: 0x78549 from TLB
 	Data: 0xec from cache
 Virtual Address: 0x14a 
+	Physical Address: 0x7854a from TLB
 	Data: 0xf1 from cache
 Virtual Address: 0x14b 
+	Physical Address: 0x7854b from TLB
 	Data: 0x6d from cache
 Virtual Address: 0x14c 
+	Physical Address: 0x7854c from TLB
 	Data: 0xd3 from memory
 Virtual Address: 0x14d 
+	Physical Address: 0x7854d from TLB
 	Data: 0x66 from cache
 Virtual Address: 0x14e 
+	Physical Address: 0x7854e from TLB
 	Data: 0x69 from cache
 Virtual Address: 0x14f 
+	Physical Address: 0x7854f from TLB
 	Data: 0x39 from cache
 Virtual Address: 0x150 
+	Physical Address: 0x78550 from TLB
 	Data: 0x7b from memory
 Virtual Address: 0x151 
+	Physical Address: 0x78551 from TLB
 	Data: 0xc9 from cache
 Virtual Address: 0x152 
+	Physical Address: 0x78552 from TLB
 	Data: 0x0 from cache
 Virtual Address: 0x153 
+	Physical Address: 0x78553 from TLB
 	Data: 0x56 from cache
 Virtual Address: 0x154 
+	Physical Address: 0x78554 from TLB
 	Data: 0x8f from memory
 Virtual Address: 0x155 
+	Physical Address: 0x78555 from TLB
 	Data: 0x4f from cache
 Virtual Address: 0x156 
+	Physical Address: 0x78556 from TLB
 	Data: 0x33 from cache
 Virtual Address: 0x157 
+	Physical Address: 0x78557 from TLB
 	Data: 0x66 from cache
 Virtual Address: 0x158 
+	Physical Address: 0x78558 from TLB
 	Data: 0x97 from memory
 Virtual Address: 0x159 
+	Physical Address: 0x78559 from TLB
 	Data: 0x4a from cache
 Virtual Address: 0x15a 
+	Physical Address: 0x7855a from TLB
 	Data: 0x53 from cache
 Virtual Address: 0x15b 
+	Physical Address: 0x7855b from TLB
 	Data: 0x7c from cache
 Virtual Address: 0x15c 
+	Physical Address: 0x7855c from TLB
 	Data: 0x84 from memory
 Virtual Address: 0x15d 
+	Physical Address: 0x7855d from TLB
 	Data: 0x7c from cache
 Virtual Address: 0x15e 
+	Physical Address: 0x7855e from TLB
 	Data: 0x19 from cache
 Virtual Address: 0x15f 
+	Physical Address: 0x7855f from TLB
 	Data: 0xa from cache
 Virtual Address: 0x160 
+	Physical Address: 0x78560 from TLB
 	Data: 0xb4 from memory
 Virtual Address: 0x161 
+	Physical Address: 0x78561 from TLB
 	Data: 0xd8 from cache
 Virtual Address: 0x162 
+	Physical Address: 0x78562 from TLB
 	Data: 0x9 from cache
 Virtual Address: 0x163 
+	Physical Address: 0x78563 from TLB
 	Data: 0x58 from cache
 Virtual Address: 0x164 
+	Physical Address: 0x78564 from TLB
 	Data: 0xc3 from memory
 Virtual Address: 0x165 
+	Physical Address: 0x78565 from TLB
 	Data: 0x11 from cache
 Virtual Address: 0x166 
+	Physical Address: 0x78566 from TLB
 	Data: 0xea from cache
 Virtual Address: 0x167 
+	Physical Address: 0x78567 from TLB
 	Data: 0x61 from cache
 Virtual Address: 0x168 
+	Physical Address: 0x78568 from TLB
 	Data: 0x96 from memory
 Virtual Address: 0x169 
+	Physical Address: 0x78569 from TLB
 	Data: 0x10 from cache
 Virtual Address: 0x16a 
+	Physical Address: 0x7856a from TLB
 	Data: 0x76 from cache
 Virtual Address: 0x16b 
+	Physical Address: 0x7856b from TLB
 	Data: 0x11 from cache
 Virtual Address: 0x16c 
+	Physical Address: 0x7856c from TLB
 	Data: 0x8f from memory
 Virtual Address: 0x16d 
+	Physical Address: 0x7856d from TLB
 	Data: 0xaf from cache
 Virtual Address: 0x16e 
+	Physical Address: 0x7856e from TLB
 	Data: 0xe0 from cache
 Virtual Address: 0x16f 
+	Physical Address: 0x7856f from TLB
 	Data: 0x64 from cache
 Virtual Address: 0x170 
+	Physical Address: 0x78570 from TLB
 	Data: 0xa1 from memory
 Virtual Address: 0x171 
+	Physical Address: 0x78571 from TLB
 	Data: 0x92 from cache
 Virtual Address: 0x172 
+	Physical Address: 0x78572 from TLB
 	Data: 0xd0 from cache
 Virtual Address: 0x173 
+	Physical Address: 0x78573 from TLB
 	Data: 0x6 from cache
 Virtual Address: 0x174 
+	Physical Address: 0x78574 from TLB
 	Data: 0x34 from memory
 Virtual Address: 0x175 
+	Physical Address: 0x78575 from TLB
 	Data: 0x34 from cache
 Virtual Address: 0x176 
+	Physical Address: 0x78576 from TLB
 	Data: 0x81 from cache
 Virtual Address: 0x177 
+	Physical Address: 0x78577 from TLB
 	Data: 0x6b from cache
 Virtual Address: 0x178 
+	Physical Address: 0x78578 from TLB
 	Data: 0x36 from memory
 Virtual Address: 0x179 
+	Physical Address: 0x78579 from TLB
 	Data: 0x36 from cache
 Virtual Address: 0x17a 
+	Physical Address: 0x7857a from TLB
 	Data: 0xd from cache
 Virtual Address: 0x17b 
+	Physical Address: 0x7857b from TLB
 	Data: 0x22 from cache
 Virtual Address: 0x17c 
+	Physical Address: 0x7857c from TLB
 	Data: 0xc2 from memory
 Virtual Address: 0x17d 
+	Physical Address: 0x7857d from TLB
 	Data: 0x63 from cache
 Virtual Address: 0x17e 
+	Physical Address: 0x7857e from TLB
 	Data: 0x11 from cache
 Virtual Address: 0x17f 
+	Physical Address: 0x7857f from TLB
 	Data: 0x57 from cache
 Virtual Address: 0x180 
+	Physical Address: 0x78580 from TLB
 	Data: 0xaa from memory
 Virtual Address: 0x181 
+	Physical Address: 0x78581 from TLB
 	Data: 0x85 from cache
 Virtual Address: 0x182 
+	Physical Address: 0x78582 from TLB
 	Data: 0x89 from cache
 Virtual Address: 0x183 
+	Physical Address: 0x78583 from TLB
 	Data: 0x1 from cache
 Virtual Address: 0x184 
+	Physical Address: 0x78584 from TLB
 	Data: 0x64 from memory
 Virtual Address: 0x185 
+	Physical Address: 0x78585 from TLB
 	Data: 0xc3 from cache
 Virtual Address: 0x186 
+	Physical Address: 0x78586 from TLB
 	Data: 0x2e from cache
 Virtual Address: 0x187 
+	Physical Address: 0x78587 from TLB
 	Data: 0x21 from cache
 Virtual Address: 0x188 
+	Physical Address: 0x78588 from TLB
 	Data: 0x6a from memory
 Virtual Address: 0x189 
+	Physical Address: 0x78589 from TLB
 	Data: 0x7c from cache
 Virtual Address: 0x18a 
+	Physical Address: 0x7858a from TLB
 	Data: 0xbe from cache
 Virtual Address: 0x18b 
+	Physical Address: 0x7858b from TLB
 	Data: 0x75 from cache
 Virtual Address: 0x18c 
+	Physical Address: 0x7858c from TLB
 	Data: 0x68 from memory
 Virtual Address: 0x18d 
+	Physical Address: 0x7858d from TLB
 	Data: 0x4d from cache
 Virtual Address: 0x18e 
+	Physical Address: 0x7858e from TLB
 	Data: 0x5 from cache
 Virtual Address: 0x18f 
+	Physical Address: 0x7858f from TLB
 	Data: 0x49 from cache
 Virtual Address: 0x190 
+	Physical Address: 0x78590 from TLB
 	Data: 0x45 from memory
 Virtual Address: 0x191 
+	Physical Address: 0x78591 from TLB
 	Data: 0x23 from cache
 Virtual Address: 0x192 
+	Physical Address: 0x78592 from TLB
 	Data: 0x4c from cache
 Virtual Address: 0x193 
+	Physical Address: 0x78593 from TLB
 	Data: 0x50 from cache
 Virtual Address: 0x194 
+	Physical Address: 0x78594 from TLB
 	Data: 0x63 from memory
 Virtual Address: 0x195 
+	Physical Address: 0x78595 from TLB
 	Data: 0x8f from cache
 Virtual Address: 0x196 
+	Physical Address: 0x78596 from TLB
 	Data: 0x46 from cache
 Virtual Address: 0x197 
+	Physical Address: 0x78597 from TLB
 	Data: 0x48 from cache
 Virtual Address: 0x198 
+	Physical Address: 0x78598 from TLB
 	Data: 0x24 from memory
 Virtual Address: 0x199 
+	Physical Address: 0x78599 from TLB
 	Data: 0x1b from cache
 Virtual Address: 0x19a 
+	Physical Address: 0x7859a from TLB
 	Data: 0x55 from cache
 Virtual Address: 0x19b 
+	Physical Address: 0x7859b from TLB
 	Data: 0x5d from cache
 Virtual Address: 0x19c 
+	Physical Address: 0x7859c from TLB
 	Data: 0x39 from memory
 Virtual Address: 0x19d 
+	Physical Address: 0x7859d from TLB
 	Data: 0x1a from cache
 Virtual Address: 0x19e 
+	Physical Address: 0x7859e from TLB
 	Data: 0x26 from cache
 Virtual Address: 0x19f 
+	Physical Address: 0x7859f from TLB
 	Data: 0x25 from cache
 Virtual Address: 0x1a0 
+	Physical Address: 0x785a0 from TLB
 	Data: 0x7e from memory
 Virtual Address: 0x1a1 
+	Physical Address: 0x785a1 from TLB
 	Data: 0x69 from cache
 Virtual Address: 0x1a2 
+	Physical Address: 0x785a2 from TLB
 	Data: 0xe1 from cache
 Virtual Address: 0x1a3 
+	Physical Address: 0x785a3 from TLB
 	Data: 0x57 from cache
 Virtual Address: 0x1a4 
+	Physical Address: 0x785a4 from TLB
 	Data: 0x81 from memory
 Virtual Address: 0x1a5 
+	Physical Address: 0x785a5 from TLB
 	Data: 0xd0 from cache
 Virtual Address: 0x1a6 
+	Physical Address: 0x785a6 from TLB
 	Data: 0x40 from cache
 Virtual Address: 0x1a7 
+	Physical Address: 0x785a7 from TLB
 	Data: 0x21 from cache
 Virtual Address: 0x1a8 
+	Physical Address: 0x785a8 from TLB
 	Data: 0xcd from memory
 Virtual Address: 0x1a9 
+	Physical Address: 0x785a9 from TLB
 	Data: 0x4f from cache
 Virtual Address: 0x1aa 
+	Physical Address: 0x785aa from TLB
 	Data: 0x2 from cache
 Virtual Address: 0x1ab 
+	Physical Address: 0x785ab from TLB
 	Data: 0x8 from cache
 Virtual Address: 0x1ac 
+	Physical Address: 0x785ac from TLB
 	Data: 0x31 from memory
 Virtual Address: 0x1ad 
+	Physical Address: 0x785ad from TLB
 	Data: 0x78 from cache
 Virtual Address: 0x1ae 
+	Physical Address: 0x785ae from TLB
 	Data: 0x68 from cache
 Virtual Address: 0x1af 
+	Physical Address: 0x785af from TLB
 	Data: 0x10 from cache
 Virtual Address: 0x1b0 
+	Physical Address: 0x785b0 from TLB
 	Data: 0x9c from memory
 Virtual Address: 0x1b1 
+	Physical Address: 0x785b1 from TLB
 	Data: 0x4e from cache
 Virtual Address: 0x1b2 
+	Physical Address: 0x785b2 from TLB
 	Data: 0xd5 from cache
 Virtual Address: 0x1b3 
+	Physical Address: 0x785b3 from TLB
 	Data: 0x78 from cache
 Virtual Address: 0x1b4 
+	Physical Address: 0x785b4 from TLB
 	Data: 0x5a from memory
 Virtual Address: 0x1b5 
+	Physical Address: 0x785b5 from TLB
 	Data: 0x4a from cache
 Virtual Address: 0x1b6 
+	Physical Address: 0x785b6 from TLB
 	Data: 0x3b from cache
 Virtual Address: 0x1b7 
+	Physical Address: 0x785b7 from TLB
 	Data: 0x5c from cache
 Virtual Address: 0x1b8 
+	Physical Address: 0x785b8 from TLB
 	Data: 0x35 from memory
 Virtual Address: 0x1b9 
+	Physical Address: 0x785b9 from TLB
 	Data: 0x42 from cache
 Virtual Address: 0x1ba 
+	Physical Address: 0x785ba from TLB
 	Data: 0x69 from cache
 Virtual Address: 0x1bb 
+	Physical Address: 0x785bb from TLB
 	Data: 0x43 from cache
 Virtual Address: 0x1bc 
+	Physical Address: 0x785bc from TLB
 	Data: 0xdb from memory
 Virtual Address: 0x1bd 
+	Physical Address: 0x785bd from TLB
 	Data: 0xc0 from cache
 Virtual Address: 0x1be 
+	Physical Address: 0x785be from TLB
 	Data: 0x88 from cache
 Virtual Address: 0x1bf 
+	Physical Address: 0x785bf from TLB
 	Data: 0x6d from cache
 Virtual Address: 0x1c0 
+	Physical Address: 0x785c0 from TLB
 	Data: 0x82 from memory
 Virtual Address: 0x1c1 
+	Physical Address: 0x785c1 from TLB
 	Data: 0xfa from cache
 Virtual Address: 0x1c2 
+	Physical Address: 0x785c2 from TLB
 	Data: 0x37 from cache
 Virtual Address: 0x1c3 
+	Physical Address: 0x785c3 from TLB
 	Data: 0x12 from cache
 Virtual Address: 0x1c4 
+	Physical Address: 0x785c4 from TLB
 	Data: 0x85 from memory
 Virtual Address: 0x1c5 
+	Physical Address: 0x785c5 from TLB
 	Data: 0x2e from cache
 Virtual Address: 0x1c6 
+	Physical Address: 0x785c6 from TLB
 	Data: 0x5b from cache
 Virtual Address: 0x1c7 
+	Physical Address: 0x785c7 from TLB
 	Data: 0x31 from cache
 Virtual Address: 0x1c8 
+	Physical Address: 0x785c8 from TLB
 	Data: 0xae from memory
 Virtual Address: 0x1c9 
+	Physical Address: 0x785c9 from TLB
 	Data: 0x27 from cache
 Virtual Address: 0x1ca 
+	Physical Address: 0x785ca from TLB
 	Data: 0xf2 from cache
 Virtual Address: 0x1cb 
+	Physical Address: 0x785cb from TLB
 	Data: 0x26 from cache
 Virtual Address: 0x1cc 
+	Physical Address: 0x785cc from TLB
 	Data: 0xfd from memory
 Virtual Address: 0x1cd 
+	Physical Address: 0x785cd from TLB
 	Data: 0xc3 from cache
 Virtual Address: 0x1ce 
+	Physical Address: 0x785ce from TLB
 	Data: 0x38 from cache
 Virtual Address: 0x1cf 
+	Physical Address: 0x785cf from TLB
 	Data: 0x68 from cache
 Virtual Address: 0x1d0 
+	Physical Address: 0x785d0 from TLB
 	Data: 0x14 from memory
 Virtual Address: 0x1d1 
+	Physical Address: 0x785d1 from TLB
 	Data: 0x7e from cache
 Virtual Address: 0x1d2 
+	Physical Address: 0x785d2 from TLB
 	Data: 0x8e from cache
 Virtual Address: 0x1d3 
+	Physical Address: 0x785d3 from TLB
 	Data: 0x17 from cache
 Virtual Address: 0x1d4 
+	Physical Address: 0x785d4 from TLB
 	Data: 0x46 from memory
 Virtual Address: 0x1d5 
+	Physical Address: 0x785d5 from TLB
 	Data: 0x72 from cache
 Virtual Address: 0x1d6 
+	Physical Address: 0x785d6 from TLB
 	Data: 0x45 from cache
 Virtual Address: 0x1d7 
+	Physical Address: 0x785d7 from TLB
 	Data: 0x23 from cache
 Virtual Address: 0x1d8 
+	Physical Address: 0x785d8 from TLB
 	Data: 0x82 from memory
 Virtual Address: 0x1d9 
+	Physical Address: 0x785d9 from TLB
 	Data: 0x40 from cache
 Virtual Address: 0x1da 
+	Physical Address: 0x785da from TLB
 	Data: 0x52 from cache
 Virtual Address: 0x1db 
+	Physical Address: 0x785db from TLB
 	Data: 0x72 from cache
 Virtual Address: 0x1dc 
+	Physical Address: 0x785dc from TLB
 	Data: 0xc9 from memory
 Virtual Address: 0x1dd 
+	Physical Address: 0x785dd from TLB
 	Data: 0x56 from cache
 Virtual Address: 0x1de 
+	Physical Address: 0x785de from TLB
 	Data: 0x98 from cache
 Virtual Address: 0x1df 
+	Physical Address: 0x785df from TLB
 	Data: 0x6f from cache
 Virtual Address: 0x1e0 
+	Physical Address: 0x785e0 from TLB
 	Data: 0x9 from memory
 Virtual Address: 0x1e1 
+	Physical Address: 0x785e1 from TLB
 	Data: 0x84 from cache
 Virtual Address: 0x1e2 
+	Physical Address: 0x785e2 from TLB
 	Data: 0x2f from cache
 Virtual Address: 0x1e3 
+	Physical Address: 0x785e3 from TLB
 	Data: 0x5 from cache
 Virtual Address: 0x1e4 
+	Physical Address: 0x785e4 from TLB
 	Data: 0x18 from memory
 Virtual Address: 0x1e5 
+	Physical Address: 0x785e5 from TLB
 	Data: 0x51 from cache
 Virtual Address: 0x1e6 
+	Physical Address: 0x785e6 from TLB
 	Data: 0xc8 from cache
 Virtual Address: 0x1e7 
+	Physical Address: 0x785e7 from TLB
 	Data: 0x3 from cache
 Virtual Address: 0x1e8 
+	Physical Address: 0x785e8 from TLB
 	Data: 0x58 from memory
 Virtual Address: 0x1e9 
+	Physical Address: 0x785e9 from TLB
 	Data: 0x6 from cache
 Virtual Address: 0x1ea 
+	Physical Address: 0x785ea from TLB
 	Data: 0x79 from cache
 Virtual Address: 0x1eb 
+	Physical Address: 0x785eb from TLB
 	Data: 0x54 from cache
 Virtual Address: 0x1ec 
+	Physical Address: 0x785ec from TLB
 	Data: 0xaa from memory
 Virtual Address: 0x1ed 
+	Physical Address: 0x785ed from TLB
 	Data: 0x16 from cache
 Virtual Address: 0x1ee 
+	Physical Address: 0x785ee from TLB
 	Data: 0x0 from cache
 Virtual Address: 0x1ef 
+	Physical Address: 0x785ef from TLB
 	Data: 0xc from cache
 Virtual Address: 0x1f0 
+	Physical Address: 0x785f0 from TLB
 	Data: 0x4c from memory
 Virtual Address: 0x1f1 
+	Physical Address: 0x785f1 from TLB
 	Data: 0x85 from cache
 Virtual Address: 0x1f2 
+	Physical Address: 0x785f2 from TLB
 	Data: 0x49 from cache
 Virtual Address: 0x1f3 
+	Physical Address: 0x785f3 from TLB
 	Data: 0x6f from cache
 Virtual Address: 0x1f4 
+	Physical Address: 0x785f4 from TLB
 	Data: 0x8e from memory
 Virtual Address: 0x1f5 
+	Physical Address: 0x785f5 from TLB
 	Data: 0x3c from cache
 Virtual Address: 0x1f6 
+	Physical Address: 0x785f6 from TLB
 	Data: 0x86 from cache
 Virtual Address: 0x1f7 
+	Physical Address: 0x785f7 from TLB
 	Data: 0x76 from cache
 Virtual Address: 0x1f8 
+	Physical Address: 0x785f8 from TLB
 	Data: 0x6d from memory
 Virtual Address: 0x1f9 
+	Physical Address: 0x785f9 from TLB
 	Data: 0x7a from cache
 Virtual Address: 0x1fa 
+	Physical Address: 0x785fa from TLB
 	Data: 0x11 from cache
 Virtual Address: 0x1fb 
+	Physical Address: 0x785fb from TLB
 	Data: 0x63 from cache
 Virtual Address: 0x1fc 
+	Physical Address: 0x785fc from TLB
 	Data: 0xf7 from memory
 Virtual Address: 0x1fd 
+	Physical Address: 0x785fd from TLB
 	Data: 0xa from cache
 Virtual Address: 0x1fe 
+	Physical Address: 0x785fe from TLB
 	Data: 0xd3 from cache
 Virtual Address: 0x1ff 
+	Physical Address: 0x785ff from TLB
 	Data: 0x70 from cache
 Virtual Address: 0x200 
+	Physical Address: 0x1e400 from page table
 	Data: 0xc5 from memory
 Virtual Address: 0x201 
+	Physical Address: 0x1e401 from TLB
 	Data: 0xb7 from cache
 Virtual Address: 0x202 
+	Physical Address: 0x1e402 from TLB
 	Data: 0xa7 from cache
 Virtual Address: 0x203 
+	Physical Address: 0x1e403 from TLB
 	Data: 0x7c from cache
 Virtual Address: 0x204 
+	Physical Address: 0x1e404 from TLB
 	Data: 0x29 from memory
 Virtual Address: 0x205 
+	Physical Address: 0x1e405 from TLB
 	Data: 0x80 from cache
 Virtual Address: 0x206 
+	Physical Address: 0x1e406 from TLB
 	Data: 0x92 from cache
 Virtual Address: 0x207 
+	Physical Address: 0x1e407 from TLB
 	Data: 0x61 from cache
 Virtual Address: 0x208 
+	Physical Address: 0x1e408 from TLB
 	Data: 0x3c from memory
 Virtual Address: 0x209 
+	Physical Address: 0x1e409 from TLB
 	Data: 0x7e from cache
 Virtual Address: 0x20a 
+	Physical Address: 0x1e40a from TLB
 	Data: 0x2b from cache
 Virtual Address: 0x20b 
+	Physical Address: 0x1e40b from TLB
 	Data: 0x2 from cache
 Virtual Address: 0x20c 
+	Physical Address: 0x1e40c from TLB
 	Data: 0xb8 from memory
 Virtual Address: 0x20d 
+	Physical Address: 0x1e40d from TLB
 	Data: 0xbc from cache
 Virtual Address: 0x20e 
+	Physical Address: 0x1e40e from TLB
 	Data: 0x19 from cache
 Virtual Address: 0x20f 
+	Physical Address: 0x1e40f from TLB
 	Data: 0x40 from cache
 Virtual Address: 0x210 
+	Physical Address: 0x1e410 from TLB
 	Data: 0x19 from memory
 Virtual Address: 0x211 
+	Physical Address: 0x1e411 from TLB
 	Data: 0x69 from cache
 Virtual Address: 0x212 
+	Physical Address: 0x1e412 from TLB
 	Data: 0xd6 from cache
 Virtual Address: 0x213 
+	Physical Address: 0x1e413 from TLB
 	Data: 0x73 from cache
 Virtual Address: 0x214 
+	Physical Address: 0x1e414 from TLB
 	Data: 0x4b from memory
 Virtual Address: 0x215 
+	Physical Address: 0x1e415 from TLB
 	Data: 0xa5 from cache
 Virtual Address: 0x216 
+	Physical Address: 0x1e416 from TLB
 	Data: 0x8e from cache
 Virtual Address: 0x217 
+	Physical Address: 0x1e417 from TLB
 	Data: 0x17 from cache
 Virtual Address: 0x218 
+	Physical Address: 0x1e418 from TLB
 	Data: 0xe from memory
 Virtual Address: 0x219 
+	Physical Address: 0x1e419 from TLB
 	Data: 0x1d from cache
 Virtual Address: 0x21a 
+	Physical Address: 0x1e41a from TLB
 	Data: 0x4 from cache
 Virtual Address: 0x21b 
+	Physical Address: 0x1e41b from TLB
 	Data: 0x35 from cache
 Virtual Address: 0x21c 
+	Physical Address: 0x1e41c from TLB
 	Data: 0x67 from memory
 Virtual Address: 0x21d 
+	Physical Address: 0x1e41d from TLB
 	Data: 0xaf from cache
 Virtual Address: 0x21e 
+	Physical Address: 0x1e41e from TLB
 	Data: 0x2f from cache
 Virtual Address: 0x21f 
+	Physical Address: 0x1e41f from TLB
 	Data: 0x77 from cache
 Virtual Address: 0x220 
+	Physical Address: 0x1e420 from TLB
 	Data: 0xa9 from memory
 Virtual Address: 0x221 
+	Physical Address: 0x1e421 from TLB
 	Data: 0x18 from cache
 Virtual Address: 0x222 
+	Physical Address: 0x1e422 from TLB
 	Data: 0x8d from cache
 Virtual Address: 0x223 
+	Physical Address: 0x1e423 from TLB
 	Data: 0x62 from cache
 Virtual Address: 0x224 
+	Physical Address: 0x1e424 from TLB
 	Data: 0x2e from memory
 Virtual Address: 0x225 
+	Physical Address: 0x1e425 from TLB
 	Data: 0xb9 from cache
 Virtual Address: 0x226 
+	Physical Address: 0x1e426 from TLB
 	Data: 0x44 from cache
 Virtual Address: 0x227 
+	Physical Address: 0x1e427 from TLB
 	Data: 0x1f from cache
 Virtual Address: 0x228 
+	Physical Address: 0x1e428 from TLB
 	Data: 0x32 from memory
 Virtual Address: 0x229 
+	Physical Address: 0x1e429 from TLB
 	Data: 0x41 from cache
 Virtual Address: 0x22a 
+	Physical Address: 0x1e42a from TLB
 	Data: 0xc0 from cache
 Virtual Address: 0x22b 
+	Physical Address: 0x1e42b from TLB
 	Data: 0x4a from cache
 Virtual Address: 0x22c 
+	Physical Address: 0x1e42c from TLB
 	Data: 0x1a from memory
 Virtual Address: 0x22d 
+	Physical Address: 0x1e42d from TLB
 	Data: 0xfc from cache
 Virtual Address: 0x22e 
+	Physical Address: 0x1e42e from TLB
 	Data: 0x23 from cache
 Virtual Address: 0x22f 
+	Physical Address: 0x1e42f from TLB
 	Data: 0x3b from cache
 Virtual Address: 0x230 
+	Physical Address: 0x1e430 from TLB
 	Data: 0xe4 from memory
 Virtual Address: 0x231 
+	Physical Address: 0x1e431 from TLB
 	Data: 0xd0 from cache
 Virtual Address: 0x232 
+	Physical Address: 0x1e432 from TLB
 	Data: 0x14 from cache
 Virtual Address: 0x233 
+	Physical Address: 0x1e433 from TLB
 	Data: 0x20 from cache
 Virtual Address: 0x234 
+	Physical Address: 0x1e434 from TLB
 	Data: 0x5 from memory
 Virtual Address: 0x235 
+	Physical Address: 0x1e435 from TLB
 	Data: 0x11 from cache
 Virtual Address: 0x236 
+	Physical Address: 0x1e436 from TLB
 	Data: 0x83 from cache
 Virtual Address: 0x237 
+	Physical Address: 0x1e437 from TLB
 	Data: 0x24 from cache
 Virtual Address: 0x238 
+	Physical Address: 0x1e438 from TLB
 	Data: 0xc0 from memory
 Virtual Address: 0x239 
+	Physical Address: 0x1e439 from TLB
 	Data: 0x1d from cache
 Virtual Address: 0x23a 
+	Physical Address: 0x1e43a from TLB
 	Data: 0xd2 from cache
 Virtual Address: 0x23b 
+	Physical Address: 0x1e43b from TLB
 	Data: 0x23 from cache
 Virtual Address: 0x23c 
+	Physical Address: 0x1e43c from TLB
 	Data: 0xf7 from memory
 Virtual Address: 0x23d 
+	Physical Address: 0x1e43d from TLB
 	Data: 0x7b from cache
 Virtual Address: 0x23e 
+	Physical Address: 0x1e43e from TLB
 	Data: 0x69 from cache
 Virtual Address: 0x23f 
+	Physical Address: 0x1e43f from TLB
 	Data: 0x47 from cache
 Virtual Address: 0x240 
+	Physical Address: 0x1e440 from TLB
 	Data: 0xae from memory
 Virtual Address: 0x241 
+	Physical Address: 0x1e441 from TLB
 	Data: 0xd3 from cache
 Virtual Address: 0x242 
+	Physical Address: 0x1e442 from TLB
 	Data: 0x7b from cache
 Virtual Address: 0x243 
+	Physical Address: 0x1e443 from TLB
 	Data: 0x16 from cache
 Virtual Address: 0x244 
+	Physical Address: 0x1e444 from TLB
 	Data: 0x1c from memory
 Virtual Address: 0x245 
+	Physical Address: 0x1e445 from TLB
 	Data: 0xd3 from cache
 Virtual Address: 0x246 
+	Physical Address: 0x1e446 from TLB
 	Data: 0x74 from cache
 Virtual Address: 0x247 
+	Physical Address: 0x1e447 from TLB
 	Data: 0x29 from cache
 Virtual Address: 0x248 
+	Physical Address: 0x1e448 from TLB
 	Data: 0xc7 from memory
 Virtual Address: 0x249 
+	Physical Address: 0x1e449 from TLB
 	Data: 0xdd from cache
 Virtual Address: 0x24a 
+	Physical Address: 0x1e44a from TLB
 	Data: 0xe5 from cache
 Virtual Address: 0x24b 
+	Physical Address: 0x1e44b from TLB
 	Data: 0x5 from cache
 Virtual Address: 0x24c 
+	Physical Address: 0x1e44c from TLB
 	Data: 0x8e from memory
 Virtual Address: 0x24d 
+	Physical Address: 0x1e44d from TLB
 	Data: 0xb8 from cache
 Virtual Address: 0x24e 
+	Physical Address: 0x1e44e from TLB
 	Data: 0x6b from cache
 Virtual Address: 0x24f 
+	Physical Address: 0x1e44f from TLB
 	Data: 0x48 from cache
 Virtual Address: 0x250 
+	Physical Address: 0x1e450 from TLB
 	Data: 0xed from memory
 Virtual Address: 0x251 
+	Physical Address: 0x1e451 from TLB
 	Data: 0x68 from cache
 Virtual Address: 0x252 
+	Physical Address: 0x1e452 from TLB
 	Data: 0xa0 from cache
 Virtual Address: 0x253 
+	Physical Address: 0x1e453 from TLB
 	Data: 0x25 from cache
 Virtual Address: 0x254 
+	Physical Address: 0x1e454 from TLB
 	Data: 0x6e from memory
 Virtual Address: 0x255 
+	Physical Address: 0x1e455 from TLB
 	Data: 0x1d from cache
 Virtual Address: 0x256 
+	Physical Address: 0x1e456 from TLB
 	Data: 0x5d from cache
 Virtual Address: 0x257 
+	Physical Address: 0x1e457 from TLB
 	Data: 0x6c from cache
 Virtual Address: 0x258 
+	Physical Address: 0x1e458 from TLB
 	Data: 0x6e from memory
 Virtual Address: 0x259 
+	Physical Address: 0x1e459 from TLB
 	Data: 0x47 from cache
 Virtual Address: 0x25a 
+	Physical Address: 0x1e45a from TLB
 	Data: 0x98 from cache
 Virtual Address: 0x25b 
+	Physical Address: 0x1e45b from TLB
 	Data: 0x15 from cache
 Virtual Address: 0x25c 
+	Physical Address: 0x1e45c from TLB
 	Data: 0xfc from memory
 Virtual Address: 0x25d 
+	Physical Address: 0x1e45d from TLB
 	Data: 0x37 from cache
 Virtual Address: 0x25e 
+	Physical Address: 0x1e45e from TLB
 	Data: 0xe2 from cache
 Virtual Address: 0x25f 
+	Physical Address: 0x1e45f from TLB
 	Data: 0x77 from cache
 Virtual Address: 0x260 
+	Physical Address: 0x1e460 from TLB
 	Data: 0x40 from memory
 Virtual Address: 0x261 
+	Physical Address: 0x1e461 from TLB
 	Data: 0xd3 from cache
 Virtual Address: 0x262 
+	Physical Address: 0x1e462 from TLB
 	Data: 0x8f from cache
 Virtual Address: 0x263 
+	Physical Address: 0x1e463 from TLB
 	Data: 0x4c from cache
 Virtual Address: 0x264 
+	Physical Address: 0x1e464 from TLB
 	Data: 0x90 from memory
 Virtual Address: 0x265 
+	Physical Address: 0x1e465 from TLB
 	Data: 0x8e from cache
 Virtual Address: 0x266 
+	Physical Address: 0x1e466 from TLB
 	Data: 0x61 from cache
 Virtual Address: 0x267 
+	Physical Address: 0x1e467 from TLB
 	Data: 0x78 from cache
 Virtual Address: 0x268 
+	Physical Address: 0x1e468 from TLB
 	Data: 0x37 from memory
 Virtual Address: 0x269 
+	Physical Address: 0x1e469 from TLB
 	Data: 0xfc from cache
 Virtual Address: 0x26a 
+	Physical Address: 0x1e46a from TLB
 	Data: 0x78 from cache
 Virtual Address: 0x26b 
+	Physical Address: 0x1e46b from TLB
 	Data: 0x33 from cache
 Virtual Address: 0x26c 
+	Physical Address: 0x1e46c from TLB
 	Data: 0x11 from memory
 Virtual Address: 0x26d 
+	Physical Address: 0x1e46d from TLB
 	Data: 0xbb from cache
 Virtual Address: 0x26e 
+	Physical Address: 0x1e46e from TLB
 	Data: 0x2e from cache
 Virtual Address: 0x26f 
+	Physical Address: 0x1e46f from TLB
 	Data: 0x47 from cache
 Virtual Address: 0x270 
+	Physical Address: 0x1e470 from TLB
 	Data: 0xd0 from memory
 Virtual Address: 0x271 
+	Physical Address: 0x1e471 from TLB
 	Data: 0x70 from cache
 Virtual Address: 0x272 
+	Physical Address: 0x1e472 from TLB
 	Data: 0xea from cache
 Virtual Address: 0x273 
+	Physical Address: 0x1e473 from TLB
 	Data: 0x59 from cache
 Virtual Address: 0x274 
+	Physical Address: 0x1e474 from TLB
 	Data: 0x85 from memory
 Virtual Address: 0x275 
+	Physical Address: 0x1e475 from TLB
 	Data: 0x9e from cache
 Virtual Address: 0x276 
+	Physical Address: 0x1e476 from TLB
 	Data: 0x9a from cache
 Virtual Address: 0x277 
+	Physical Address: 0x1e477 from TLB
 	Data: 0x75 from cache
 Virtual Address: 0x278 
+	Physical Address: 0x1e478 from TLB
 	Data: 0xb0 from memory
 Virtual Address: 0x279 
+	Physical Address: 0x1e479 from TLB
 	Data: 0x87 from cache
 Virtual Address: 0x27a 
+	Physical Address: 0x1e47a from TLB
 	Data: 0x82 from cache
 Virtual Address: 0x27b 
+	Physical Address: 0x1e47b from TLB
 	Data: 0x77 from cache
 Virtual Address: 0x27c 
+	Physical Address: 0x1e47c from TLB
 	Data: 0x95 from memory
 Virtual Address: 0x27d 
+	Physical Address: 0x1e47d from TLB
 	Data: 0x28 from cache
 Virtual Address: 0x27e 
+	Physical Address: 0x1e47e from TLB
 	Data: 0x92 from cache
 Virtual Address: 0x27f 
+	Physical Address: 0x1e47f from TLB
 	Data: 0x56 from cache
 Virtual Address: 0x280 
+	Physical Address: 0x1e480 from TLB
 	Data: 0xae from memory
 Virtual Address: 0x281 
+	Physical Address: 0x1e481 from TLB
 	Data: 0x1e from cache
 Virtual Address: 0x282 
+	Physical Address: 0x1e482 from TLB
 	Data: 0x2d from cache
 Virtual Address: 0x283 
+	Physical Address: 0x1e483 from TLB
 	Data: 0x57 from cache
 Virtual Address: 0x284 
+	Physical Address: 0x1e484 from TLB
 	Data: 0xec from memory
 Virtual Address: 0x285 
+	Physical Address: 0x1e485 from TLB
 	Data: 0x5 from cache
 Virtual Address: 0x286 
+	Physical Address: 0x1e486 from TLB
 	Data: 0xae from cache
 Virtual Address: 0x287 
+	Physical Address: 0x1e487 from TLB
 	Data: 0x79 from cache
 Virtual Address: 0x288 
+	Physical Address: 0x1e488 from TLB
 	Data: 0x4e from memory
 Virtual Address: 0x289 
+	Physical Address: 0x1e489 from TLB
 	Data: 0xe5 from cache
 Virtual Address: 0x28a 
+	Physical Address: 0x1e48a from TLB
 	Data: 0xab from cache
 Virtual Address: 0x28b 
+	Physical Address: 0x1e48b from TLB
 	Data: 0x16 from cache
 Virtual Address: 0x28c 
+	Physical Address: 0x1e48c from TLB
 	Data: 0xc8 from memory
 Virtual Address: 0x28d 
+	Physical Address: 0x1e48d from TLB
 	Data: 0x87 from cache
 Virtual Address: 0x28e 
+	Physical Address: 0x1e48e from TLB
 	Data: 0x3 from cache
 Virtual Address: 0x28f 
+	Physical Address: 0x1e48f from TLB
 	Data: 0x4b from cache
 Virtual Address: 0x290 
+	Physical Address: 0x1e490 from TLB
 	Data: 0x38 from memory
 Virtual Address: 0x291 
+	Physical Address: 0x1e491 from TLB
 	Data: 0xab from cache
 Virtual Address: 0x292 
+	Physical Address: 0x1e492 from TLB
 	Data: 0x3c from cache
 Virtual Address: 0x293 
+	Physical Address: 0x1e493 from TLB
 	Data: 0x11 from cache
 Virtual Address: 0x294 
+	Physical Address: 0x1e494 from TLB
 	Data: 0x5c from memory
 Virtual Address: 0x295 
+	Physical Address: 0x1e495 from TLB
 	Data: 0x2 from cache
 Virtual Address: 0x296 
+	Physical Address: 0x1e496 from TLB
 	Data: 0xb0 from cache
 Virtual Address: 0x297 
+	Physical Address: 0x1e497 from TLB
 	Data: 0x4b from cache
 Virtual Address: 0x298 
+	Physical Address: 0x1e498 from TLB
 	Data: 0x2f from memory
 Virtual Address: 0x299 
+	Physical Address: 0x1e499 from TLB
 	Data: 0x37 from cache
 Virtual Address: 0x29a 
+	Physical Address: 0x1e49a from TLB
 	Data: 0x33 from cache
 Virtual Address: 0x29b 
+	Physical Address: 0x1e49b from TLB
 	Data: 0x42 from cache
 Virtual Address: 0x29c 
+	Physical Address: 0x1e49c from TLB
 	Data: 0xe1 from memory
 Virtual Address: 0x29d 
+	Physical Address: 0x1e49d from TLB
 	Data: 0xc3 from cache
 Virtual Address: 0x29e 
+	Physical Address: 0x1e49e from TLB
 	Data: 0xc9 from cache
 Virtual Address: 0x29f 
+	Physical Address: 0x1e49f from TLB
 	Data: 0x73 from cache
 Virtual Address: 0x2a0 
+	Physical Address: 0x1e4a0 from TLB
 	Data: 0x8b from memory
 Virtual Address: 0x2a1 
+	Physical Address: 0x1e4a1 from TLB
 	Data: 0xbb from cache
 Virtual Address: 0x2a2 
+	Physical Address: 0x1e4a2 from TLB
 	Data: 0xf4 from cache
 Virtual Address: 0x2a3 
+	Physical Address: 0x1e4a3 from TLB
 	Data: 0x6a from cache
 Virtual Address: 0x2a4 
+	Physical Address: 0x1e4a4 from TLB
 	Data: 0x61 from memory
 Virtual Address: 0x2a5 
+	Physical Address: 0x1e4a5 from TLB
 	Data: 0x78 from cache
 Virtual Address: 0x2a6 
+	Physical Address: 0x1e4a6 from TLB
 	Data: 0xf3 from cache
 Virtual Address: 0x2a7 
+	Physical Address: 0x1e4a7 from TLB
 	Data: 0xc from cache
 Virtual Address: 0x2a8 
+	Physical Address: 0x1e4a8 from TLB
 	Data: 0xfb from memory
 Virtual Address: 0x2a9 
+	Physical Address: 0x1e4a9 from TLB
 	Data: 0xbf from cache
 Virtual Address: 0x2aa 
+	Physical Address: 0x1e4aa from TLB
 	Data: 0xed from cache
 Virtual Address: 0x2ab 
+	Physical Address: 0x1e4ab from TLB
 	Data: 0x2e from cache
 Virtual Address: 0x2ac 
+	Physical Address: 0x1e4ac from TLB
 	Data: 0x6f from memory
 Virtual Address: 0x2ad 
+	Physical Address: 0x1e4ad from TLB
 	Data: 0x8c from cache
 Virtual Address: 0x2ae 
+	Physical Address: 0x1e4ae from TLB
 	Data: 0x9 from cache
 Virtual Address: 0x2af 
+	Physical Address: 0x1e4af from TLB
 	Data: 0xb from cache
 Virtual Address: 0x2b0 
+	Physical Address: 0x1e4b0 from TLB
 	Data: 0x67 from memory
 Virtual Address: 0x2b1 
+	Physical Address: 0x1e4b1 from TLB
 	Data: 0x89 from cache
 Virtual Address: 0x2b2 
+	Physical Address: 0x1e4b2 from TLB
 	Data: 0x76 from cache
 Virtual Address: 0x2b3 
+	Physical Address: 0x1e4b3 from TLB
 	Data: 0x31 from cache
 Virtual Address: 0x2b4 
+	Physical Address: 0x1e4b4 from TLB
 	Data: 0xbc from memory
 Virtual Address: 0x2b5 
+	Physical Address: 0x1e4b5 from TLB
 	Data: 0xdd from cache
 Virtual Address: 0x2b6 
+	Physical Address: 0x1e4b6 from TLB
 	Data: 0xbf from cache
 Virtual Address: 0x2b7 
+	Physical Address: 0x1e4b7 from TLB
 	Data: 0x52 from cache
 Virtual Address: 0x2b8 
+	Physical Address: 0x1e4b8 from TLB
 	Data: 0x67 from memory
 Virtual Address: 0x2b9 
+	Physical Address: 0x1e4b9 from TLB
 	Data: 0x8 from cache
 Virtual Address: 0x2ba 
+	Physical Address: 0x1e4ba from TLB
 	Data: 0x73 from cache
 Virtual Address: 0x2bb 
+	Physical Address: 0x1e4bb from TLB
 	Data: 0x52 from cache
 Virtual Address: 0x2bc 
+	Physical Address: 0x1e4bc from TLB
 	Data: 0x15 from memory
 Virtual Address: 0x2bd 
+	Physical Address: 0x1e4bd from TLB
 	Data: 0x5d from cache
 Virtual Address: 0x2be 
+	Physical Address: 0x1e4be from TLB
 	Data: 0xf2 from cache
 Virtual Address: 0x2bf 
+	Physical Address: 0x1e4bf from TLB
 	Data: 0x47 from cache
 Virtual Address: 0x2c0 
+	Physical Address: 0x1e4c0 from TLB
 	Data: 0xd8 from memory
 Virtual Address: 0x2c1 
+	Physical Address: 0x1e4c1 from TLB
 	Data: 0xb0 from cache
 Virtual Address: 0x2c2 
+	Physical Address: 0x1e4c2 from TLB
 	Data: 0x34 from cache
 Virtual Address: 0x2c3 
+	Physical Address: 0x1e4c3 from TLB
 	Data: 0x7c from cache
 Virtual Address: 0x2c4 
+	Physical Address: 0x1e4c4 from TLB
 	Data: 0x2e from memory
 Virtual Address: 0x2c5 
+	Physical Address: 0x1e4c5 from TLB
 	Data: 0xe6 from cache
 Virtual Address: 0x2c6 
+	Physical Address: 0x1e4c6 from TLB
 	Data: 0x58 from cache
 Virtual Address: 0x2c7 
+	Physical Address: 0x1e4c7 from TLB
 	Data: 0x58 from cache
 Virtual Address: 0x2c8 
+	Physical Address: 0x1e4c8 from TLB
 	Data: 0xa4 from memory
 Virtual Address: 0x2c9 
+	Physical Address: 0x1e4c9 from TLB
 	Data: 0x15 from cache
 Virtual Address: 0x2ca 
+	Physical Address: 0x1e4ca from TLB
 	Data: 0x5e from cache
 Virtual Address: 0x2cb 
+	Physical Address: 0x1e4cb from TLB
 	Data: 0x10 from cache
 Virtual Address: 0x2cc 
+	Physical Address: 0x1e4cc from TLB
 	Data: 0xc5 from memory
 Virtual Address: 0x2cd 
+	Physical Address: 0x1e4cd from TLB
 	Data: 0x19 from cache
 Virtual Address: 0x2ce 
+	Physical Address: 0x1e4ce from TLB
 	Data: 0xd5 from cache
 Virtual Address: 0x2cf 
+	Physical Address: 0x1e4cf from TLB
 	Data: 0x21 from cache
 Virtual Address: 0x2d0 
+	Physical Address: 0x1e4d0 from TLB
 	Data: 0x9d from memory
 Virtual Address: 0x2d1 
+	Physical Address: 0x1e4d1 from TLB
 	Data: 0x3 from cache
 Virtual Address: 0x2d2 
+	Physical Address: 0x1e4d2 from TLB
 	Data: 0xb6 from cache
 Virtual Address: 0x2d3 
+	Physical Address: 0x1e4d3 from TLB
 	Data: 0x44 from cache
 Virtual Address: 0x2d4 
+	Physical Address: 0x1e4d4 from TLB
 	Data: 0x12 from memory
 Virtual Address: 0x2d5 
+	Physical Address: 0x1e4d5 from TLB
 	Data: 0x5d from cache
 Virtual Address: 0x2d6 
+	Physical Address: 0x1e4d6 from TLB
 	Data: 0xf6 from cache
 Virtual Address: 0x2d7 
+	Physical Address: 0x1e4d7 from TLB
 	Data: 0x25 from cache
 Virtual Address: 0x2d8 
+	Physical Address: 0x1e4d8 from TLB
 	Data: 0xc1 from memory
 Virtual Address: 0x2d9 
+	Physical Address: 0x1e4d9 from TLB
 	Data: 0x51 from cache
 Virtual Address: 0x2da 
+	Physical Address: 0x1e4da from TLB
 	Data: 0xb7 from cache
 Virtual Address: 0x2db 
+	Physical Address: 0x1e4db from TLB
 	Data: 0x19 from cache
 Virtual Address: 0x2dc 
+	Physical Address: 0x1e4dc from TLB
 	Data: 0xdd from memory
 Virtual Address: 0x2dd 
+	Physical Address: 0x1e4dd from TLB
 	Data: 0xd6 from cache
 Virtual Address: 0x2de 
+	Physical Address: 0x1e4de from TLB
 	Data: 0x45 from cache
 Virtual Address: 0x2df 
+	Physical Address: 0x1e4df from TLB
 	Data: 0x11 from cache
 Virtual Address: 0x2e0 
+	Physical Address: 0x1e4e0 from TLB
 	Data: 0xa2 from memory
 Virtual Address: 0x2e1 
+	Physical Address: 0x1e4e1 from TLB
 	Data: 0xeb from cache
 Virtual Address: 0x2e2 
+	Physical Address: 0x1e4e2 from TLB
 	Data: 0x57 from cache
 Virtual Address: 0x2e3 
+	Physical Address: 0x1e4e3 from TLB
 	Data: 0x1e from cache
 Virtual Address: 0x2e4 
+	Physical Address: 0x1e4e4 from TLB
 	Data: 0xf8 from memory
 Virtual Address: 0x2e5 
+	Physical Address: 0x1e4e5 from TLB
 	Data: 0x4d from cache
 Virtual Address: 0x2e6 
+	Physical Address: 0x1e4e6 from TLB
 	Data: 0x30 from cache
 Virtual Address: 0x2e7 
+	Physical Address: 0x1e4e7 from TLB
 	Data: 0x4d from cache
 Virtual Address: 0x2e8 
+	Physical Address: 0x1e4e8 from TLB
 	Data: 0xee from memory
 Virtual Address: 0x2e9 
+	Physical Address: 0x1e4e9 from TLB
 	Data: 0x91 from cache
 Virtual Address: 0x2ea 
+	Physical Address: 0x1e4ea from TLB
 	Data: 0x74 from cache
 Virtual Address: 0x2eb 
+	Physical Address: 0x1e4eb from TLB
 	Data: 0x58 from cache
 Virtual Address: 0x2ec 
+	Physical Address: 0x1e4ec from TLB
 	Data: 0x73 from memory
 Virtual Address: 0x2ed 
+	Physical Address: 0x1e4ed from TLB
 	Data: 0x5c from cache
 Virtual Address: 0x2ee 
+	Physical Address: 0x1e4ee from TLB
 	Data: 0x42 from cache
 Virtual Address: 0x2ef 
+	Physical Address: 0x1e4ef from TLB
 	Data: 0x78 from cache
 Virtual Address: 0x2f0 
+	Physical Address: 0x1e4f0 from TLB
 	Data: 0x7d from memory
 Virtual Address: 0x2f1 
+	Physical Address: 0x1e4f1 from TLB
 	Data: 0xec from cache
 Virtual Address: 0x2f2 
+	Physical Address: 0x1e4f2 from TLB
 	Data: 0xca from cache
 Virtual Address: 0x2f3 
+	Physical Address: 0x1e4f3 from TLB
 	Data: 0x42 from cache
 Virtual Address: 0x2f4 
+	Physical Address: 0x1e4f4 from TLB
 	Data: 0x9e from memory
 Virtual Address: 0x2f5 
+	Physical Address: 0x1e4f5 from TLB
 	Data: 0x19 from cache
 Virtual Address: 0x2f6 
+	Physical Address: 0x1e4f6 from TLB
 	Data: 0xf7 from cache
 Virtual Address: 0x2f7 
+	Physical Address: 0x1e4f7 from TLB
 	Data: 0x4f from cache
 Virtual Address: 0x2f8 
+	Physical Address: 0x1e4f8 from TLB
 	Data: 0x8 from memory
 Virtual Address: 0x2f9 
+	Physical Address: 0x1e4f9 from TLB
 	Data: 0x85 from cache
 Virtual Address: 0x2fa 
+	Physical Address: 0x1e4fa from TLB
 	Data: 0xd4 from cache
 Virtual Address: 0x2fb 
+	Physical Address: 0x1e4fb from TLB
 	Data: 0x4e from cache
 Virtual Address: 0x2fc 
+	Physical Address: 0x1e4fc from TLB
 	Data: 0x2c from memory
 Virtual Address: 0x2fd 
+	Physical Address: 0x1e4fd from TLB
 	Data: 0xb from cache
 Virtual Address: 0x2fe 
+	Physical Address: 0x1e4fe from TLB
 	Data: 0xf8 from cache
 Virtual Address: 0x2ff 
+	Physical Address: 0x1e4ff from TLB
 	Data: 0x19 from cache
 Virtual Address: 0x300 
+	Physical Address: 0x1e500 from TLB
 	Data: 0x8b from memory
 Virtual Address: 0x301 
+	Physical Address: 0x1e501 from TLB
 	Data: 0x1f from cache
 Virtual Address: 0x302 
+	Physical Address: 0x1e502 from TLB
 	Data: 0xa5 from cache
 Virtual Address: 0x303 
+	Physical Address: 0x1e503 from TLB
 	Data: 0x49 from cache
 Virtual Address: 0x304 
+	Physical Address: 0x1e504 from TLB
 	Data: 0x56 from memory
 Virtual Address: 0x305 
+	Physical Address: 0x1e505 from TLB
 	Data: 0x6a from cache
 Virtual Address: 0x306 
+	Physical Address: 0x1e506 from TLB
 	Data: 0x80 from cache
 Virtual Address: 0x307 
+	Physical Address: 0x1e507 from TLB
 	Data: 0x65 from cache
 Virtual Address: 0x308 
+	Physical Address: 0x1e508 from TLB
 	Data: 0xf4 from memory
 Virtual Address: 0x309 
+	Physical Address: 0x1e509 from TLB
 	Data: 0x92 from cache
 Virtual Address: 0x30a 
+	Physical Address: 0x1e50a from TLB
 	Data: 0xfb from cache
 Virtual Address: 0x30b 
+	Physical Address: 0x1e50b from TLB
 	Data: 0x64 from cache
 Virtual Address: 0x30c 
+	Physical Address: 0x1e50c from TLB
 	Data: 0xc3 from memory
 Virtual Address: 0x30d 
+	Physical Address: 0x1e50d from TLB
 	Data: 0xca from cache
 Virtual Address: 0x30e 
+	Physical Address: 0x1e50e from TLB
 	Data: 0xe1 from cache
 Virtual Address: 0x30f 
+	Physical Address: 0x1e50f from TLB
 	Data: 0x5a from cache
 Virtual Address: 0x310 
+	Physical Address: 0x1e510 from TLB
 	Data: 0xb3 from memory
 Virtual Address: 0x311 
+	Physical Address: 0x1e511 from TLB
 	Data: 0x6c from cache
 Virtual Address: 0x312 
+	Physical Address: 0x1e512 from TLB
 	Data: 0x30 from cache
 Virtual Address: 0x313 
+	Physical Address: 0x1e513 from TLB
 	Data: 0x31 from cache
 Virtual Address: 0x314 
+	Physical Address: 0x1e514 from TLB
 	Data: 0x23 from memory
 Virtual Address: 0x315 
+	Physical Address: 0x1e515 from TLB
 	Data: 0xca from cache
 Virtual Address: 0x316 
+	Physical Address: 0x1e516 from TLB
 	Data: 0x2e from cache
 Virtual Address: 0x317 
+	Physical Address: 0x1e517 from TLB
 	Data: 0x27 from cache
 Virtual Address: 0x318 
+	Physical Address: 0x1e518 from TLB
 	Data: 0xa4 from memory
 Virtual Address: 0x319 
+	Physical Address: 0x1e519 from TLB
 	Data: 0x8e from cache
 Virtual Address: 0x31a 
+	Physical Address: 0x1e51a from TLB
 	Data: 0xab from cache
 Virtual Address: 0x31b 
+	Physical Address: 0x1e51b from TLB
 	Data: 0x4e from cache
 Virtual Address: 0x31c 
+	Physical Address: 0x1e51c from TLB
 	Data: 0x3e from memory
 Virtual Address: 0x31d 
+	Physical Address: 0x1e51d from TLB
 	Data: 0x28 from cache
 Virtual Address: 0x31e 
+	Physical Address: 0x1e51e from TLB
 	Data: 0x25 from cache
 Virtual Address: 0x31f 
+	Physical Address: 0x1e51f from TLB
 	Data: 0x1c from cache
 Virtual Address: 0x320 
+	Physical Address: 0x1e520 from TLB
 	Data: 0x84 from memory
 Virtual Address: 0x321 
+	Physical Address: 0x1e521 from TLB
 	Data: 0x42 from cache
 Virtual Address: 0x322 
+	Physical Address: 0x1e522 from TLB
 	Data: 0x22 from cache
 Virtual Address: 0x323 
+	Physical Address: 0x1e523 from TLB
 	Data: 0x34 from cache
 Virtual Address: 0x324 
+	Physical Address: 0x1e524 from TLB
 	Data: 0xa0 from memory
 Virtual Address: 0x325 
+	Physical Address: 0x1e525 from TLB
 	Data: 0x4e from cache
 Virtual Address: 0x326 
+	Physical Address: 0x1e526 from TLB
 	Data: 0x99 from cache
 Virtual Address: 0x327 
+	Physical Address: 0x1e527 from TLB
 	Data: 0x7d from cache
 Virtual Address: 0x328 
+	Physical Address: 0x1e528 from TLB
 	Data: 0xad from memory
 Virtual Address: 0x329 
+	Physical Address: 0x1e529 from TLB
 	Data: 0xb4 from cache
 Virtual Address: 0x32a 
+	Physical Address: 0x1e52a from TLB
 	Data: 0x2e from cache
 Virtual Address: 0x32b 
+	Physical Address: 0x1e52b from TLB
 	Data: 0x27 from cache
 Virtual Address: 0x32c 
+	Physical Address: 0x1e52c from TLB
 	Data: 0xeb from memory
 Virtual Address: 0x32d 
+	Physical Address: 0x1e52d from TLB
 	Data: 0xcb from cache
 Virtual Address: 0x32e 
+	Physical Address: 0x1e52e from TLB
 	Data: 0x98 from cache
 Virtual Address: 0x32f 
+	Physical Address: 0x1e52f from TLB
 	Data: 0x65 from cache
 Virtual Address: 0x330 
+	Physical Address: 0x1e530 from TLB
 	Data: 0x5c from memory
 Virtual Address: 0x331 
+	Physical Address: 0x1e531 from TLB
 	Data: 0x2c from cache
 Virtual Address: 0x332 
+	Physical Address: 0x1e532 from TLB
 	Data: 0x59 from cache
 Virtual Address: 0x333 
+	Physical Address: 0x1e533 from TLB
 	Data: 0x50 from cache
 Virtual Address: 0x334 
+	Physical Address: 0x1e534 from TLB
 	Data: 0x14 from memory
 Virtual Address: 0x335 
+	Physical Address: 0x1e535 from TLB
 	Data: 0xbd from cache
 Virtual Address: 0x336 
+	Physical Address: 0x1e536 from TLB
 	Data: 0xa1 from cache
 Virtual Address: 0x337 
+	Physical Address: 0x1e537 from TLB
 	Data: 0x79 from cache
 Virtual Address: 0x338 
+	Physical Address: 0x1e538 from TLB
 	Data: 0x1 from memory
 Virtual Address: 0x339 
+	Physical Address: 0x1e539 from TLB
 	Data: 0x29 from cache
 Virtual Address: 0x33a 
+	Physical Address: 0x1e53a from TLB
 	Data: 0x8b from cache
 Virtual Address: 0x33b 
+	Physical Address: 0x1e53b from TLB
 	Data: 0x2d from cache
 Virtual Address: 0x33c 
+	Physical Address: 0x1e53c from TLB
 	Data: 0x34 from memory
 Virtual Address: 0x33d 
+	Physical Address: 0x1e53d from TLB
 	Data: 0xdd from cache
 Virtual Address: 0x33e 
+	Physical Address: 0x1e53e from TLB
 	Data: 0x8d from cache
 Virtual Address: 0x33f 
+	Physical Address: 0x1e53f from TLB
 	Data: 0x4c from cache
 Virtual Address: 0x340 
+	Physical Address: 0x1e540 from TLB
 	Data: 0x43 from memory
 Virtual Address: 0x341 
+	Physical Address: 0x1e541 from TLB
 	Data: 0xa3 from cache
 Virtual Address: 0x342 
+	Physical Address: 0x1e542 from TLB
 	Data: 0xfa from cache
 Virtual Address: 0x343 
+	Physical Address: 0x1e543 from TLB
 	Data: 0x51 from cache
 Virtual Address: 0x344 
+	Physical Address: 0x1e544 from TLB
 	Data: 0xa5 from memory
 Virtual Address: 0x345 
+	Physical Address: 0x1e545 from TLB
 	Data: 0x3e from cache
 Virtual Address: 0x346 
+	Physical Address: 0x1e546 from TLB
 	Data: 0xe9 from cache
 Virtual Address: 0x347 
+	Physical Address: 0x1e547 from TLB
 	Data: 0x3d from cache
 Virtual Address: 0x348 
+	Physical Address: 0x1e548 from TLB
 	Data: 0xf9 from memory
 Virtual Address: 0x349 
+	Physical Address: 0x1e549 from TLB
 	Data: 0xf6 from cache
 Virtual Address: 0x34a 
+	Physical Address: 0x1e54a from TLB
 	Data: 0x62 from cache
 Virtual Address: 0x34b 
+	Physical Address: 0x1e54b from TLB
 	Data: 0x6e from cache
 Virtual Address: 0x34c 
+	Physical Address: 0x1e54c from TLB
 	Data: 0xe0 from memory
 Virtual Address: 0x34d 
+	Physical Address: 0x1e54d from TLB
 	Data: 0xa6 from cache
 Virtual Address: 0x34e 
+	Physical Address: 0x1e54e from TLB
 	Data: 0xb0 from cache
 Virtual Address: 0x34f 
+	Physical Address: 0x1e54f from TLB
 	Data: 0x16 from cache
 Virtual Address: 0x350 
+	Physical Address: 0x1e550 from TLB
 	Data: 0xb7 from memory
 Virtual Address: 0x351 
+	Physical Address: 0x1e551 from TLB
 	Data: 0x9b from cache
 Virtual Address: 0x352 
+	Physical Address: 0x1e552 from TLB
 	Data: 0xdf from cache
 Virtual Address: 0x353 
+	Physical Address: 0x1e553 from TLB
 	Data: 0x63 from cache
 Virtual Address: 0x354 
+	Physical Address: 0x1e554 from TLB
 	Data: 0xba from memory
 Virtual Address: 0x355 
+	Physical Address: 0x1e555 from TLB
 	Data: 0x48 from cache
 Virtual Address: 0x356 
+	Physical Address: 0x1e556 from TLB
 	Data: 0x1a from cache
 Virtual Address: 0x357 
+	Physical Address: 0x1e557 from TLB
 	Data: 0x8 from cache
 Virtual Address: 0x358 
+	Physical Address: 0x1e558 from TLB
 	Data: 0xbd from memory
 Virtual Address: 0x359 
+	Physical Address: 0x1e559 from TLB
 	Data: 0x7d from cache
 Virtual Address: 0x35a 
+	Physical Address: 0x1e55a from TLB
 	Data: 0xf6 from cache
 Virtual Address: 0x35b 
+	Physical Address: 0x1e55b from TLB
 	Data: 0x27 from cache
 Virtual Address: 0x35c 
+	Physical Address: 0x1e55c from TLB
 	Data: 0x59 from memory
 Virtual Address: 0x35d 
+	Physical Address: 0x1e55d from TLB
 	Data: 0x87 from cache
 Virtual Address: 0x35e 
+	Physical Address: 0x1e55e from TLB
 	Data: 0x37 from cache
 Virtual Address: 0x35f 
+	Physical Address: 0x1e55f from TLB
 	Data: 0x2 from cache
 Virtual Address: 0x360 
+	Physical Address: 0x1e560 from TLB
 	Data: 0xb2 from memory
 Virtual Address: 0x361 
+	Physical Address: 0x1e561 from TLB
 	Data: 0x96 from cache
 Virtual Address: 0x362 
+	Physical Address: 0x1e562 from TLB
 	Data: 0x4a from cache
 Virtual Address: 0x363 
+	Physical Address: 0x1e563 from TLB
 	Data: 0x55 from cache
 Virtual Address: 0x364 
+	Physical Address: 0x1e564 from TLB
 	Data: 0xac from memory
 Virtual Address: 0x365 
+	Physical Address: 0x1e565 from TLB
 	Data: 0xf from cache
 Virtual Address: 0x366 
+	Physical Address: 0x1e566 from TLB
 	Data: 0x6b from cache
 Virtual Address: 0x367 
+	Physical Address: 0x1e567 from TLB
 	Data: 0x0 from cache
 Virtual Address: 0x368 
+	Physical Address: 0x1e568 from TLB
 	Data: 0xcc from memory
 Virtual Address: 0x369 
+	Physical Address: 0x1e569 from TLB
 	Data: 0xe3 from cache
 Virtual Address: 0x36a 
+	Physical Address: 0x1e56a from TLB
 	Data: 0x79 from cache
 Virtual Address: 0x36b 
+	Physical Address: 0x1e56b from TLB
 	Data: 0x7a from cache
 Virtual Address: 0x36c 
+	Physical Address: 0x1e56c from TLB
 	Data: 0x2f from memory
 Virtual Address: 0x36d 
+	Physical Address: 0x1e56d from TLB
 	Data: 0x83 from cache
 Virtual Address: 0x36e 
+	Physical Address: 0x1e56e from TLB
 	Data: 0x15 from cache
 Virtual Address: 0x36f 
+	Physical Address: 0x1e56f from TLB
 	Data: 0x18 from cache
 Virtual Address: 0x370 
+	Physical Address: 0x1e570 from TLB
 	Data: 0x4a from memory
 Virtual Address: 0x371 
+	Physical Address: 0x1e571 from TLB
 	Data: 0x29 from cache
 Virtual Address: 0x372 
+	Physical Address: 0x1e572 from TLB
 	Data: 0x62 from cache
 Virtual Address: 0x373 
+	Physical Address: 0x1e573 from TLB
 	Data: 0x50 from cache
 Virtual Address: 0x374 
+	Physical Address: 0x1e574 from TLB
 	Data: 0xd5 from memory
 Virtual Address: 0x375 
+	Physical Address: 0x1e575 from TLB
 	Data: 0x68 from cache
 Virtual Address: 0x376 
+	Physical Address: 0x1e576 from TLB
 	Data: 0x4e from cache
 Virtual Address: 0x377 
+	Physical Address: 0x1e577 from TLB
 	Data: 0x49 from cache
 Virtual Address: 0x378 
+	Physical Address: 0x1e578 from TLB
 	Data: 0x5b from memory
 Virtual Address: 0x379 
+	Physical Address: 0x1e579 from TLB
 	Data: 0x8e from cache
 Virtual Address: 0x37a 
+	Physical Address: 0x1e57a from TLB
 	Data: 0xd from cache
 Virtual Address: 0x37b 
+	Physical Address: 0x1e57b from TLB
 	Data: 0x32 from cache
 Virtual Address: 0x37c 
+	Physical Address: 0x1e57c from TLB
 	Data: 0xd5 from memory
 Virtual Address: 0x37d 
+	Physical Address: 0x1e57d from TLB
 	Data: 0x48 from cache
 Virtual Address: 0x37e 
+	Physical Address: 0x1e57e from TLB
 	Data: 0x7 from cache
 Virtual Address: 0x37f 
+	Physical Address: 0x1e57f from TLB
 	Data: 0x1a from cache
 Virtual Address: 0x380 
+	Physical Address: 0x1e580 from TLB
 	Data: 0x2b from memory
 Virtual Address: 0x381 
+	Physical Address: 0x1e581 from TLB
 	Data: 0xd3 from cache
 Virtual Address: 0x382 
+	Physical Address: 0x1e582 from TLB
 	Data: 0xce from cache
 Virtual Address: 0x383 
+	Physical Address: 0x1e583 from TLB
 	Data: 0x2e from cache
 Virtual Address: 0x384 
+	Physical Address: 0x1e584 from TLB
 	Data: 0x4f from memory
 Virtual Address: 0x385 
+	Physical Address: 0x1e585 from TLB
 	Data: 0x21 from cache
 Virtual Address: 0x386 
+	Physical Address: 0x1e586 from TLB
 	Data: 0x9 from cache
 Virtual Address: 0x387 
+	Physical Address: 0x1e587 from TLB
 	Data: 0x17 from cache
 Virtual Address: 0x388 
+	Physical Address: 0x1e588 from TLB
 	Data: 0x98 from memory
 Virtual Address: 0x389 
+	Physical Address: 0x1e589 from TLB
 	Data: 0x13 from cache
 Virtual Address: 0x38a 
+	Physical Address: 0x1e58a from TLB
 	Data: 0xe9 from cache
 Virtual Address: 0x38b 
+	Physical Address: 0x1e58b from TLB
 	Data: 0x74 from cache
 Virtual Address: 0x38c 
+	Physical Address: 0x1e58c from TLB
 	Data: 0xde from memory
 Virtual Address: 0x38d 
+	Physical Address: 0x1e58d from TLB
 	Data: 0x3f from cache
 Virtual Address: 0x38e 
+	Physical Address: 0x1e58e from TLB
 	Data: 0xff from cache
 Virtual Address: 0x38f 
+	Physical Address: 0x1e58f from TLB
 	Data: 0x5f from cache
 Virtual Address: 0x390 
+	Physical Address: 0x1e590 from TLB
 	Data: 0x72 from memory
 Virtual Address: 0x391 
+	Physical Address: 0x1e591 from TLB
 	Data: 0xeb from cache
 Virtual Address: 0x392 
+	Physical Address: 0x1e592 from TLB
 	Data: 0x37 from cache
 Virtual Address: 0x393 
+	Physical Address: 0x1e593 from TLB
 	Data: 0x3e from cache
 Virtual Address: 0x394 
+	Physical Address: 0x1e594 from TLB
 	Data: 0x3d from memory
 Virtual Address: 0x395 
+	Physical Address: 0x1e595 from TLB
 	Data: 0xa2 from cache
 Virtual Address: 0x396 
+	Physical Address: 0x1e596 from TLB
 	Data: 0x94 from cache
 Virtual Address: 0x397 
+	Physical Address: 0x1e597 from TLB
 	Data: 0x43 from cache
 Virtual Address: 0x398 
+	Physical Address: 0x1e598 from TLB
 	Data: 0x1c from memory
 Virtual Address: 0x399 
+	Physical Address: 0x1e599 from TLB
 	Data: 0x68 from cache
 Virtual Address: 0x39a 
+	Physical Address: 0x1e59a from TLB
 	Data: 0x24 from cache
 Virtual Address: 0x39b 
+	Physical Address: 0x1e59b from TLB
 	Data: 0x7c from cache
 Virtual Address: 0x39c 
+	Physical Address: 0x1e59c from TLB
 	Data: 0xf7 from memory
 Virtual Address: 0x39d 
+	Physical Address: 0x1e59d from TLB
 	Data: 0x2d from cache
 Virtual Address: 0x39e 
+	Physical Address: 0x1e59e from TLB
 	Data: 0x5a from cache
 Virtual Address: 0x39f 
+	Physical Address: 0x1e59f from TLB
 	Data: 0x72 from cache
 Virtual Address: 0x3a0 
+	Physical Address: 0x1e5a0 from TLB
 	Data: 0xdd from memory
 Virtual Address: 0x3a1 
+	Physical Address: 0x1e5a1 from TLB
 	Data: 0xf0 from cache
 Virtual Address: 0x3a2 
+	Physical Address: 0x1e5a2 from TLB
 	Data: 0x2d from cache
 Virtual Address: 0x3a3 
+	Physical Address: 0x1e5a3 from TLB
 	Data: 0x41 from cache
 Virtual Address: 0x3a4 
+	Physical Address: 0x1e5a4 from TLB
 	Data: 0xca from memory
 Virtual Address: 0x3a5 
+	Physical Address: 0x1e5a5 from TLB
 	Data: 0x1c from cache
 Virtual Address: 0x3a6 
+	Physical Address: 0x1e5a6 from TLB
 	Data: 0x53 from cache
 Virtual Address: 0x3a7 
+	Physical Address: 0x1e5a7 from TLB
 	Data: 0x23 from cache
 Virtual Address: 0x3a8 
+	Physical Address: 0x1e5a8 from TLB
 	Data: 0xe2 from memory
 Virtual Address: 0x3a9 
+	Physical Address: 0x1e5a9 from TLB
 	Data: 0xf9 from cache
 Virtual Address: 0x3aa 
+	Physical Address: 0x1e5aa from TLB
 	Data: 0xf2 from cache
 Virtual Address: 0x3ab 
+	Physical Address: 0x1e5ab from TLB
 	Data: 0x57 from cache
 Virtual Address: 0x3ac 
+	Physical Address: 0x1e5ac from TLB
 	Data: 0x39 from memory
 Virtual Address: 0x3ad 
+	Physical Address: 0x1e5ad from TLB
 	Data: 0x1d from cache
 Virtual Address: 0x3ae 
+	Physical Address: 0x1e5ae from TLB
 	Data: 0x87 from cache
 Virtual Address: 0x3af 
+	Physical Address: 0x1e5af from TLB
 	Data: 0x11 from cache
 Virtual Address: 0x3b0 
+	Physical Address: 0x1e5b0 from TLB
 	Data: 0xde from memory
 Virtual Address: 0x3b1 
+	Physical Address: 0x1e5b1 from TLB
 	Data: 0xd9 from cache
 Virtual Address: 0x3b2 
+	Physical Address: 0x1e5b2 from TLB
 	Data: 0xf4 from cache
 Virtual Address: 0x3b3 
+	Physical Address: 0x1e5b3 from TLB
 	Data: 0x1c from cache
 Virtual Address: 0x3b4 
+	Physical Address: 0x1e5b4 from TLB
 	Data: 0xe3 from memory
 Virtual Address: 0x3b5 
+	Physical Address: 0x1e5b5 from TLB
 	Data: 0x22 from cache
 Virtual Address: 0x3b6 
+	Physical Address: 0x1e5b6 from TLB
 	Data: 0x7e from cache
 Virtual Address: 0x3b7 
+	Physical Address: 0x1e5b7 from TLB
 	Data: 0x5 from cache
 Virtual Address: 0x3b8 
+	Physical Address: 0x1e5b8 from TLB
 	Data: 0x6d from memory
 Virtual Address: 0x3b9 
+	Physical Address: 0x1e5b9 from TLB
 	Data: 0xfa from cache
 Virtual Address: 0x3ba 
+	Physical Address: 0x1e5ba from TLB
 	Data: 0x14 from cache
 Virtual Address: 0x3bb 
+	Physical Address: 0x1e5bb from TLB
 	Data: 0x5e from cache
 Virtual Address: 0x3bc 
+	Physical Address: 0x1e5bc from TLB
 	Data: 0x21 from memory
 Virtual Address: 0x3bd 
+	Physical Address: 0x1e5bd from TLB
 	Data: 0x7d from cache
 Virtual Address: 0x3be 
+	Physical Address: 0x1e5be from TLB
 	Data: 0xef from cache
 Virtual Address: 0x3bf 
+	Physical Address: 0x1e5bf from TLB
 	Data: 0x6e from cache
 Virtual Address: 0x3c0 
+	Physical Address: 0x1e5c0 from TLB
 	Data: 0x88 from memory
 Virtual Address: 0x3c1 
+	Physical Address: 0x1e5c1 from TLB
 	Data: 0x61 from cache
 Virtual Address: 0x3c2 
+	Physical Address: 0x1e5c2 from TLB
 	Data: 0x67 from cache
 Virtual Address: 0x3c3 
+	Physical Address: 0x1e5c3 from TLB
 	Data: 0x43 from cache
 Virtual Address: 0x3c4 
+	Physical Address: 0x1e5c4 from TLB
 	Data: 0x66 from memory
 Virtual Address: 0x3c5 
+	Physical Address: 0x1e5c5 from TLB
 	Data: 0xf1 from cache
 Virtual Address: 0x3c6 
+	Physical Address: 0x1e5c6 from TLB
 	Data: 0x77 from cache
 Virtual Address: 0x3c7 
+	Physical Address: 0x1e5c7 from TLB
 	Data: 0x4c from cache
 Virtual Address: 0x3c8 
+	Physical Address: 0x1e5c8 from TLB
 	Data: 0x1 from memory
 Virtual Address: 0x3c9 
+	Physical Address: 0x1e5c9 from TLB
 	Data: 0x24 from cache
 Virtual Address: 0x3ca 
+	Physical Address: 0x1e5ca from TLB
 	Data: 0xa0 from cache
 Virtual Address: 0x3cb 
+	Physical Address: 0x1e5cb from TLB
 	Data: 0x5 from cache
 Virtual Address: 0x3cc 
+	Physical Address: 0x1e5cc from TLB
 	Data: 0x3f from memory
 Virtual Address: 0x3cd 
+	Physical Address: 0x1e5cd from TLB
 	Data: 0xfd from cache
 Virtual Address: 0x3ce 
+	Physical Address: 0x1e5ce from TLB
 	Data: 0x46 from cache
 Virtual Address: 0x3cf 
+	Physical Address: 0x1e5cf from TLB
 	Data: 0x27 from cache
 Virtual Address: 0x3d0 
+	Physical Address: 0x1e5d0 from TLB
 	Data: 0x20 from memory
 Virtual Address: 0x3d1 
+	Physical Address: 0x1e5d1 from TLB
 	Data: 0x3a from cache
 Virtual Address: 0x3d2 
+	Physical Address: 0x1e5d2 from TLB
 	Data: 0x92 from cache
 Virtual Address: 0x3d3 
+	Physical Address: 0x1e5d3 from TLB
 	Data: 0x54 from cache
 Virtual Address: 0x3d4 
+	Physical Address: 0x1e5d4 from TLB
 	Data: 0xbf from memory
 Virtual Address: 0x3d5 
+	Physical Address: 0x1e5d5 from TLB
 	Data: 0xa1 from cache
 Virtual Address: 0x3d6 
+	Physical Address: 0x1e5d6 from TLB
 	Data: 0x96 from cache
 Virtual Address: 0x3d7 
+	Physical Address: 0x1e5d7 from TLB
 	Data: 0x2d from cache
 Virtual Address: 0x3d8 
+	Physical Address: 0x1e5d8 from TLB
 	Data: 0x99 from memory
 Virtual Address: 0x3d9 
+	Physical Address: 0x1e5d9 from TLB
 	Data: 0x84 from cache
 Virtual Address: 0x3da 
+	Physical Address: 0x1e5da from TLB
 	Data: 0x7e from cache
 Virtual Address: 0x3db 
+	Physical Address: 0x1e5db from TLB
 	Data: 0x29 from cache
 Virtual Address: 0x3dc 
+	Physical Address: 0x1e5dc from TLB
 	Data: 0xd2 from memory
 Virtual Address: 0x3dd 
+	Physical Address: 0x1e5dd from TLB
 	Data: 0xd0 from cache
 Virtual Address: 0x3de 
+	Physical Address: 0x1e5de from TLB
 	Data: 0xdc from cache
 Virtual Address: 0x3df 
+	Physical Address: 0x1e5df from TLB
 	Data: 0x29 from cache
 Virtual Address: 0x3e0 
+	Physical Address: 0x1e5e0 from TLB
 	Data: 0x6b from memory
 Virtual Address: 0x3e1 
+	Physical Address: 0x1e5e1 from TLB
 	Data: 0xb1 from cache
 Virtual Address: 0x3e2 
+	Physical Address: 0x1e5e2 from TLB
 	Data: 0x1 from cache
 Virtual Address: 0x3e3 
+	Physical Address: 0x1e5e3 from TLB
 	Data: 0x2e from cache
 Virtual Address: 0x3e4 
+	Physical Address: 0x1e5e4 from TLB
 	Data: 0x65 from memory
 Virtual Address: 0x3e5 
+	Physical Address: 0x1e5e5 from TLB
 	Data: 0x68 from cache
 Virtual Address: 0x3e6 
+	Physical Address: 0x1e5e6 from TLB
 	Data: 0xf8 from cache
 Virtual Address: 0x3e7 
+	Physical Address: 0x1e5e7 from TLB
 	Data: 0x23 from cache
 Virtual Address: 0x3e8 
+	Physical Address: 0x1e5e8 from TLB
 	Data: 0x1 from memory
