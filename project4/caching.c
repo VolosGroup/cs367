@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 #include "memory_system.h"
 
 /*
@@ -11,7 +12,7 @@
  *  
  */
 
-
+int getHex(int n);
 void print();
 void updateCache(int pa, int data);
 
@@ -82,10 +83,9 @@ get_physical_address(int virt_address) {
 
     int PA;
     
-    char x[32];
-    sprintf(x,"%x",virt_address);
-    int virtuality = (int)strtol(x, NULL, 16);
+    int virtuality = getHex(virt_address);
     
+    printf("\nvirtuality = %x\n",virtuality);
     
     int vpo = virtuality & 0x1ff;
     virtuality >>= 9;
@@ -298,6 +298,102 @@ print(){
     printf("---------------------------------------------------------------------\n\n");
     
 }
+
+char * strrev(char *str)
+{
+
+    int i = strlen(str)-1,j=0;
+
+    char ch;
+    while(i>j)
+    {
+        ch = str[i];
+        str[i]= str[j];
+        str[j] = ch;
+        i--;
+        j++;
+    }
+    return str;
+}
+
+int getHex(int n){
+    printf("n = %d\n",n);
+    char newhex[8];
+    int ind = 0,tmp;
+    while(n){
+        tmp = n%16;
+        n /= 16;
+        switch(tmp){
+            case 0:
+                newhex[ind] = (char)48;
+                break;
+            case 1:
+                newhex[ind] = 48 + tmp;
+                break;
+            case 2:
+                newhex[ind] = '2';
+                break;
+            case 3:
+                newhex[ind] = '3';
+                break;
+            case 4:
+                newhex[ind] = '4';
+                break;
+            case 5:
+                newhex[ind] = '5';
+                break;
+            case 6:
+                newhex[ind] = '6';
+                break;
+            case 7:
+                newhex[ind] = '7';
+                break;
+            case 8:
+                newhex[ind] = '8';
+                break;
+            case 9:
+                newhex[ind] = '9';
+                break;
+            case 10:
+                newhex[ind] = 'A';
+                break;
+            case 11:
+                newhex[ind] = 'B';
+                break;
+            case 12:
+                newhex[ind] = 'C';
+                break;
+            case 13:
+                newhex[ind] = 'D';
+                break;
+            case 14:
+                newhex[ind] = 'E';
+                break;
+            case 15:
+                newhex[ind] = 'F';
+                break;
+        }
+        ind++;
+    }
+    newhex[ind] = '\0';
+   // printf(" get hex = %s\n strlen = %lu\n",newhex,strlen(newhex));
+    
+    int len = strlen(newhex);
+    
+    int i = 0;
+    int j = strlen(newhex) - 1;
+    while( i<j ){
+        char tmp = newhex[j];
+        newhex[j] = newhex[i];
+        newhex[i] = tmp;
+        i++; j--;
+    }
+   // printf(" after reverse hex = %s\n strlen = %lu\n",newhex,strlen(newhex));
+    int converted = (int)strtol(newhex,NULL,16);
+    return converted;
+}
+
+
 
 
 

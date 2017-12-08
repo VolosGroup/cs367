@@ -15,7 +15,7 @@ main() {
   initialize();
 
   printf("> ");
-  scanf("%x",&virt_address);
+  scanf("%d",&virt_address);
   while (virt_address >= 0) {
 // While loop that takes the input virtual address, maps it to
 // a physical address, and then does a lookup to get the corresponding
@@ -28,7 +28,7 @@ main() {
         char ch = get_byte(phy_address);  // implement this function
      }
      printf("> ");
-     scanf("%x",&virt_address);
+     scanf("%d",&virt_address);
   }
   stop_logging();
 }
