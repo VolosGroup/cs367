@@ -4,25 +4,29 @@
 #include <string.h>
 #include "memory_system.h"
 
+TLB tlbentries[16]; // Array of TLB blocks
 
-TLB tlbentries[32]; // maybe array size should be 16?
-Cache cache[32]; 
-
-
+Cache cache[32]; // Array of cache blocks
 
 void
 initialize() {
     
-    for(int z=0;z<32;z++){
+    // Initialize all TLB blocks
+    for( int z=0; z<16; z++ ){
+        
         tlbentries[z].index = 0x0;
+        
         tlbentries[z].tag = 0x0;
         tlbentries[z].ppn = 0x0;
         tlbentries[z].valid = 0;
+        
     }
     
-    for(int z=0;z<32;z++){
-        cache[z].index = 0x0;
+    // Initialize all cache blocks
+    for( int z=0; z<32; z++ ){
         
+        cache[z].index = 0x0;
+
         cache[z].tag = 0x0;
         cache[z].data = 0x0;
         cache[z].valid = 0;
@@ -30,55 +34,47 @@ initialize() {
         cache[z].tag2 = 0x0;
         cache[z].data2 = 0x0;
         cache[z].valid2 = 0;
+        
     }
     
 
 }
 
 
+
+
+
 int
 get_physical_address(int virt_address) {
-/*
-   Convert the incoming virtual address to a physical address. 
-     * if virt_address too large, 
-          log_entry(ILLEGALVIRTUAL,virt_address); 
-          return -1
-          NOT DONE
-     * if PPN is in the TLB, 
-          compute PA 
-          log_entry(ADDRESS_FROM_TLB,PA);
-          return PA
-          DONE
-     * else use the page table function to get the PPN:
-          PPN = get_page_table_entry(VPN) // provided function
-          compute PA 
-          log_entry(ADDRESS_FROM_PAGETABLE,PA);
-          return PA
-          DONE
-*/
+    
+    if ( virt_address > 262143 ){
+        log_entry(ILLEGALVIRTUAL, virt_address);
+        return -1;
+    }
+
 
     int PA;
     
-    int virtuality = getHex(virt_address);
+    int virtuality = getHex(virt_address); // get hex value of input
 
-    int vpo = virtuality & 0x1ff;
+    int vpo = virtuality & 0x1ff; // VPO: 9 bits
     
-    virtuality >>= 9; // 
+    virtuality >>= 9; 
     
-    int vpn = virtuality;
+    int vpn = virtuality; // VPN: 9 bits
     
-    int tlbi = virtuality & 0xf;
+    int tlbi = virtuality & 0xf; // TLB index: 4 bits
     
     virtuality >>= 4;
     
-    int tlbt = virtuality & 0x1f;
+    int tlbt = virtuality & 0x1f; // TLB tag: 5 bits
 
-    int ppn = -1;
+    int ppn = -1; // initialize PPN
     
     
     // check that vpn is within limit
-    if ( vpn > 512 ){
-        log_entry(ILLEGALVIRTUAL,virt_address); 
+    if ( vpn > 511 ){
+        log_entry(ILLEGALVPN, vpn); 
         return -1;
     }
     
@@ -104,7 +100,11 @@ get_physical_address(int virt_address) {
      PA = (PA << 9) | vpo;
      log_entry(ADDRESS_FROM_PAGETABLE,PA);
     }
-
+    
+    if ( PA > 1048575 ){
+        log_entry(PHYSICALERROR,PA);
+        return -1;
+    }
     
     return PA;
 }
@@ -112,64 +112,53 @@ get_physical_address(int virt_address) {
 
 
 
+
 char
 get_byte(int phys_address) {
-/*
-   Use the incoming physical address to find the relevant byte. 
-     * if data is in the cache, use the offset (last 2 bits of address)
-          to compute the byte to be returned data
-          log_entry(DATA_FROM_CACHE,byte);
-          return byte 
-     * else use the function get_long_word(phys_address) to get the 
-          4 bytes of data where the relevant byte will be at the
-          given offset (last 2 bits of address)
-          log_entry(DATA_FROM_MEMORY,byte);
-          return byte
-
-NOTE: if the incoming physical address is too large, there is an
-error in the way you are computing it...
-
-// get word goes to ram
-*/
-
+    
     char byte;
     
-    int foundInCache = 0;
+    int foundInCache = 0; // tracks if data was found in cache
    
-    int pareplica = phys_address;
+    int pareplica = phys_address; // replica of physical address for operations
     
-    int co = pareplica & 0x3;
+    int co = pareplica & 0x3; // physical address offset
     
     pareplica >>= 2 ;
     
-    int ci = pareplica & 0x1f;
+    int ci = pareplica & 0x1f; // physical address index
     
     pareplica >>= 5;
     
-    int ct = pareplica & 0x1fff;
+    int ct = pareplica & 0x1fff; // physical address tag
     
     int cacheData = -1;
     
-
-     if( cache[ci].tag == ct && cache[ci].valid == 1){
-        cacheData = cache[ci].data;
+    
+    // check cache block 1
+    if( cache[ci].tag == ct && cache[ci].valid == 1){
+        cacheData = cache[ci].data; // data from cache
         foundInCache = 1;
-     }
-     if( cache[ci].tag2 == ct && cache[ci].valid2 == 1){
-        cacheData = cache[ci].data2;
+    }
+    
+    // check cache block 2
+    if( cache[ci].tag2 == ct && cache[ci].valid2 == 1){
+        cacheData = cache[ci].data2; // data from cache
         foundInCache = 1;
-     }
+    }
 
     
-   // data was found in cache
+   // data was not found in cache
    if ( cacheData == -1 ){
-    cacheData = get_word(phys_address);
-    //update cache
-    updateCache(phys_address,cacheData);
+    
+    cacheData = get_word(phys_address); // get data from memory
+    
+    updateCache(phys_address,cacheData); // update cache
     
    }
    
    
+   // get byte according to offset bits
    switch(co){
     case 0:
         byte = cacheData & 0xff;
@@ -189,8 +178,8 @@ error in the way you are computing it...
    }
    
    
-   if (foundInCache == 1)   log_entry(DATA_FROM_CACHE,byte&0xff);
-   else     log_entry(DATA_FROM_MEMORY,byte&0xff);
+   if ( foundInCache == 1 )   log_entry(DATA_FROM_CACHE,byte&0xff);
+   else   log_entry(DATA_FROM_MEMORY,byte&0xff);
    
    
    return byte;
@@ -203,21 +192,19 @@ error in the way you are computing it...
 void
 updateCache(int pa, int data){
     
-    int pareplica = pa;
+    int pareplica = pa; // copy physical address
+    
     pareplica >>= 2 ;
-    int ci = pareplica & 0x1f;
+    
+    int ci = pareplica & 0x1f; // Cache Index: 5 bits
+    
     pareplica >>= 5;
-    int ct = pareplica & 0x1fff;
     
-    /*
-     * check cache at index
-     * if block1 or block2 valid == 0
-     *  update block 1 or 2
-     * if block 1 and block 2 valid == 1
-     *  check both times
-     *   update oldest
-     */
+    int ct = pareplica & 0x1fff; // Cache tag: 13 bits
     
+
+// If block 1 or 2 are not set: check and update the one
+// with valid equal to 0
     if (cache[ci].valid == 0 || cache[ci].valid2 == 0){
         if(cache[ci].valid == 0){
             cache[ci].valid = 1;
@@ -232,8 +219,12 @@ updateCache(int pa, int data){
             cache[ci].data2 = data;
             cache[ci].time2 = (unsigned long)time(NULL);
         }
-    }else if ( cache[ci].valid == 1 && cache[ci].valid2 == 1){
-        
+    }
+    
+// If both blocks are set, check which is oldest
+// overwrite the oldest
+    else if ( cache[ci].valid == 1 && cache[ci].valid2 == 1){
+
         if( cache[ci].time < cache[ci].time2 ){
             cache[ci].valid = 1;
             cache[ci].index = ci;
@@ -247,21 +238,34 @@ updateCache(int pa, int data){
             cache[ci].data2 = data;
             cache[ci].time2 = (unsigned long)time(NULL);
         }
-        
+
     }
 }
 
 
 
 
+
+// Converts an integer from decimal to hexadecimal
+// n : decimal number
 int
 getHex(int n){
     
-    char newhex[8];
-    int ind = 0,tmp;
+    char newhex[8]; // stores the hexadecimal digits
+    
+    int ind = 0; // counter for newhex
+    
+    int tmp; // holds remainder value of modulo 16
+    
+    
+    // Loop to find the remainder of the decimal number and get correct hex value
+    // puts hex value in newhex array
     while(n){
-        tmp = n%16;
-        n /= 16;
+        
+        tmp = n%16; // get remainder
+        
+        n /= 16; // divide decimal number by 16
+        
         switch(tmp){
             case 0:
                 newhex[ind] = (char)48;
@@ -314,23 +318,25 @@ getHex(int n){
         }
         ind++;
     }
-    newhex[ind] = '\0';
+    newhex[ind] = '\0'; // terminate string
     
     
-    // reverse the the converted hex number so it is in correct order
-    int len = strlen(newhex);
-    int i = 0;
-    int j = strlen(newhex) - 1;
+    // Reverse the converted hex number so it is in correct order
+    //
+    int len = strlen(newhex); 
     
-    while( i<j ){
+    int i = 0; 
+    
+    int j = strlen(newhex) - 1; 
+    
+    while( i < j ){
         char tmp = newhex[j];
         newhex[j] = newhex[i];
         newhex[i] = tmp;
         i++; j--;
     }
     
-    
-    int converted = (int)strtol(newhex,NULL,16);
+    int converted = (int)strtol(newhex,NULL,16); // put new hexadecimal value in int 
     
     return converted;
 }
