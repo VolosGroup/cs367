@@ -1,0 +1,37 @@
+Virtual Address: 0x2d16957 
+	Illegal Virtual Address as input: 0x2d16957 
+Virtual Address: 0xa76a 
+	Physical Address: 0x6a56a from page table
+	Data: 0xf9 from memory
+Virtual Address: 0xcd4 
+	Physical Address: 0x542d4 from page table
+	Data: 0x38 from memory
+Virtual Address: 0xea14 
+	Physical Address: 0x32e14 from page table
+	Data: 0x90 from memory
+Virtual Address: 0x5016838c 
+	Illegal Virtual Address as input: 0x5016838c 
+Virtual Address: 0x33325fdd 
+	Illegal Virtual Address as input: 0x33325fdd 
+Virtual Address: 0x2e0b2dd 
+	Illegal Virtual Address as input: 0x2e0b2dd 
+Virtual Address: 0x3cc3c 
+	Physical Address: 0x6843c from page table
+	Data: 0x5b from memory
+Virtual Address: 0x12dc 
+	Physical Address: 0xea2dc from page table
+	Data: 0x48 from memory
+Virtual Address: 0x30 
+	Physical Address: 0x78430 from page table
+	Data: 0xa1 from memory
+Virtual Address: 0x16 
+	Physical Address: 0x78416 from TLB
+	Data: 0x11 from memory
+Virtual Address: 0x135e 
+	Physical Address: 0xea35e from TLB
+	Data: 0x5b from memory
+Virtual Address: 0x70a8 
+	Physical Address: 0xfe8a8 from page table
+	Data: 0x34 from memory
+Virtual Address: 0x5b8ab4 
+	Illegal Virtual Address as input: 0x5b8ab4 
