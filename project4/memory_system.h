@@ -12,40 +12,6 @@
 #define PHYSICALERROR 6
 #define ILLEGALVPN 7
 
-#ifndef MEMORY_SYSTEM_H
-#define MEMORY_SYSTEM_H
-
-
-typedef struct {
-    int index;
-    
-    int tag;
-    int ppn;
-    int valid;
-}   TLB;
-
-typedef struct {
-    int index;
-    
-    int tag;
-    int valid;
-    int data;
-    long int time;
-    
-    int tag2;
-    int valid2;
-    int data2;
-    long int time2;
-    
-}   Cache;
-
-#endif
-
-extern TLB tlbentries[32]; // maybe array size should be 16?
-extern Cache cache[32]; //
-int getHex(int n);
-void updateCache(int pa, int data);
-void print();
 
 void initialize();
 int get_physical_address(int);

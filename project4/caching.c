@@ -4,9 +4,40 @@
 #include <string.h>
 #include "memory_system.h"
 
-TLB tlbentries[16]; // Array of TLB blocks
+typedef struct {
+    int index;
+    
+    int tag;
+    int ppn;
+    int valid;
+}   TLB;
 
+typedef struct {
+    int index;
+    
+    int tag;
+    int valid;
+    int data;
+    long int time;
+    
+    int tag2;
+    int valid2;
+    int data2;
+    long int time2;
+    
+}   Cache;
+
+
+int getHex(int n); // Converts decimal value to hex
+
+void updateCache(int pa, int data); // Updates cache 
+
+TLB tlbentries[16]; // Array of TLB blocks
 Cache cache[32]; // Array of cache blocks
+
+
+
+
 
 void
 initialize() {
@@ -47,6 +78,7 @@ initialize() {
 int
 get_physical_address(int virt_address) {
     
+    // virtual address is too big
     if ( virt_address > 262143 ){
         log_entry(ILLEGALVIRTUAL, virt_address);
         return -1;
@@ -72,7 +104,7 @@ get_physical_address(int virt_address) {
     int ppn = -1; // initialize PPN
     
     
-    // check that vpn is within limit
+    // VPN is too big
     if ( vpn > 511 ){
         log_entry(ILLEGALVPN, vpn); 
         return -1;
@@ -88,19 +120,25 @@ get_physical_address(int virt_address) {
     }
 
     
-    // get PPN from page table and update TLB
+    // PPN was not found in TLB
     if( ppn == -1) {
-     ppn = get_page_table_entry(vpn);
+        
+     ppn = get_page_table_entry(vpn); // get PPN from page table
      
+     // update TLB block
      tlbentries[tlbi].ppn = ppn;
      tlbentries[tlbi].tag = tlbt;
      tlbentries[tlbi].index = tlbi;
      tlbentries[tlbi].valid = 1;
+     
+     // Set up physical address with PPN and VPO
      PA = ppn;
      PA = (PA << 9) | vpo;
+     
      log_entry(ADDRESS_FROM_PAGETABLE,PA);
     }
     
+    // physical address is too big
     if ( PA > 1048575 ){
         log_entry(PHYSICALERROR,PA);
         return -1;
@@ -160,6 +198,7 @@ get_byte(int phys_address) {
    
    // get byte according to offset bits
    switch(co){
+    
     case 0:
         byte = cacheData & 0xff;
         break;
@@ -175,6 +214,7 @@ get_byte(int phys_address) {
         cacheData >>= 24;
         byte = cacheData & 0xff;
         break;
+    
    }
    
    
@@ -329,11 +369,16 @@ getHex(int n){
     
     int j = strlen(newhex) - 1; 
     
+    // Start at first and last characters
+    // switch and increment/decrement until
+    // all characters have been switched
     while( i < j ){
-        char tmp = newhex[j];
-        newhex[j] = newhex[i];
+        
+        char tmp = newhex[j]; 
+        newhex[j] = newhex[i]; 
         newhex[i] = tmp;
         i++; j--;
+        
     }
     
     int converted = (int)strtol(newhex,NULL,16); // put new hexadecimal value in int 
